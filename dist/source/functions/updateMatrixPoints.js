@@ -6,7 +6,7 @@ Object.defineProperty(exports, '__esModule', {
 exports.default = void 0
 require('core-js/modules/esnext.iterator.constructor.js')
 require('core-js/modules/esnext.iterator.for-each.js')
-var _point = _interopRequireDefault(require('../objects/point.js'))
+const _point = _interopRequireDefault(require('../objects/point.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Update the points for each DomItem in a matrix.
@@ -47,4 +47,4 @@ const updateMatrixPoints = matrix => {
   })
   return matrix
 }
-var _default = exports.default = updateMatrixPoints
+const _default = exports.default = updateMatrixPoints

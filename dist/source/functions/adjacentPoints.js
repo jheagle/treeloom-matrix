@@ -8,11 +8,11 @@ require('core-js/modules/esnext.iterator.constructor.js')
 require('core-js/modules/esnext.iterator.filter.js')
 require('core-js/modules/esnext.iterator.map.js')
 require('core-js/stable')
-var _getPointsForLines = _interopRequireDefault(require('./getPointsForLines'))
-var _point = _interopRequireDefault(require('../objects/point'))
-var _nextCell = _interopRequireDefault(require('./nextCell'))
-var _checkValidPoint = _interopRequireDefault(require('./checkValidPoint'))
-var _testFilesystem = require('test-filesystem')
+const _getPointsForLines = _interopRequireDefault(require('./getPointsForLines'))
+const _point = _interopRequireDefault(require('../objects/point'))
+const _nextCell = _interopRequireDefault(require('./nextCell'))
+const _checkValidPoint = _interopRequireDefault(require('./checkValidPoint'))
+const _testFilesystem = require('test-filesystem')
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Return all valid points surrounding a provided point
@@ -22,4 +22,4 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @returns {Array.<module:matrixObjects~Point>}
  */
 const adjacentPoints = (pnt, matrix) => (0, _getPointsForLines.default)([[(0, _point.default)(-1, -1, -1), (0, _point.default)(-1, 1, -1)], [(0, _point.default)(0, -1, -1), (0, _point.default)(0, 1, -1)], [(0, _point.default)(1, -1, -1), (0, _point.default)(1, 1, -1)], [(0, _point.default)(-1, -1, 0), (0, _point.default)(-1, 1, 0)], [(0, _point.default)(1, -1, 0), (0, _point.default)(1, 1, 0)], [(0, _point.default)(-1, -1, 1), (0, _point.default)(-1, 1, 1)], [(0, _point.default)(0, -1, 1), (0, _point.default)(0, 1, 1)], [(0, _point.default)(1, -1, 1), (0, _point.default)(1, 1, 1)]]).concat([(0, _point.default)(0, -1, 0), (0, _point.default)(0, 1, 0)]).map(p => (0, _nextCell.default)(pnt, p)).filter(p => (0, _checkValidPoint.default)(p, matrix))
-var _default = exports.default = adjacentPoints
+const _default = exports.default = adjacentPoints

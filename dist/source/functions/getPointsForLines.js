@@ -7,7 +7,7 @@ exports.default = void 0
 require('core-js/modules/esnext.iterator.constructor.js')
 require('core-js/modules/esnext.iterator.reduce.js')
 require('core-js/stable')
-var _getLinePoints = _interopRequireDefault(require('./getLinePoints.js'))
+const _getLinePoints = _interopRequireDefault(require('./getLinePoints.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Takes an array of arrays containing two points each. Calls getPointsLine for each array of points. Returns an
@@ -17,4 +17,4 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @returns {Array.<Array.<module:matrixObjects~Point>>}
  */
 const getPointsForLines = lines => lines.reduce((pointsArray, line) => pointsArray.concat((0, _getLinePoints.default)(...line)), [])
-var _default = exports.default = getPointsForLines
+const _default = exports.default = getPointsForLines

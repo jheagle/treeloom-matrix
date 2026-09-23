@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _testPointsBetween = _interopRequireDefault(require('./testPointsBetween'))
+const _testPointsBetween = _interopRequireDefault(require('./testPointsBetween'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Given two points, check the cells between using specified function.
@@ -15,4 +15,4 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @returns {boolean}
  */
 const checkInBetween = (...args) => !!(0, _testPointsBetween.default)(...args).true.length
-var _default = exports.default = checkInBetween
+const _default = exports.default = checkInBetween

@@ -5,8 +5,8 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
-var _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
+const _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
+const _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * An object that has boolean values for each axis indicating whether the interval fits within the matrix.
@@ -42,4 +42,4 @@ const testIntervalFits = (matrix, interval = null, maxRanges = null) => {
     z: maxRanges.z > absoluteInterval
   }
 }
-var _default = exports.default = testIntervalFits
+const _default = exports.default = testIntervalFits

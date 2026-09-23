@@ -15,4 +15,4 @@ require('core-js/stable')
  * @returns {false|module:matrixObjects~axis}
  */
 const getFirstAxisOfCoordinate = (pnt, coordinate) => Object.keys(pnt).filter(key => pnt[key] === coordinate)[0] || false
-var _default = exports.default = getFirstAxisOfCoordinate
+const _default = exports.default = getFirstAxisOfCoordinate

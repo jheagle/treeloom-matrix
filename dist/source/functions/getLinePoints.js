@@ -5,9 +5,9 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _getLineIntersectPoints = _interopRequireDefault(require('./getLineIntersectPoints.js'))
-var _getLineRelativePoints = _interopRequireDefault(require('./getLineRelativePoints.js'))
-var _getLineTransitionPoints = _interopRequireDefault(require('./getLineTransitionPoints.js'))
+const _getLineIntersectPoints = _interopRequireDefault(require('./getLineIntersectPoints.js'))
+const _getLineRelativePoints = _interopRequireDefault(require('./getLineRelativePoints.js'))
+const _getLineTransitionPoints = _interopRequireDefault(require('./getLineTransitionPoints.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Find the points that a line would cross from 'start' to 'end' and return the array of points
@@ -30,4 +30,4 @@ const getLinePoints = (start, end, type = 'relative', line = []) => {
       throw Error(`The given type: '${type}' is invalid. Valid types are 'relative', 'intersect', 'transition'`)
   }
 }
-var _default = exports.default = getLinePoints
+const _default = exports.default = getLinePoints

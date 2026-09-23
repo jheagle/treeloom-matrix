@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _point = _interopRequireDefault(require('../objects/point'))
+const _point = _interopRequireDefault(require('../objects/point'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * @callback alterCoordinate
@@ -23,4 +23,4 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @returns {module:matrixObjects~Point}
  */
 const alterCoordinates = (pnt, fn) => (0, _point.default)(fn(pnt?.x ?? null, 'x', pnt), fn(pnt?.y ?? null, 'y', pnt), fn(pnt?.z ?? null, 'z', pnt))
-var _default = exports.default = alterCoordinates
+const _default = exports.default = alterCoordinates

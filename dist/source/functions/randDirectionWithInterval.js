@@ -5,20 +5,20 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _alterCoordinates = _interopRequireDefault(require('./alterCoordinates.js'))
-var _checkValidPoint = _interopRequireDefault(require('./checkValidPoint.js'))
-var _direction = _interopRequireDefault(require('../objects/direction.js'))
-var _getAbsolutePoint = _interopRequireDefault(require('./getAbsolutePoint.js'))
-var _getAxisLengths = _interopRequireDefault(require('./getAxisLengths.js'))
-var _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
-var _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
-var _nextCell = _interopRequireDefault(require('./nextCell.js'))
-var _point = _interopRequireDefault(require('../objects/point.js'))
-var _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
-var _randDirection = _interopRequireDefault(require('./randDirection.js'))
-var _randomPoint = _interopRequireDefault(require('./randomPoint.js'))
-var _siFunciona = _interopRequireDefault(require('si-funciona'))
-var _testIntervalFits = _interopRequireDefault(require('./testIntervalFits.js'))
+const _alterCoordinates = _interopRequireDefault(require('./alterCoordinates.js'))
+const _checkValidPoint = _interopRequireDefault(require('./checkValidPoint.js'))
+const _direction = _interopRequireDefault(require('../objects/direction.js'))
+const _getAbsolutePoint = _interopRequireDefault(require('./getAbsolutePoint.js'))
+const _getAxisLengths = _interopRequireDefault(require('./getAxisLengths.js'))
+const _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
+const _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
+const _nextCell = _interopRequireDefault(require('./nextCell.js'))
+const _point = _interopRequireDefault(require('../objects/point.js'))
+const _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
+const _randDirection = _interopRequireDefault(require('./randDirection.js'))
+const _randomPoint = _interopRequireDefault(require('./randomPoint.js'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
+const _testIntervalFits = _interopRequireDefault(require('./testIntervalFits.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Get random direction point.
@@ -73,4 +73,4 @@ const randDirectionWithInterval = (matrix, start = null, interval = null, maxRan
   }
   return (0, _direction.default)(delta.x, delta.y, delta.z)
 }
-var _default = exports.default = randDirectionWithInterval
+const _default = exports.default = randDirectionWithInterval

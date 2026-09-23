@@ -5,11 +5,11 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _areEqualPoints = _interopRequireDefault(require('./areEqualPoints.js'))
-var _direction = _interopRequireDefault(require('../objects/direction.js'))
-var _point = _interopRequireDefault(require('../objects/point.js'))
-var _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
-var _siFunciona = _interopRequireDefault(require('si-funciona'))
+const _areEqualPoints = _interopRequireDefault(require('./areEqualPoints.js'))
+const _direction = _interopRequireDefault(require('../objects/direction.js'))
+const _point = _interopRequireDefault(require('../objects/point.js'))
+const _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Find the lowest common ratio of the difference between the coordinates of two points.
@@ -26,4 +26,4 @@ const pointsToStep = (start, end) => {
   const simplifiedCoordinates = _siFunciona.default.simplestRatio(difference.x, difference.y, difference.z)
   return (0, _direction.default)(...simplifiedCoordinates)
 }
-var _default = exports.default = pointsToStep
+const _default = exports.default = pointsToStep

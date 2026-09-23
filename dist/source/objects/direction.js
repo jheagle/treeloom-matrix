@@ -5,10 +5,10 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _point = _interopRequireDefault(require('./point.js'))
-var _nextCell = _interopRequireDefault(require('../functions/nextCell.js'))
-var _prevCell = _interopRequireDefault(require('../functions/prevCell.js'))
-var _siFunciona = _interopRequireDefault(require('si-funciona'))
+const _point = _interopRequireDefault(require('./point.js'))
+const _nextCell = _interopRequireDefault(require('../functions/nextCell.js'))
+const _prevCell = _interopRequireDefault(require('../functions/prevCell.js'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Direction represents the delta from on point to another and indicactes the direction of travel.
@@ -34,4 +34,4 @@ const direction = (x, y, z = 0) => {
   dir.prev = end => (0, _prevCell.default)(end, dir)
   return dir
 }
-var _default = exports.default = direction
+const _default = exports.default = direction

@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-var _point = _interopRequireDefault(require('../objects/point'))
+const _point = _interopRequireDefault(require('../objects/point'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Retrieve the point associated with the provided DomItem.
@@ -22,4 +22,4 @@ const getPointFromDomItem = (domItem, useIfExists = true) => {
   }
   return (0, _point.default)(Array.from(domItem.parentItem.children).indexOf(domItem), Array.from(domItem.parentItem.parentItem.children).indexOf(domItem.parentItem), Array.from(domItem.parentItem.parentItem.parentItem.children).indexOf(domItem.parentItem.parentItem))
 }
-var _default = exports.default = getPointFromDomItem
+const _default = exports.default = getPointFromDomItem

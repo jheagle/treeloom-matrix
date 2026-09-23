@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _checkValidPoint = _interopRequireDefault(require('./checkValidPoint'))
+const _checkValidPoint = _interopRequireDefault(require('./checkValidPoint'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Retrieve the DomItem associated with the provided point
@@ -15,4 +15,4 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @returns {false|module:domObjects~DomItem}
  */
 const getDomItemFromPoint = (pnt, matrix) => (0, _checkValidPoint.default)(pnt, matrix) ? matrix.children[pnt.z].children[pnt.y].children[pnt.x] : false
-var _default = exports.default = getDomItemFromPoint
+const _default = exports.default = getDomItemFromPoint

@@ -5,9 +5,9 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _siFunciona = _interopRequireDefault(require('si-funciona'))
-var _jsonDom = _interopRequireDefault(require('json-dom'))
-var _tile = _interopRequireDefault(require('./tile'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
+const _jsonDom = _interopRequireDefault(require('json-dom'))
+const _tile = _interopRequireDefault(require('./tile'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * MatrixColumn is a DomItem which represents the x axis and also stores {@link module:matrixObjects~MatrixTile}
@@ -106,4 +106,4 @@ const matrix = (dimensions = {
     }), props.y), dimensions.y)
   }), props.z), dimensions.z)
 }), props.matrix)
-var _default = exports.default = matrix
+const _default = exports.default = matrix

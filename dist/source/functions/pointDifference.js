@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _point = _interopRequireDefault(require('../objects/point'))
+const _point = _interopRequireDefault(require('../objects/point'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Based on provided point and another point, get a point with the difference between each axis
@@ -15,4 +15,4 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @returns {module:matrixObjects~Point}
  */
 const pointDifference = (start, end) => (0, _point.default)(end.x - start.x, end.y - start.y, end.z - start.z)
-var _default = exports.default = pointDifference
+const _default = exports.default = pointDifference

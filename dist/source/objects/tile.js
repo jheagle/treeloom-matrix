@@ -20,4 +20,4 @@ require('core-js/stable')
 const tile = () => ({
   point: {}
 })
-var _default = exports.default = tile
+const _default = exports.default = tile

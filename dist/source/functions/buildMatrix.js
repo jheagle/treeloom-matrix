@@ -4,10 +4,10 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 })
 exports.default = void 0
-var _matrix = _interopRequireDefault(require('../objects/matrix.js'))
-var _updateMatrixPoints = _interopRequireDefault(require('./updateMatrixPoints.js'))
-var _jsonDom = _interopRequireDefault(require('json-dom'))
-var _siFunciona = _interopRequireDefault(require('si-funciona'))
+const _matrix = _interopRequireDefault(require('../objects/matrix.js'))
+const _updateMatrixPoints = _interopRequireDefault(require('./updateMatrixPoints.js'))
+const _jsonDom = _interopRequireDefault(require('json-dom'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Create the matrix and assign the correct points to each tile.
@@ -33,4 +33,4 @@ const buildMatrix = (dimensions = {
   z: [],
   matrix: []
 }) => _siFunciona.default.pipe(_jsonDom.default.setParentItemReferences, _updateMatrixPoints.default)((0, _matrix.default)(dimensions, props))
-var _default = exports.default = buildMatrix
+const _default = exports.default = buildMatrix
