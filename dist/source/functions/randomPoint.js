@@ -5,10 +5,10 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _siFunciona = _interopRequireDefault(require('si-funciona'))
-var _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
-var _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
-var _point = _interopRequireDefault(require('../objects/point.js'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
+const _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
+const _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
+const _point = _interopRequireDefault(require('../objects/point.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Get random point within a matrix
@@ -22,4 +22,4 @@ const randPoint = (matrix, maxRanges = null) => {
   const coordinateRanges = (0, _getCoordinateRanges.default)(minPoint, maxPoint, maxRanges)
   return (0, _point.default)(_siFunciona.default.randomInteger(coordinateRanges.x, minPoint.x), _siFunciona.default.randomInteger(coordinateRanges.y, minPoint.y), _siFunciona.default.randomInteger(coordinateRanges.z, minPoint.z))
 }
-var _default = exports.default = randPoint
+const _default = exports.default = randPoint

@@ -5,14 +5,14 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _checkValidPoint = _interopRequireDefault(require('./checkValidPoint.js'))
-var _direction = _interopRequireDefault(require('../objects/direction.js'))
-var _getAxisLengths = _interopRequireDefault(require('./getAxisLengths.js'))
-var _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
-var _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
-var _nextCell = _interopRequireDefault(require('./nextCell.js'))
-var _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
-var _randomPoint = _interopRequireDefault(require('./randomPoint.js'))
+const _checkValidPoint = _interopRequireDefault(require('./checkValidPoint.js'))
+const _direction = _interopRequireDefault(require('../objects/direction.js'))
+const _getAxisLengths = _interopRequireDefault(require('./getAxisLengths.js'))
+const _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
+const _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
+const _nextCell = _interopRequireDefault(require('./nextCell.js'))
+const _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
+const _randomPoint = _interopRequireDefault(require('./randomPoint.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Get random direction point.
@@ -41,4 +41,4 @@ const randDirection = (matrix, start = null, maxRanges = null) => {
   const delta = (0, _pointDifference.default)(start, validPoint)
   return (0, _direction.default)(delta.x, delta.y, delta.z)
 }
-var _default = exports.default = randDirection
+const _default = exports.default = randDirection

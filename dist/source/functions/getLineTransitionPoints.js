@@ -5,10 +5,10 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _areEqualPoints = _interopRequireDefault(require('./areEqualPoints.js'))
-var _point = _interopRequireDefault(require('../objects/point.js'))
-var _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
-var _getHighestAbsoluteCoordinate = _interopRequireDefault(require('./getHighestAbsoluteCoordinate.js'))
+const _areEqualPoints = _interopRequireDefault(require('./areEqualPoints.js'))
+const _point = _interopRequireDefault(require('../objects/point.js'))
+const _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
+const _getHighestAbsoluteCoordinate = _interopRequireDefault(require('./getHighestAbsoluteCoordinate.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
@@ -40,4 +40,4 @@ const getLineTransitionPoints = (start, end, line = [], transitions = null) => {
   }
   return line
 }
-var _default = exports.default = getLineTransitionPoints
+const _default = exports.default = getLineTransitionPoints

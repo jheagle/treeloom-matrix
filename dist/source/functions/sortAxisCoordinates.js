@@ -38,4 +38,4 @@ const sortAxisCoordinates = (pnt, direction = 'desc') => {
   }]
   return axisCoordinatePairs.sort(sortFn)
 }
-var _default = exports.default = sortAxisCoordinates
+const _default = exports.default = sortAxisCoordinates

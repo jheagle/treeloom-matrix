@@ -7,8 +7,8 @@ exports.default = void 0
 require('core-js/modules/esnext.iterator.constructor.js')
 require('core-js/modules/esnext.iterator.reduce.js')
 require('core-js/stable')
-var _getAllPoints = _interopRequireDefault(require('./getAllPoints.js'))
-var _siFunciona = _interopRequireDefault(require('si-funciona'))
+const _getAllPoints = _interopRequireDefault(require('./getAllPoints.js'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Get the lowest and highest points in the matrix as the range.
@@ -40,4 +40,4 @@ const getMatrixRange = matrix => (0, _getAllPoints.default)(matrix).reduce((rang
   }
   return range
 }, [])
-var _default = exports.default = getMatrixRange
+const _default = exports.default = getMatrixRange

@@ -8,7 +8,7 @@ require('core-js/modules/esnext.iterator.constructor.js')
 require('core-js/modules/esnext.iterator.filter.js')
 require('core-js/modules/esnext.iterator.reduce.js')
 require('core-js/stable')
-var _getLinePoints = _interopRequireDefault(require('./getLinePoints'))
+const _getLinePoints = _interopRequireDefault(require('./getLinePoints'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Function that produces a property of the new Object, taking three arguments
@@ -36,4 +36,4 @@ const testPointsBetween = (start, end, matrix, func, inclusive = true) => (0, _g
   true: [],
   false: []
 })
-var _default = exports.default = testPointsBetween
+const _default = exports.default = testPointsBetween

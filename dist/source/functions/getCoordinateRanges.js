@@ -5,9 +5,9 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _nextCell = _interopRequireDefault(require('./nextCell.js'))
-var _point = _interopRequireDefault(require('../objects/point.js'))
-var _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
+const _nextCell = _interopRequireDefault(require('./nextCell.js'))
+const _point = _interopRequireDefault(require('../objects/point.js'))
+const _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Using a max an min point, find the ranges for each coordinate.
@@ -27,4 +27,4 @@ const getCoordinateRanges = (minPoint, maxPoint, maxRanges = null) => {
   }
   return coordinateRanges
 }
-var _default = exports.default = getCoordinateRanges
+const _default = exports.default = getCoordinateRanges

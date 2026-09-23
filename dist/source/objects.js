@@ -5,12 +5,12 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _cube = _interopRequireDefault(require('./objects/cube'))
-var _direction = _interopRequireDefault(require('./objects/direction'))
-var _matrix = _interopRequireDefault(require('./objects/matrix'))
-var _point = _interopRequireDefault(require('./objects/point'))
-var _square = _interopRequireDefault(require('./objects/square'))
-var _tile = _interopRequireDefault(require('./objects/tile'))
+const _cube = _interopRequireDefault(require('./objects/cube'))
+const _direction = _interopRequireDefault(require('./objects/direction'))
+const _matrix = _interopRequireDefault(require('./objects/matrix'))
+const _point = _interopRequireDefault(require('./objects/point'))
+const _square = _interopRequireDefault(require('./objects/square'))
+const _tile = _interopRequireDefault(require('./objects/tile'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * @file Core Matrix objects for representing DOM grid in JSON.
@@ -18,7 +18,7 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @version 1.0.0
  * @module matrixObjects
  */
-var _default = exports.default = {
+const _default = exports.default = {
   cube: _cube.default,
   direction: _direction.default,
   matrix: _matrix.default,

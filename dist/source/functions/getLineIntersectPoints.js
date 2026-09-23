@@ -5,8 +5,8 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _areEqualPoints = _interopRequireDefault(require('./areEqualPoints.js'))
-var _pointsToStep = _interopRequireDefault(require('./pointsToStep.js'))
+const _areEqualPoints = _interopRequireDefault(require('./areEqualPoints.js'))
+const _pointsToStep = _interopRequireDefault(require('./pointsToStep.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Recursively find the next point in a line from 'start' to 'end' using the provided direction. Return an array of points connecting 'start' and 'end'.
@@ -38,4 +38,4 @@ const getLineIntersectPoints = (start, end, line = []) => {
   const simplifiedDirection = (0, _pointsToStep.default)(start, end)
   return nextIntersect(simplifiedDirection, start, end, line)
 }
-var _default = exports.default = getLineIntersectPoints
+const _default = exports.default = getLineIntersectPoints

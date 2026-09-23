@@ -5,8 +5,8 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
-var _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
+const _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
+const _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Find the range of the matrix from smallest to largest point.
@@ -19,4 +19,4 @@ const getAvailableRanges = (matrix, maxRanges = null) => {
   const [minPoint, maxPoint] = (0, _getMatrixRange.default)(matrix)
   return (0, _getCoordinateRanges.default)(minPoint, maxPoint, maxRanges)
 }
-var _default = exports.default = getAvailableRanges
+const _default = exports.default = getAvailableRanges

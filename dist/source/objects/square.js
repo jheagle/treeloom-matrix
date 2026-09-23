@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _buildMatrix = _interopRequireDefault(require('../functions/buildMatrix.js'))
+const _buildMatrix = _interopRequireDefault(require('../functions/buildMatrix.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Return a single layer matrix where x and y are equal
@@ -28,9 +28,9 @@ const square = ({
   y: size,
   z: 1
 }, {
-  x: x,
-  y: y,
-  z: z,
-  matrix: matrix
+  x,
+  y,
+  z,
+  matrix
 })
-var _default = exports.default = square
+const _default = exports.default = square

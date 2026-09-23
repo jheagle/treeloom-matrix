@@ -5,8 +5,8 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _getDomItemFromPoint = _interopRequireDefault(require('./getDomItemFromPoint'))
-var _getPointFromElement = _interopRequireDefault(require('./getPointFromElement'))
+const _getDomItemFromPoint = _interopRequireDefault(require('./getDomItemFromPoint'))
+const _getPointFromElement = _interopRequireDefault(require('./getPointFromElement'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Retrieve the DomItem associated with the provided element in the matrix
@@ -16,4 +16,4 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @returns {false|module:domObjects~DomItem}
  */
 const getDomItemFromElement = (elem, matrix) => (0, _getDomItemFromPoint.default)((0, _getPointFromElement.default)(elem), matrix)
-var _default = exports.default = getDomItemFromElement
+const _default = exports.default = getDomItemFromElement

@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _point = _interopRequireDefault(require('../objects/point'))
+const _point = _interopRequireDefault(require('../objects/point'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Retrieve the point associated with the provided element.
@@ -20,4 +20,4 @@ const getPointFromElement = elem => {
   }
   return (0, _point.default)(Array.from(elem.parentNode.childNodes).indexOf(elem), Array.from(elem.parentNode.parentNode.childNodes).indexOf(elem.parentNode), Array.from(elem.parentNode.parentNode.parentNode.childNodes).indexOf(elem.parentNode.parentNode))
 }
-var _default = exports.default = getPointFromElement
+const _default = exports.default = getPointFromElement

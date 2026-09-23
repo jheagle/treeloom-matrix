@@ -5,7 +5,7 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _getAxisLengths = _interopRequireDefault(require('./getAxisLengths'))
+const _getAxisLengths = _interopRequireDefault(require('./getAxisLengths'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Test if the provided point exists in the matrix.
@@ -21,4 +21,4 @@ const checkValidPoint = (pnt, matrix) => {
   }
   return !!matrix.children[pnt.z] && !!matrix.children[pnt.z].children[pnt.y] && !!matrix.children[pnt.z].children[pnt.y].children[pnt.x] && !!matrix.children[pnt.z].children[pnt.y].children[pnt.x].point
 }
-var _default = exports.default = checkValidPoint
+const _default = exports.default = checkValidPoint

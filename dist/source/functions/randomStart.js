@@ -5,14 +5,14 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _siFunciona = _interopRequireDefault(require('si-funciona'))
-var _alterCoordinates = _interopRequireDefault(require('./alterCoordinates.js'))
-var _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
-var _getHighestAbsoluteCoordinate = _interopRequireDefault(require('./getHighestAbsoluteCoordinate.js'))
-var _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
-var _nextCell = _interopRequireDefault(require('./nextCell.js'))
-var _randomPoint = _interopRequireDefault(require('./randomPoint.js'))
-var _randDirectionWithInterval = _interopRequireDefault(require('./randDirectionWithInterval.js'))
+const _siFunciona = _interopRequireDefault(require('si-funciona'))
+const _alterCoordinates = _interopRequireDefault(require('./alterCoordinates.js'))
+const _getCoordinateRanges = _interopRequireDefault(require('./getCoordinateRanges.js'))
+const _getHighestAbsoluteCoordinate = _interopRequireDefault(require('./getHighestAbsoluteCoordinate.js'))
+const _getMatrixRange = _interopRequireDefault(require('./getMatrixRange.js'))
+const _nextCell = _interopRequireDefault(require('./nextCell.js'))
+const _randomPoint = _interopRequireDefault(require('./randomPoint.js'))
+const _randDirectionWithInterval = _interopRequireDefault(require('./randDirectionWithInterval.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Generate a random starting point for a line with the provided length and direction.
@@ -58,4 +58,4 @@ const randomStart = (matrix, length = null, dir = null, maxRanges = null) => {
   }
   return (0, _nextCell.default)(minPoint, (0, _randomPoint.default)(matrix, maxRanges))
 }
-var _default = exports.default = randomStart
+const _default = exports.default = randomStart

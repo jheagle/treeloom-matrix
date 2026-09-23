@@ -5,8 +5,8 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _functions = _interopRequireDefault(require('./source/functions'))
-var _objects = _interopRequireDefault(require('./source/objects'))
+const _functions = _interopRequireDefault(require('./source/functions'))
+const _objects = _interopRequireDefault(require('./source/objects'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * All of the Matrix DOM functions and objects necessary to create DOM Matrices
@@ -44,4 +44,4 @@ const noConflict = () => {
   return matrixDom
 }
 matrixDom.noConflict = noConflict
-var _default = exports.default = root.matrixDom = Object.assign(matrixDom, _functions.default, _objects.default)
+const _default = exports.default = root.matrixDom = Object.assign(matrixDom, _functions.default, _objects.default)

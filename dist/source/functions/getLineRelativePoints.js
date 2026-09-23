@@ -5,11 +5,11 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-var _areEqualPoints = _interopRequireDefault(require('./areEqualPoints.js'))
-var _getAbsolutePoint = _interopRequireDefault(require('./getAbsolutePoint.js'))
-var _point = _interopRequireDefault(require('../objects/point.js'))
-var _pointsToStep = _interopRequireDefault(require('./pointsToStep.js'))
-var _sortAxisCoordinates = _interopRequireDefault(require('./sortAxisCoordinates.js'))
+const _areEqualPoints = _interopRequireDefault(require('./areEqualPoints.js'))
+const _getAbsolutePoint = _interopRequireDefault(require('./getAbsolutePoint.js'))
+const _point = _interopRequireDefault(require('../objects/point.js'))
+const _pointsToStep = _interopRequireDefault(require('./pointsToStep.js'))
+const _sortAxisCoordinates = _interopRequireDefault(require('./sortAxisCoordinates.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * Having provided two points, return an array of integer transition points connecting 'start' and 'end'.
@@ -67,4 +67,4 @@ const getLineRelativePoints = (start, end, line = []) => {
   }
   return line
 }
-var _default = exports.default = getLineRelativePoints
+const _default = exports.default = getLineRelativePoints
