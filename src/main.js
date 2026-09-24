@@ -7,8 +7,12 @@
  */
 
 import 'core-js/stable'
-import functions from './source/functions'
-import objects from './source/objects'
+import point from './point/index.js'
+import line from './line/index.js'
+import grid from './grid/index.js'
+import bounds from './bounds/index.js'
+import lookup from './lookup/index.js'
+import random from './random/index.js'
 
 /**
  * Store a reference to this scope which will be Window if rendered via browser
@@ -41,6 +45,10 @@ matrixDom.noConflict = noConflict
 
 export default root.matrixDom = Object.assign(
   matrixDom,
-  functions,
-  objects
+  point,
+  line,
+  grid,
+  bounds,
+  lookup,
+  random
 )
