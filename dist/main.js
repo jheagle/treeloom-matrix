@@ -5,8 +5,12 @@ Object.defineProperty(exports, '__esModule', {
 })
 exports.default = void 0
 require('core-js/stable')
-const _functions = _interopRequireDefault(require('./source/functions'))
-const _objects = _interopRequireDefault(require('./source/objects'))
+const _index = _interopRequireDefault(require('./point/index.js'))
+const _index2 = _interopRequireDefault(require('./line/index.js'))
+const _index3 = _interopRequireDefault(require('./grid/index.js'))
+const _index4 = _interopRequireDefault(require('./bounds/index.js'))
+const _index5 = _interopRequireDefault(require('./lookup/index.js'))
+const _index6 = _interopRequireDefault(require('./random/index.js'))
 function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * All of the Matrix DOM functions and objects necessary to create DOM Matrices
@@ -44,4 +48,4 @@ const noConflict = () => {
   return matrixDom
 }
 matrixDom.noConflict = noConflict
-const _default = exports.default = root.matrixDom = Object.assign(matrixDom, _functions.default, _objects.default)
+const _default = exports.default = root.matrixDom = Object.assign(matrixDom, _index.default, _index2.default, _index3.default, _index4.default, _index5.default, _index6.default)
