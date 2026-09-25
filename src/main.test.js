@@ -34,7 +34,6 @@ const publicApi = [
   'lineEndPoint',
   'matrix',
   'nextCell',
-  'noConflict',
   'point',
   'pointDifference',
   'pointsToStep',
@@ -54,18 +53,5 @@ const publicApi = [
 describe('matrixDom public API', () => {
   test('has exactly the functions and objects it had before the folders were regrouped', () => {
     expect(Object.keys(matrixDom).sort()).toEqual(publicApi)
-  })
-
-  test('noConflict gives back the previous matrixDom and leaves jsonDom alone', () => {
-    const previous = { name: 'previous' }
-    jest.isolateModules(() => {
-      window.matrixDom = previous
-      const fresh = require('./main').default
-      const jsonDom = window.jsonDom
-      expect(window.matrixDom).toBe(fresh)
-      expect(fresh.noConflict()).toBe(fresh)
-      expect(window.matrixDom).toBe(previous)
-      expect(window.jsonDom === jsonDom).toBe(true)
-    })
   })
 })

@@ -169,19 +169,12 @@ All of the Matrix DOM functions and objects necessary to create DOM Matrices
 
 * [matrixDom](#module_matrixDom)
     * [~root](#module_matrixDom..root)
-    * [~previousMatrixDom](#module_matrixDom..previousMatrixDom)
     * [~matrixDom](#module_matrixDom..matrixDom)
 
 <a name="module_matrixDom..root"></a>
 
 ### matrixDom~root
 Store a reference to the global scope which will be Window if rendered via browser
-
-**Kind**: inner constant of [<code>matrixDom</code>](#module_matrixDom)  
-<a name="module_matrixDom..previousMatrixDom"></a>
-
-### matrixDom~previousMatrixDom
-Store reference to any pre-existing module of the same name
 
 **Kind**: inner constant of [<code>matrixDom</code>](#module_matrixDom)  
 <a name="module_matrixDom..matrixDom"></a>

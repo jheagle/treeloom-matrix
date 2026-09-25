@@ -1170,10 +1170,6 @@
  */
     const root = typeof window !== 'undefined' ? window : {}
     /**
- * Store reference to any pre-existing module of the same name
- */
-    const previousMatrixDom = root.matrixDom
-    /**
  * All the functions of matrix-dom.
  */
     const matrixDom = {
@@ -1184,15 +1180,8 @@
       ...index_5.default,
       ...index_6.default
     }
-    const noConflict = () => {
-      root.matrixDom = previousMatrixDom
-      return library
-    }
-    const library = Object.assign(matrixDom, {
-      noConflict
-    })
-    root.matrixDom = library
-    exports.default = library
+    root.matrixDom = matrixDom
+    exports.default = matrixDom
   }, { './bounds/index': 9, './grid/index': 12, './line/index': 24, './lookup/index': 32, './point/index': 40, './random/index': 46, 'core-js/stable': 733 }],
   34: [function (require, module, exports) {
     'use strict'

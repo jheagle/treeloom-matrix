@@ -54,13 +54,4 @@ declare const matrixDom: {
     prevCell: (pnt: import("./point/types").Point, dir: import("./point/types").Point | import("./point/types").Direction) => import("./point/types").Point;
     sortAxisCoordinates: (pnt: import("./point/types").Point, direction?: "asc" | "desc") => import("./point/types").AxisCoordinatePairs;
 };
-type MatrixDomFunctions = typeof matrixDom;
-/**
- * The matrix-dom library: all of its functions and noConflict.
- */
-export interface MatrixDom extends MatrixDomFunctions {
-    /** Return a reference to this library while preserving the original same-named library */
-    noConflict: () => MatrixDom;
-}
-declare const library: MatrixDom;
-export default library;
+export default matrixDom;

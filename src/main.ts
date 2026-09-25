@@ -20,11 +20,6 @@ import random from './random/index'
 const root = (typeof window !== 'undefined' ? window : {}) as unknown as Record<string, unknown>
 
 /**
- * Store reference to any pre-existing module of the same name
- */
-const previousMatrixDom = root.matrixDom
-
-/**
  * All the functions of matrix-dom.
  */
 const matrixDom = {
@@ -36,22 +31,6 @@ const matrixDom = {
   ...random
 }
 
-type MatrixDomFunctions = typeof matrixDom
+root.matrixDom = matrixDom
 
-/**
- * The matrix-dom library: all of its functions and noConflict.
- */
-export interface MatrixDom extends MatrixDomFunctions {
-  /** Return a reference to this library while preserving the original same-named library */
-  noConflict: () => MatrixDom
-}
-
-const noConflict = (): MatrixDom => {
-  root.matrixDom = previousMatrixDom
-  return library
-}
-
-const library: MatrixDom = Object.assign(matrixDom, { noConflict })
-root.matrixDom = library
-
-export default library
+export default matrixDom

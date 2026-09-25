@@ -29,10 +29,6 @@ const index_6 = __importDefault(require('./random/index'))
  */
 const root = typeof window !== 'undefined' ? window : {}
 /**
- * Store reference to any pre-existing module of the same name
- */
-const previousMatrixDom = root.matrixDom
-/**
  * All the functions of matrix-dom.
  */
 const matrixDom = {
@@ -43,12 +39,5 @@ const matrixDom = {
   ...index_5.default,
   ...index_6.default
 }
-const noConflict = () => {
-  root.matrixDom = previousMatrixDom
-  return library
-}
-const library = Object.assign(matrixDom, {
-  noConflict
-})
-root.matrixDom = library
-exports.default = library
+root.matrixDom = matrixDom
+exports.default = matrixDom
