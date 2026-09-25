@@ -1,18 +1,23 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _checkValidPoint = _interopRequireDefault(require('../bounds/checkValidPoint'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
+const checkValidPoint_1 = __importDefault(require('../bounds/checkValidPoint'))
 /**
  * Retrieve the DomItem associated with the provided point
  * @function
- * @param {module:matrixObjects~Point} pnt - A point corresponding to a DomItem.
- * @param {module:matrixObjects~Matrix} matrix - The matrix containing the point.
- * @returns {false|module:domObjects~DomItem}
+ * @param pnt - A point corresponding to a DomItem.
+ * @param matrix - The matrix containing the point.
+ * @returns The DomItem (a column), or false when the point is not in the matrix
  */
-const getDomItemFromPoint = (pnt, matrix) => (0, _checkValidPoint.default)(pnt, matrix) ? matrix.children[pnt.z].children[pnt.y].children[pnt.x] : false
-const _default = exports.default = getDomItemFromPoint
+const getDomItemFromPoint = (pnt, matrix) => (0, checkValidPoint_1.default)(pnt, matrix) ? matrix.children[pnt.z].children[pnt.y].children[pnt.x] : false
+exports.default = getDomItemFromPoint

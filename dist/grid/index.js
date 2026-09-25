@@ -1,22 +1,27 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _buildMatrix = _interopRequireDefault(require('./buildMatrix.js'))
-const _cube = _interopRequireDefault(require('./cube.js'))
-const _matrix = _interopRequireDefault(require('./matrix.js'))
-const _square = _interopRequireDefault(require('./square.js'))
-const _tile = _interopRequireDefault(require('./tile.js'))
-const _updateMatrixPoints = _interopRequireDefault(require('./updateMatrixPoints.js'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
-const _default = exports.default = {
-  buildMatrix: _buildMatrix.default,
-  cube: _cube.default,
-  matrix: _matrix.default,
-  square: _square.default,
-  tile: _tile.default,
-  updateMatrixPoints: _updateMatrixPoints.default
+const buildMatrix_1 = __importDefault(require('./buildMatrix'))
+const cube_1 = __importDefault(require('./cube'))
+const matrix_1 = __importDefault(require('./matrix'))
+const square_1 = __importDefault(require('./square'))
+const tile_1 = __importDefault(require('./tile'))
+const updateMatrixPoints_1 = __importDefault(require('./updateMatrixPoints'))
+exports.default = {
+  buildMatrix: buildMatrix_1.default,
+  cube: cube_1.default,
+  matrix: matrix_1.default,
+  square: square_1.default,
+  tile: tile_1.default,
+  updateMatrixPoints: updateMatrixPoints_1.default
 }

@@ -1,17 +1,5 @@
 'use strict'
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-})
-exports.default = void 0
-require('core-js/stable')
-const _index = _interopRequireDefault(require('./point/index.js'))
-const _index2 = _interopRequireDefault(require('./line/index.js'))
-const _index3 = _interopRequireDefault(require('./grid/index.js'))
-const _index4 = _interopRequireDefault(require('./bounds/index.js'))
-const _index5 = _interopRequireDefault(require('./lookup/index.js'))
-const _index6 = _interopRequireDefault(require('./random/index.js'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
 /**
  * All of the Matrix DOM functions and objects necessary to create DOM Matrices
  * @file
@@ -19,33 +7,48 @@ function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: 
  * @version 1.0.0
  * @module matrixDom
  */
-
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
+Object.defineProperty(exports, '__esModule', {
+  value: true
+})
+require('core-js/stable')
+const index_1 = __importDefault(require('./point/index'))
+const index_2 = __importDefault(require('./line/index'))
+const index_3 = __importDefault(require('./grid/index'))
+const index_4 = __importDefault(require('./bounds/index'))
+const index_5 = __importDefault(require('./lookup/index'))
+const index_6 = __importDefault(require('./random/index'))
 /**
- * Store a reference to this scope which will be Window if rendered via browser
+ * Store a reference to the global scope which will be Window if rendered via browser
  */
-const root = void 0 || window || global || {}
-
+const root = typeof window !== 'undefined' ? window : {}
 /**
  * Store reference to any pre-existing module of the same name
- * @type {module|*}
  */
-const previousMatrixDom = root.jsonDom || {}
-
+const previousMatrixDom = root.matrixDom
 /**
- * All methods exported from this module are encapsulated within jsonDom.
- * @typedef {module:matrixDom} matrixDom
+ * All the functions of matrix-dom.
  */
-const matrixDom = {}
-root.matrixDom = matrixDom
-
-/**
- * Return a reference to this library while preserving the original same-named library
- * @function
- * @returns {module:matrixDom~matrixDom|module:matrixFunctions|module:matrixObjects}
- */
-const noConflict = () => {
-  root.jsonDom = previousMatrixDom
-  return matrixDom
+const matrixDom = {
+  ...index_1.default,
+  ...index_2.default,
+  ...index_3.default,
+  ...index_4.default,
+  ...index_5.default,
+  ...index_6.default
 }
-matrixDom.noConflict = noConflict
-const _default = exports.default = root.matrixDom = Object.assign(matrixDom, _index.default, _index2.default, _index3.default, _index4.default, _index5.default, _index6.default)
+const noConflict = () => {
+  root.matrixDom = previousMatrixDom
+  return library
+}
+const library = Object.assign(matrixDom, {
+  noConflict
+})
+root.matrixDom = library
+exports.default = library

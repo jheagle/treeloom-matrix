@@ -1,39 +1,35 @@
 'use strict'
 
-Object.defineProperty(exports, '__esModule', {
-  value: true
-})
-exports.default = void 0
 require('core-js/modules/esnext.iterator.constructor.js')
 require('core-js/modules/esnext.iterator.filter.js')
 require('core-js/modules/esnext.iterator.reduce.js')
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
+Object.defineProperty(exports, '__esModule', {
+  value: true
+})
 require('core-js/stable')
-const _getLinePoints = _interopRequireDefault(require('./getLinePoints'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
-/**
- * Function that produces a property of the new Object, taking three arguments
- * @callback module:matrixFunctions~testPointStatus
- * @param {module:matrixObjects~MatrixColumn|Object} pnt - A point which may have some status.
- * @param {module:matrixObjects~Matrix|Object} matrix - A matrix of points to find the point within.
- * @returns {boolean}
- */
-
+const getLinePoints_1 = __importDefault(require('./getLinePoints'))
 /**
  * Given a start and end point, test the points between with the provided function. Return the points as part of true
  * and / or false properties based on the test.
  * @function
- * @param {module:matrixObjects~Point} start - The beginning point to check.
- * @param {module:matrixObjects~Point} end - The terminating point to check between.
- * @param {module:matrixObjects~Matrix} matrix - The grid of points all the points can exist on.
- * @param {module:matrixFunctions~testPointStatus} func - The test function which will return true or false.
- * @param {boolean} [inclusive=true] - Choose whether to include or exclude the start and end points in the results.
- * @returns {Object.<string, Array.<module:matrixObjects~Point>>}
+ * @param start - The beginning point to check.
+ * @param end - The terminating point to check between.
+ * @param matrix - The grid of points all the points can exist on.
+ * @param func - The test function which will return true or false.
+ * @param inclusive - Choose whether to include or exclude the start and end points in the results.
  */
-const testPointsBetween = (start, end, matrix, func, inclusive = true) => (0, _getLinePoints.default)(start, end).filter((prop, i, line) => i !== 0 && i !== line.length - 1 || inclusive).reduce((newPoints, next) => {
-  newPoints[`${func(next, matrix)}`].push(next)
+const testPointsBetween = (start, end, matrix, func, inclusive = true) => (0, getLinePoints_1.default)(start, end).filter((_prop, i, line) => i !== 0 && i !== line.length - 1 || inclusive).reduce((newPoints, next) => {
+  newPoints[func(next, matrix) ? 'true' : 'false'].push(next)
   return newPoints
 }, {
   true: [],
   false: []
 })
-const _default = exports.default = testPointsBetween
+exports.default = testPointsBetween

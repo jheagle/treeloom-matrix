@@ -1,50 +1,51 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _siFunciona = _interopRequireDefault(require('si-funciona'))
-const _alterCoordinates = _interopRequireDefault(require('../point/alterCoordinates.js'))
-const _getCoordinateRanges = _interopRequireDefault(require('../bounds/getCoordinateRanges.js'))
-const _getHighestAbsoluteCoordinate = _interopRequireDefault(require('../point/getHighestAbsoluteCoordinate.js'))
-const _getMatrixRange = _interopRequireDefault(require('../bounds/getMatrixRange.js'))
-const _nextCell = _interopRequireDefault(require('../point/nextCell.js'))
-const _randomPoint = _interopRequireDefault(require('./randomPoint.js'))
-const _randDirectionWithInterval = _interopRequireDefault(require('./randDirectionWithInterval.js'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
+const si_funciona_1 = __importDefault(require('si-funciona'))
+const alterCoordinates_1 = __importDefault(require('../point/alterCoordinates'))
+const getCoordinateRanges_1 = __importDefault(require('../bounds/getCoordinateRanges'))
+const getHighestAbsoluteCoordinate_1 = __importDefault(require('../point/getHighestAbsoluteCoordinate'))
+const getMatrixRange_1 = __importDefault(require('../bounds/getMatrixRange'))
+const nextCell_1 = __importDefault(require('../point/nextCell'))
+const randomPoint_1 = __importDefault(require('./randomPoint'))
+const randDirectionWithInterval_1 = __importDefault(require('./randDirectionWithInterval'))
 /**
  * Generate a random starting point for a line with the provided length and direction.
  * @function
- * @param {module:matrixObjects~Matrix} matrix - The matrix in which the line will be drawn.
- * @param {number|null} [length=null] - The intended length (intersected tiles) of the resulting line, null will use a random length within the matrix
- * @param {module:matrixObjects~Direction|null} [dir=null] - The direction the line will extend towards, null will use a random direction within the matrix
- * @param {module:matrixObjects~Point} maxRanges - The maximum ranges for the point. If null, the matrix will be used.
- * @returns {module:matrixObjects~Point}
+ * @param matrix - The matrix in which the line will be drawn.
+ * @param length - The intended length (intersected tiles) of the resulting line, null will use a random length within the matrix
+ * @param dir - The direction the line will extend towards, null will use a random direction within the matrix
+ * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.
  */
 const randomStart = (matrix, length = null, dir = null, maxRanges = null) => {
-  const [minPoint, maxPoint] = (0, _getMatrixRange.default)(matrix)
-  maxRanges = (0, _getCoordinateRanges.default)(minPoint, maxPoint, maxRanges)
-  if (length === null) {
-    const highestCoordinate = (0, _getHighestAbsoluteCoordinate.default)(maxRanges)
-    // length must be at least 1, and less than the highest coordinate in the matrix
-    length = _siFunciona.default.randomInteger(highestCoordinate - 2, 1)
-  }
+  const [minPoint, maxPoint] = (0, getMatrixRange_1.default)(matrix)
+  maxRanges = (0, getCoordinateRanges_1.default)(minPoint, maxPoint, maxRanges)
+  // length must be at least 1, and less than the highest coordinate in the matrix
+  const lineLength = length ?? si_funciona_1.default.randomInteger((0, getHighestAbsoluteCoordinate_1.default)(maxRanges) - 2, 1)
   if (dir === null) {
-    dir = (0, _randDirectionWithInterval.default)(matrix, null, length, maxRanges)
+    dir = (0, randDirectionWithInterval_1.default)(matrix, null, lineLength, maxRanges)
   }
   // check direction has at least one non-zero component
   if (dir.x === 0 && dir.y === 0 && dir.z === 0) {
     throw new Error('Direction must have at least one non-zero coordinate')
   }
-  const multipleToLength = (0, _alterCoordinates.default)(dir, coordinate => {
-    if (length % coordinate !== 0) {
+  const multipleToLength = (0, alterCoordinates_1.default)(dir, coordinate => {
+    if (lineLength % coordinate !== 0) {
       return null
     }
-    return length / coordinate
+    return lineLength / coordinate
   })
-  const timesToLength = _siFunciona.default.reduceObject(multipleToLength, (times, coordinate) => {
+  const timesToLength = si_funciona_1.default.reduceObject(multipleToLength, (times, coordinate) => {
     if (coordinate === null) {
       return times
     }
@@ -52,10 +53,10 @@ const randomStart = (matrix, length = null, dir = null, maxRanges = null) => {
       return coordinate
     }
     return times
-  }, length)
+  }, lineLength)
   for (let i = 0; i < timesToLength; ++i) {
     maxRanges = dir.prev(maxRanges)
   }
-  return (0, _nextCell.default)(minPoint, (0, _randomPoint.default)(matrix, maxRanges))
+  return (0, nextCell_1.default)(minPoint, (0, randomPoint_1.default)(matrix, maxRanges))
 }
-const _default = exports.default = randomStart
+exports.default = randomStart

@@ -1,22 +1,26 @@
 'use strict'
 
+require('core-js/modules/esnext.iterator.constructor.js')
+require('core-js/modules/esnext.iterator.filter.js')
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
-require('core-js/modules/esnext.iterator.constructor.js')
-require('core-js/modules/esnext.iterator.filter.js')
 require('core-js/stable')
-const _point = _interopRequireDefault(require('../point/point'))
-const _nextCell = _interopRequireDefault(require('../point/nextCell'))
-const _checkValidPoint = _interopRequireDefault(require('./checkValidPoint'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
+const point_1 = __importDefault(require('../point/point'))
+const nextCell_1 = __importDefault(require('../point/nextCell'))
+const checkValidPoint_1 = __importDefault(require('./checkValidPoint'))
 /**
  * Return all points which touch on edges (not diagonal)
  * @function
- * @param {module:matrixObjects~Point} pnt - The point we want to find adjacent points for.
- * @param {module:matrixObjects~Matrix} matrix - The matrix having the point.
- * @returns {Array.<module:matrixObjects~Point>}
+ * @param pnt - The point we want to find adjacent points for.
+ * @param matrix - The matrix having the point.
  */
-const adjacentEdgePoints = (pnt, matrix) => [(0, _point.default)(-1, 0, 0), (0, _point.default)(1, 0, 0), (0, _point.default)(0, -1, 0), (0, _point.default)(0, 1, 0), (0, _point.default)(0, 0, -1), (0, _point.default)(0, 0, 1)].map(p => (0, _nextCell.default)(pnt, p)).filter(p => (0, _checkValidPoint.default)(p, matrix))
-const _default = exports.default = adjacentEdgePoints
+const adjacentEdgePoints = (pnt, matrix) => [(0, point_1.default)(-1, 0, 0), (0, point_1.default)(1, 0, 0), (0, point_1.default)(0, -1, 0), (0, point_1.default)(0, 1, 0), (0, point_1.default)(0, 0, -1), (0, point_1.default)(0, 0, 1)].map(p => (0, nextCell_1.default)(pnt, p)).filter(p => (0, checkValidPoint_1.default)(p, matrix))
+exports.default = adjacentEdgePoints

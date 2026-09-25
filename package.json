@@ -19,14 +19,17 @@
     "watch:test": "gulp watchTest"
   },
   "devDependencies": {
+    "json-dom": "github:jheagle/JSON-DOM",
     "js-build-tools": "^5.2.0",
     "standard": "^17.1.2",
     "test-filesystem": "^1.5.1",
     "typescript": "^6.0.3"
   },
   "dependencies": {
-    "json-dom": "github:jheagle/JSON-DOM",
     "si-funciona": "^2.7.1"
+  },
+  "peerDependencies": {
+    "json-dom": ">=1.4.0"
   },
   "directories": {
     "test": "tests"

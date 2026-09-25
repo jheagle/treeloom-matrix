@@ -1,19 +1,16 @@
 'use strict'
 
+require('core-js/modules/esnext.iterator.constructor.js')
+require('core-js/modules/esnext.iterator.reduce.js')
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
-require('core-js/modules/esnext.iterator.constructor.js')
-require('core-js/modules/esnext.iterator.reduce.js')
 require('core-js/stable')
 /**
  * Return an array of all the points in the matrix
  * @function
- * @param {module:matrixObjects~Matrix|module:matrixObjects~MatrixColumn} matrix - The matrix to retrieve
- * points from.
- * @param {Array.<module:matrixObjects~Point>} [allPoints=[]] - The array of points to be returned
- * @returns {Array.<module:matrixObjects~Point>}
+ * @param matrix - The matrix (or any level of it) to retrieve points from.
+ * @param allPoints - The array of points to add the found points to.
  */
 const getAllPoints = (matrix, allPoints = []) => matrix.point ? allPoints.concat([matrix.point]) : matrix.children.reduce((allPoints, child) => allPoints.concat(getAllPoints(child, [])), [])
-const _default = exports.default = getAllPoints
+exports.default = getAllPoints

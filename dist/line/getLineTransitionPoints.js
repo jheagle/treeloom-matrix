@@ -1,43 +1,47 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _areEqualPoints = _interopRequireDefault(require('../point/areEqualPoints.js'))
-const _point = _interopRequireDefault(require('../point/point.js'))
-const _pointDifference = _interopRequireDefault(require('../point/pointDifference.js'))
-const _getHighestAbsoluteCoordinate = _interopRequireDefault(require('../point/getHighestAbsoluteCoordinate.js'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
+const areEqualPoints_1 = __importDefault(require('../point/areEqualPoints'))
+const point_1 = __importDefault(require('../point/point'))
+const pointDifference_1 = __importDefault(require('../point/pointDifference'))
+const getHighestAbsoluteCoordinate_1 = __importDefault(require('../point/getHighestAbsoluteCoordinate'))
 /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
  * includes 'start' (line[0]) and 'end' (line[line.length-1])
  * @function
- * @param {module:matrixObjects~Point} start - The starting location of the line.
- * @param {module:matrixObjects~Point} end - The final line destination.
- * @param {number|null} transistions - specify the desired number of transitions, resulting points will be transistions+1.
- * @param {Array.<module:matrixObjects~Point>} [line=[]] - The resulting line to connect start and end.
- * @returns {Array.<module:matrixObjects~Point>}
+ * @param start - The starting location of the line.
+ * @param end - The final line destination.
+ * @param line - The resulting line to connect start and end.
+ * @param transitions - specify the desired number of transitions, resulting points will be transitions+1 (defaults to
+ * the largest absolute difference between the points).
  */
 const getLineTransitionPoints = (start, end, line = [], transitions = null) => {
-  if ((0, _areEqualPoints.default)(start, end)) {
+  if ((0, areEqualPoints_1.default)(start, end)) {
     return [start]
   }
-  const difference = (0, _pointDifference.default)(start, end)
+  const difference = (0, pointDifference_1.default)(start, end)
   if (transitions === null) {
-    transitions = Math.abs((0, _getHighestAbsoluteCoordinate.default)(difference))
+    transitions = Math.abs((0, getHighestAbsoluteCoordinate_1.default)(difference))
   }
   for (let i = 0; i <= transitions; ++i) {
     // Calculate the fractional distance (t) from 0 to 1
     const t = i / transitions
-
     // Linear interpolation formula
     const x = start.x + (end.x - start.x) * t
     const y = start.y + (end.y - start.y) * t
     const z = start.z + (end.z - start.z) * t
-    line.push((0, _point.default)(x, y, z))
+    line.push((0, point_1.default)(x, y, z))
   }
   return line
 }
-const _default = exports.default = getLineTransitionPoints
+exports.default = getLineTransitionPoints

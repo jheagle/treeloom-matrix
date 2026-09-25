@@ -1,49 +1,46 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _areEqualPoints = _interopRequireDefault(require('../point/areEqualPoints.js'))
-const _getAbsolutePoint = _interopRequireDefault(require('../point/getAbsolutePoint.js'))
-const _point = _interopRequireDefault(require('../point/point.js'))
-const _pointsToStep = _interopRequireDefault(require('./pointsToStep.js'))
-const _sortAxisCoordinates = _interopRequireDefault(require('../point/sortAxisCoordinates.js'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
+const areEqualPoints_1 = __importDefault(require('../point/areEqualPoints'))
+const getAbsolutePoint_1 = __importDefault(require('../point/getAbsolutePoint'))
+const point_1 = __importDefault(require('../point/point'))
+const pointsToStep_1 = __importDefault(require('./pointsToStep'))
+const sortAxisCoordinates_1 = __importDefault(require('../point/sortAxisCoordinates'))
 /**
  * Having provided two points, return an array of integer transition points connecting 'start' and 'end'.
  * @function
- * @param {module:matrixObjects~Point} start - The starting location of the line.
- * @param {module:matrixObjects~Point} end - The final line destination.
- * @param {Array.<module:matrixObjects~Point>} [line=[]] - The resulting line to connect start and end.
- * @returns {Array.<module:matrixObjects~Point>}
+ * @param start - The starting location of the line.
+ * @param end - The final line destination.
+ * @param line - The resulting line to connect start and end.
  */
 const getLineRelativePoints = (start, end, line = []) => {
-  if ((0, _areEqualPoints.default)(start, end)) {
+  if ((0, areEqualPoints_1.default)(start, end)) {
     return [start]
   }
-
   // Get the difference between start and end and simplify each relative coordinate
-  const simplifiedDirection = (0, _pointsToStep.default)(start, end)
-
+  const simplifiedDirection = (0, pointsToStep_1.default)(start, end)
   // Increment each coordinate by 1 either in the positive or negative direction
-  const stepPoint = (0, _point.default)(start.x < end.x ? 1 : -1, start.y < end.y ? 1 : -1, start.z < end.z ? 1 : -1)
-
+  const stepPoint = (0, point_1.default)(start.x < end.x ? 1 : -1, start.y < end.y ? 1 : -1, start.z < end.z ? 1 : -1)
   // Use the sorted coordinates to determine the priority of updating each coordinate
-  const [highest, middle, lowest] = (0, _sortAxisCoordinates.default)((0, _getAbsolutePoint.default)(simplifiedDirection), 'desc')
-
+  const [highest, middle, lowest] = (0, sortAxisCoordinates_1.default)((0, getAbsolutePoint_1.default)(simplifiedDirection), 'desc')
   // The error range adustment for each cycle
   const incrementMid = 2 * middle.coordinate
   const incrementLow = 2 * lowest.coordinate
-
   // These are the upper limit ranges of error used to reset when we exceed the limit
   const errResetMid = 2 * (middle.coordinate - highest.coordinate)
   const errResetLow = 2 * (lowest.coordinate - highest.coordinate)
-
   // Update the coordinates of this point as we move along the line
-  const currPoint = (0, _point.default)(start.x, start.y, start.z)
-
+  const currPoint = (0, point_1.default)(start.x, start.y, start.z)
   // These are the error ranges on the lower bound that we will update for each point
   let errRangeMid = 2 * middle.coordinate - highest.coordinate
   let errRangeLow = 2 * lowest.coordinate - highest.coordinate
@@ -63,8 +60,8 @@ const getLineRelativePoints = (start, end, line = []) => {
       currPoint[lowest.axis] += stepPoint[lowest.axis]
       errRangeLow += errResetLow
     }
-    line.push((0, _point.default)(currPoint.x, currPoint.y, currPoint.z))
+    line.push((0, point_1.default)(currPoint.x, currPoint.y, currPoint.z))
   }
   return line
 }
-const _default = exports.default = getLineRelativePoints
+exports.default = getLineRelativePoints

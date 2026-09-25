@@ -1,24 +1,29 @@
 'use strict'
 
+require('core-js/modules/esnext.iterator.constructor.js')
+require('core-js/modules/esnext.iterator.reduce.js')
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
-require('core-js/modules/esnext.iterator.constructor.js')
-require('core-js/modules/esnext.iterator.reduce.js')
 require('core-js/stable')
-const _getAllPoints = _interopRequireDefault(require('./getAllPoints.js'))
-const _siFunciona = _interopRequireDefault(require('si-funciona'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
+const getAllPoints_1 = __importDefault(require('./getAllPoints'))
+const si_funciona_1 = __importDefault(require('si-funciona'))
 /**
  * Get the lowest and highest points in the matrix as the range.
  * @function
- * @param {module:matrixObjects~Matrix} matrix
- * @returns {Array.<module:matrixObjects~Point>}
+ * @param matrix - The matrix to find the range of.
+ * @returns The lowest point followed by the highest point (empty when the matrix has no points)
  */
-const getMatrixRange = matrix => (0, _getAllPoints.default)(matrix).reduce((range, point) => {
+const getMatrixRange = matrix => (0, getAllPoints_1.default)(matrix).reduce((range, point) => {
   if (range.length === 0) {
-    range.push(_siFunciona.default.cloneObject(point), _siFunciona.default.cloneObject(point))
+    range.push(si_funciona_1.default.cloneObject(point), si_funciona_1.default.cloneObject(point))
   }
   if (point.x < range[0].x) {
     range[0].x = point.x
@@ -40,4 +45,4 @@ const getMatrixRange = matrix => (0, _getAllPoints.default)(matrix).reduce((rang
   }
   return range
 }, [])
-const _default = exports.default = getMatrixRange
+exports.default = getMatrixRange

@@ -1,18 +1,23 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _getDomItemFromElement = _interopRequireDefault(require('./getDomItemFromElement.js'))
-const _getDomItemFromPoint = _interopRequireDefault(require('./getDomItemFromPoint.js'))
-const _getPointFromDomItem = _interopRequireDefault(require('./getPointFromDomItem.js'))
-const _getPointFromElement = _interopRequireDefault(require('./getPointFromElement.js'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
-const _default = exports.default = {
-  getDomItemFromElement: _getDomItemFromElement.default,
-  getDomItemFromPoint: _getDomItemFromPoint.default,
-  getPointFromDomItem: _getPointFromDomItem.default,
-  getPointFromElement: _getPointFromElement.default
+const getDomItemFromElement_1 = __importDefault(require('./getDomItemFromElement'))
+const getDomItemFromPoint_1 = __importDefault(require('./getDomItemFromPoint'))
+const getPointFromDomItem_1 = __importDefault(require('./getPointFromDomItem'))
+const getPointFromElement_1 = __importDefault(require('./getPointFromElement'))
+exports.default = {
+  getDomItemFromElement: getDomItemFromElement_1.default,
+  getDomItemFromPoint: getDomItemFromPoint_1.default,
+  getPointFromDomItem: getPointFromDomItem_1.default,
+  getPointFromElement: getPointFromElement_1.default
 }
