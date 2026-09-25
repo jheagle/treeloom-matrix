@@ -1,15 +1,17 @@
 import point from '../point/point'
+import { hasTrait } from './traits'
+import { Matrix } from './types'
 
 /**
  * Update the points for each DomItem in a matrix.
  * @function
- * @param {module:matrixObjects~Matrix} matrix - Provide a matrix to update the points for.
- * @returns {module:matrixObjects~Matrix}
+ * @param matrix - Provide a matrix to update the points for.
+ * @returns The same matrix, with the point of each column updated
  */
-const updateMatrixPoints = matrix => {
-  // confirm the matrix has classname 'matrix'
-  if (!matrix.is || matrix.is !== 'matrix') {
-    throw new Error("The provided matrix does not have the 'is:matrix'.")
+const updateMatrixPoints = (matrix: Matrix): Matrix => {
+  // confirm the matrix has the matrix trait
+  if (!matrix.has || !hasTrait(matrix, 'matrix.matrix')) {
+    throw new Error("The provided matrix does not have the 'matrix.matrix' trait.")
   }
 
   // loop through each layer, row, and column in the matrix
@@ -17,19 +19,19 @@ const updateMatrixPoints = matrix => {
   // update the point object within the column
   let z = -1
   matrix.children.forEach(layer => {
-    if (layer.is !== 'layer') {
+    if (!hasTrait(layer, 'matrix.layer')) {
       return
     }
     ++z
     let y = -1
     layer.children.forEach(row => {
-      if (row.is !== 'row') {
+      if (!hasTrait(row, 'matrix.row')) {
         return
       }
       ++y
       let x = -1
       row.children.forEach(column => {
-        if (column.is !== 'column') {
+        if (!hasTrait(column, 'matrix.column')) {
           return
         }
         // update the point object within the column

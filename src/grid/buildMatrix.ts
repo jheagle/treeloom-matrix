@@ -2,25 +2,19 @@ import matrix from './matrix'
 import updateMatrixPoints from './updateMatrixPoints'
 import jsonDom from 'json-dom'
 import siFunciona from 'si-funciona'
+import { Matrix, MatrixProps } from './types'
+import { Point } from '../point/types'
 
 /**
  * Create the matrix and assign the correct points to each tile.
  * @function
- * @param {module:matrixObjects~Point} dimensions - The dimensions of the matrix to be created
- * @param {module:matrixObjects~coordinate} dimensions.x - The width of the matrix
- * @param {module:matrixObjects~coordinate} dimensions.y - The height of the matrix
- * @param {module:matrixObjects~coordinate} dimensions.z - The depth of the matrix
- * @param {Object} props - Additional properties to be added to the matrix
- * @param {Array.<module:matrixObjects~MatrixTile>} props.x - Additional properties to be added to the x axis
- * @param {Array.<module:matrixObjects~MatrixRow>} props.y - Additional properties to be added to the y axis
- * @param {Array.<module:matrixObjects~MatrixLayer>} props.z - Additional properties to be added to the z axis
- * @param {Array.<module:matrixObjects~Matrix>} props.matrix - Additional properties to be added to the matrix
- * @returns {module:matrixObjects~Matrix}
+ * @param dimensions - The dimensions of the matrix to be created (x is the width, y the height, z the depth)
+ * @param props - Additional properties to be added to each level of the matrix
  */
 const buildMatrix = (
-  dimensions = { x: 0, y: 0, z: 1 },
-  props = { x: [], y: [], z: [], matrix: [] }
-) => siFunciona.pipe(
+  dimensions: Point = { x: 0, y: 0, z: 1 },
+  props: MatrixProps = { x: {}, y: {}, z: {}, matrix: {} }
+): Matrix => siFunciona.pipe(
   jsonDom.setParentItemReferences,
   updateMatrixPoints
 )(matrix(dimensions, props))
