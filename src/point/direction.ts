@@ -3,29 +3,20 @@ import point from './point'
 import nextCell from './nextCell'
 import prevCell from './prevCell'
 import siFunciona from 'si-funciona'
-
-/**
- * Direction represents the delta from on point to another and indicactes the direction of travel.
- * @typedef {module:matrixObjects~Point} module:matrixObjects~Direction
- * @property {module:matrixObjects~coordinate} x - The X-coordinate is the x difference from starting to end point along a line.
- * @property {module:matrixObjects~coordinate} y - The Y-coordinate is the x difference from starting to end point along a line.
- * @property {module:matrixObjects~coordinate} z - The Z-coordinate is the x difference from starting to end point along a line.
- * @method next - Get the next point in the direction from a starting point
- * @method prev - Get the previous point in the direction from a starting point
- */
+import { Coordinate, Direction, Point } from './types'
 
 /**
  * Create a direction object having x, y, z properties and next/prev methods
- * @param {number} x 
- * @param {number} y 
- * @param {number} z 
- * @returns {module:matrixObjects~Direction}
+ * @param x - The x difference along the line
+ * @param y - The y difference along the line
+ * @param z - The z difference along the line
  */
-const direction = (x, y, z = 0) => {
+const direction = (x: Coordinate, y: Coordinate, z: Coordinate = 0): Direction => {
     const simplifiedCoordinates = siFunciona.simplestRatio(x, y, z)
-    const dir = point(...simplifiedCoordinates)
-    dir.next = start => nextCell(start, dir)
-    dir.prev = end => prevCell(end, dir)
+    const [dx, dy, dz] = simplifiedCoordinates as Coordinate[]
+    const dir = point(dx, dy, dz) as Direction
+    dir.next = (start: Point) => nextCell(start, dir)
+    dir.prev = (end: Point) => prevCell(end, dir)
     return dir
 }
 
