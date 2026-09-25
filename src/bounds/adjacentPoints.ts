@@ -3,16 +3,16 @@ import getPointsForLines from '../line/getPointsForLines'
 import point from '../point/point'
 import nextCell from '../point/nextCell'
 import checkValidPoint from './checkValidPoint'
-import { logObject } from 'test-filesystem'
+import { Point } from '../point/types'
+import { Matrix } from '../grid/types'
 
 /**
  * Return all valid points surrounding a provided point
  * @function
- * @param {module:matrixObjects~Point} pnt - The point we want to find adjacent points for.
- * @param {module:matrixObjects~Matrix} matrix - The matrix having the point.
- * @returns {Array.<module:matrixObjects~Point>}
+ * @param pnt - The point we want to find adjacent points for.
+ * @param matrix - The matrix having the point.
  */
-const adjacentPoints = (pnt, matrix) => getPointsForLines([
+const adjacentPoints = (pnt: Point, matrix: Matrix): Point[] => getPointsForLines([
   [point(-1, -1, -1), point(-1, 1, -1)],
   [point(0, -1, -1), point(0, 1, -1)],
   [point(1, -1, -1), point(1, 1, -1)],

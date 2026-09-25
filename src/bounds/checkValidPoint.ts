@@ -1,14 +1,15 @@
 import 'core-js/stable'
 import getAxisLengths from './getAxisLengths'
+import { Point } from '../point/types'
+import { Matrix } from '../grid/types'
 
 /**
  * Test if the provided point exists in the matrix.
  * @function
- * @param {module:matrixObjects~Point} pnt - Provide a point to validate.
- * @param {module:matrixObjects~Matrix} matrix - The matrix that contains valid points.
- * @returns {boolean}
+ * @param pnt - Provide a point to validate.
+ * @param matrix - The matrix that contains valid points.
  */
-const checkValidPoint = (pnt, matrix) => {
+const checkValidPoint = (pnt: Point, matrix: Matrix): boolean => {
   const matrixDimensions = getAxisLengths(matrix)
   if (pnt.x >= matrixDimensions.x || pnt.y >= matrixDimensions.y || pnt.z >= matrixDimensions.z) {
     return false

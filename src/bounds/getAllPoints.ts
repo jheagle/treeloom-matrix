@@ -1,15 +1,18 @@
 import 'core-js/stable'
+import { Point } from '../point/types'
+import { MatrixColumn, MatrixLevel } from '../grid/types'
 
 /**
  * Return an array of all the points in the matrix
  * @function
- * @param {module:matrixObjects~Matrix|module:matrixObjects~MatrixColumn} matrix - The matrix to retrieve
- * points from.
- * @param {Array.<module:matrixObjects~Point>} [allPoints=[]] - The array of points to be returned
- * @returns {Array.<module:matrixObjects~Point>}
+ * @param matrix - The matrix (or any level of it) to retrieve points from.
+ * @param allPoints - The array of points to add the found points to.
  */
-const getAllPoints = (matrix, allPoints = []) => (matrix.point)
-  ? allPoints.concat([matrix.point])
-  : matrix.children.reduce((allPoints, child) => allPoints.concat(getAllPoints(child, [])), [])
+const getAllPoints = (matrix: MatrixLevel, allPoints: Point[] = []): Point[] => ((matrix as MatrixColumn).point)
+  ? allPoints.concat([(matrix as MatrixColumn).point])
+  : (matrix.children as MatrixLevel[]).reduce(
+      (allPoints: Point[], child) => allPoints.concat(getAllPoints(child, [])),
+      []
+    )
 
 export default getAllPoints

@@ -2,15 +2,16 @@ import 'core-js/stable'
 import point from '../point/point'
 import nextCell from '../point/nextCell'
 import checkValidPoint from './checkValidPoint'
+import { Point } from '../point/types'
+import { Matrix } from '../grid/types'
 
 /**
  * Return all points which touch on edges (not diagonal)
  * @function
- * @param {module:matrixObjects~Point} pnt - The point we want to find adjacent points for.
- * @param {module:matrixObjects~Matrix} matrix - The matrix having the point.
- * @returns {Array.<module:matrixObjects~Point>}
+ * @param pnt - The point we want to find adjacent points for.
+ * @param matrix - The matrix having the point.
  */
-const adjacentEdgePoints = (pnt, matrix) => [
+const adjacentEdgePoints = (pnt: Point, matrix: Matrix): Point[] => [
   point(-1, 0, 0),
   point(1, 0, 0),
   point(0, -1, 0),

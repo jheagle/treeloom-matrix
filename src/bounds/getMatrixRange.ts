@@ -1,15 +1,17 @@
 import 'core-js/stable'
 import getAllPoints from './getAllPoints'
 import siFunciona from 'si-funciona'
+import { Point } from '../point/types'
+import { Matrix } from '../grid/types'
 
 /**
  * Get the lowest and highest points in the matrix as the range.
  * @function
- * @param {module:matrixObjects~Matrix} matrix
- * @returns {Array.<module:matrixObjects~Point>}
+ * @param matrix - The matrix to find the range of.
+ * @returns The lowest point followed by the highest point (empty when the matrix has no points)
  */
-const getMatrixRange = matrix => getAllPoints(matrix).reduce(
-    (range, point) => {
+const getMatrixRange = (matrix: Matrix): Point[] => getAllPoints(matrix).reduce(
+    (range: Point[], point) => {
         if (range.length === 0) {
             range.push(siFunciona.cloneObject(point), siFunciona.cloneObject(point))
         }

@@ -42,6 +42,11 @@ export type MatrixLayer = DomItem & WithTraits<'matrix.layer'> & { children: Mat
 export type Matrix = DomItem & WithTraits<'matrix.matrix'> & { children: MatrixLayer[] }
 
 /**
+ * Any level of the matrix: the matrix, one of its layers, rows or columns.
+ */
+export type MatrixLevel = Matrix | MatrixLayer | MatrixRow | MatrixColumn
+
+/**
  * A default tile of the Matrix: it stores the point of its column, which is set once the matrix is built.
  */
 export interface MatrixTile {
