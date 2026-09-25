@@ -2,17 +2,19 @@ import 'core-js/stable'
 import getLineIntersectPoints from './getLineIntersectPoints'
 import getLineRelativePoints from './getLineRelativePoints'
 import getLineTransitionPoints from './getLineTransitionPoints'
+import { Point } from '../point/types'
+import { Line, LineType } from './types'
 
 /**
  * Find the points that a line would cross from 'start' to 'end' and return the array of points
  * @function
- * @param {module:matrixObjects~Point} start
- * @param {module:matrixObjects~Point} end
- * @param {string|'relative'|'intersect'|'transition'} [type='relative'] - select the method used for finding the points: 'relative'|'intersect'|'transition'
- * @param {Array.<Array.<module:matrixObjects~Point>>} [lines=[]] - An array of lines only containing start and end.
- * @returns {Array.<Array.<module:matrixObjects~Point>>}
+ * @param start - The starting location of the line.
+ * @param end - The final line destination.
+ * @param type - select the method used for finding the points: 'relative'|'intersect'|'transition'
+ * @param line - The points found so far, the resulting points are added to it.
+ * @returns The points connecting start and end
  */
-const getLinePoints = (start, end, type = 'relative', line = []) => {
+const getLinePoints = (start: Point, end: Point, type: LineType = 'relative', line: Line = []): Line => {
   switch (type) {
     case 'relative':
       return getLineRelativePoints(start, end, line)

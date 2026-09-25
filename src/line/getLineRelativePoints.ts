@@ -4,16 +4,17 @@ import getAbsolutePoint from '../point/getAbsolutePoint'
 import point from '../point/point'
 import pointsToStep from './pointsToStep'
 import sortAxisCoordinate from '../point/sortAxisCoordinates'
+import { Point } from '../point/types'
+import { Line } from './types'
 
 /**
  * Having provided two points, return an array of integer transition points connecting 'start' and 'end'.
  * @function
- * @param {module:matrixObjects~Point} start - The starting location of the line.
- * @param {module:matrixObjects~Point} end - The final line destination.
- * @param {Array.<module:matrixObjects~Point>} [line=[]] - The resulting line to connect start and end.
- * @returns {Array.<module:matrixObjects~Point>}
+ * @param start - The starting location of the line.
+ * @param end - The final line destination.
+ * @param line - The resulting line to connect start and end.
  */
-const getLineRelativePoints = (start, end, line = []) => {
+const getLineRelativePoints = (start: Point, end: Point, line: Line = []): Line => {
   if (areEqualPoints(start, end)) {
     return [start]
   }
