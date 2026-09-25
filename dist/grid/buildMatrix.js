@@ -1,36 +1,33 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
-const _matrix = _interopRequireDefault(require('./matrix.js'))
-const _updateMatrixPoints = _interopRequireDefault(require('./updateMatrixPoints.js'))
-const _jsonDom = _interopRequireDefault(require('json-dom'))
-const _siFunciona = _interopRequireDefault(require('si-funciona'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
+const matrix_1 = __importDefault(require('./matrix'))
+const updateMatrixPoints_1 = __importDefault(require('./updateMatrixPoints'))
+const json_dom_1 = __importDefault(require('json-dom'))
+const si_funciona_1 = __importDefault(require('si-funciona'))
 /**
  * Create the matrix and assign the correct points to each tile.
  * @function
- * @param {module:matrixObjects~Point} dimensions - The dimensions of the matrix to be created
- * @param {module:matrixObjects~coordinate} dimensions.x - The width of the matrix
- * @param {module:matrixObjects~coordinate} dimensions.y - The height of the matrix
- * @param {module:matrixObjects~coordinate} dimensions.z - The depth of the matrix
- * @param {Object} props - Additional properties to be added to the matrix
- * @param {Array.<module:matrixObjects~MatrixTile>} props.x - Additional properties to be added to the x axis
- * @param {Array.<module:matrixObjects~MatrixRow>} props.y - Additional properties to be added to the y axis
- * @param {Array.<module:matrixObjects~MatrixLayer>} props.z - Additional properties to be added to the z axis
- * @param {Array.<module:matrixObjects~Matrix>} props.matrix - Additional properties to be added to the matrix
- * @returns {module:matrixObjects~Matrix}
+ * @param dimensions - The dimensions of the matrix to be created (x is the width, y the height, z the depth)
+ * @param props - Additional properties to be added to each level of the matrix
  */
 const buildMatrix = (dimensions = {
   x: 0,
   y: 0,
   z: 1
 }, props = {
-  x: [],
-  y: [],
-  z: [],
-  matrix: []
-}) => _siFunciona.default.pipe(_jsonDom.default.setParentItemReferences, _updateMatrixPoints.default)((0, _matrix.default)(dimensions, props))
-const _default = exports.default = buildMatrix
+  x: {},
+  y: {},
+  z: {},
+  matrix: {}
+}) => si_funciona_1.default.pipe(json_dom_1.default.setParentItemReferences, updateMatrixPoints_1.default)((0, matrix_1.default)(dimensions, props))
+exports.default = buildMatrix

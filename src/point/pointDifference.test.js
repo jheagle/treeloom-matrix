@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import pointDifference from './pointDifference.js'
-import point from './point.js'
+import pointDifference from './pointDifference'
+import point from './point'
 
 describe('pointDifference', () => {
     test('return difference along x', () => {

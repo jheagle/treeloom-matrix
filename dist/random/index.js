@@ -1,20 +1,25 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _randDirection = _interopRequireDefault(require('./randDirection.js'))
-const _randDirectionWithInterval = _interopRequireDefault(require('./randDirectionWithInterval.js'))
-const _randomPoint = _interopRequireDefault(require('./randomPoint.js'))
-const _randomStart = _interopRequireDefault(require('./randomStart.js'))
-const _testIntervalFits = _interopRequireDefault(require('./testIntervalFits.js'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
-const _default = exports.default = {
-  randDirection: _randDirection.default,
-  randDirectionWithInterval: _randDirectionWithInterval.default,
-  randomPoint: _randomPoint.default,
-  randomStart: _randomStart.default,
-  testIntervalFits: _testIntervalFits.default
+const randDirection_1 = __importDefault(require('./randDirection'))
+const randDirectionWithInterval_1 = __importDefault(require('./randDirectionWithInterval'))
+const randomPoint_1 = __importDefault(require('./randomPoint'))
+const randomStart_1 = __importDefault(require('./randomStart'))
+const testIntervalFits_1 = __importDefault(require('./testIntervalFits'))
+exports.default = {
+  randDirection: randDirection_1.default,
+  randDirectionWithInterval: randDirectionWithInterval_1.default,
+  randomPoint: randomPoint_1.default,
+  randomStart: randomStart_1.default,
+  testIntervalFits: testIntervalFits_1.default
 }

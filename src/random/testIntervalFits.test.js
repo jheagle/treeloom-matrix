@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import buildMatrix from '../grid/buildMatrix.js'
-import testIntervalFits from './testIntervalFits.js'
+import buildMatrix from '../grid/buildMatrix'
+import testIntervalFits from './testIntervalFits'
 
 describe('testIntervalFits', () => {
   test('returns true for all axis when interval is null', () => {

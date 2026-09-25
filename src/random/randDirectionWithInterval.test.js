@@ -1,11 +1,11 @@
 /**
  * @jest-environment jsdom
  */
-import buildMatrix from '../grid/buildMatrix.js'
-import checkValidPoint from '../bounds/checkValidPoint.js'
-import getAbsolutePoint from '../point/getAbsolutePoint.js'
-import point from '../point/point.js'
-import randDirectionWithInterval from './randDirectionWithInterval.js'
+import buildMatrix from '../grid/buildMatrix'
+import checkValidPoint from '../bounds/checkValidPoint'
+import getAbsolutePoint from '../point/getAbsolutePoint'
+import point from '../point/point'
+import randDirectionWithInterval from './randDirectionWithInterval'
 
 describe('randDirectionWithInterval', () => {
     test('result when there is no more room within the matrix', () => {

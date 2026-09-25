@@ -1,4 +1,4 @@
-import point from './point.js'
+import point from './point'
 
 describe('point', () => {
     test('should return a point object with x, y, z coordinates', () => {

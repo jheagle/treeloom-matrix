@@ -1,18 +1,27 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _testPointsBetween = _interopRequireDefault(require('./testPointsBetween'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
+const testPointsBetween_1 = __importDefault(require('./testPointsBetween'))
 /**
  * Given two points, check the cells between using specified function.
  * When inclusive is set to true the provided start and end points will also be tested
  * @function
- * @param {...*} args - These args match the parameter list for {@link module:matrixFunctions~testPointsBetween}
- * @returns {boolean}
+ * @param start - The beginning point to check.
+ * @param end - The terminating point to check between.
+ * @param matrix - The grid of points all the points can exist on.
+ * @param func - The test function which will return true or false.
+ * @param inclusive - Choose whether to include or exclude the start and end points in the results.
+ * @returns Whether at least one of the points passed the test
  */
-const checkInBetween = (...args) => !!(0, _testPointsBetween.default)(...args).true.length
-const _default = exports.default = checkInBetween
+const checkInBetween = (start, end, matrix, func, inclusive = true) => !!(0, testPointsBetween_1.default)(start, end, matrix, func, inclusive).true.length
+exports.default = checkInBetween

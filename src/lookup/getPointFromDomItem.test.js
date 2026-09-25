@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import buildMatrix from '../grid/buildMatrix.js'
-import getPointFromDomItem from './getPointFromDomItem.js'
-import point from '../point/point.js'
+import buildMatrix from '../grid/buildMatrix'
+import getPointFromDomItem from './getPointFromDomItem'
+import point from '../point/point'
 
 describe('getPointFromDomItem', () => {
   test('Retrieve the associated point from a DomItem within a matrix by point', () => {

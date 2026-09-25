@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import randomPoint from './randomPoint.js'
-import buildMatrix from '../grid/buildMatrix.js'
-import point from '../point/point.js'
+import randomPoint from './randomPoint'
+import buildMatrix from '../grid/buildMatrix'
+import point from '../point/point'
 
 describe('randomPoint', () => {
     test('retrieves a random point within the matrix', () => {

@@ -1,28 +1,33 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _checkInBetween = _interopRequireDefault(require('./checkInBetween.js'))
-const _getLineIntersectPoints = _interopRequireDefault(require('./getLineIntersectPoints.js'))
-const _getLinePoints = _interopRequireDefault(require('./getLinePoints.js'))
-const _getLineRelativePoints = _interopRequireDefault(require('./getLineRelativePoints.js'))
-const _getLineTransitionPoints = _interopRequireDefault(require('./getLineTransitionPoints.js'))
-const _getPointsForLines = _interopRequireDefault(require('./getPointsForLines.js'))
-const _lineEndPoint = _interopRequireDefault(require('./lineEndPoint.js'))
-const _pointsToStep = _interopRequireDefault(require('./pointsToStep.js'))
-const _testPointsBetween = _interopRequireDefault(require('./testPointsBetween.js'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
-const _default = exports.default = {
-  checkInBetween: _checkInBetween.default,
-  getLineIntersectPoints: _getLineIntersectPoints.default,
-  getLinePoints: _getLinePoints.default,
-  getLineRelativePoints: _getLineRelativePoints.default,
-  getLineTransitionPoints: _getLineTransitionPoints.default,
-  getPointsForLines: _getPointsForLines.default,
-  lineEndPoint: _lineEndPoint.default,
-  pointsToStep: _pointsToStep.default,
-  testPointsBetween: _testPointsBetween.default
+const checkInBetween_1 = __importDefault(require('./checkInBetween'))
+const getLineIntersectPoints_1 = __importDefault(require('./getLineIntersectPoints'))
+const getLinePoints_1 = __importDefault(require('./getLinePoints'))
+const getLineRelativePoints_1 = __importDefault(require('./getLineRelativePoints'))
+const getLineTransitionPoints_1 = __importDefault(require('./getLineTransitionPoints'))
+const getPointsForLines_1 = __importDefault(require('./getPointsForLines'))
+const lineEndPoint_1 = __importDefault(require('./lineEndPoint'))
+const pointsToStep_1 = __importDefault(require('./pointsToStep'))
+const testPointsBetween_1 = __importDefault(require('./testPointsBetween'))
+exports.default = {
+  checkInBetween: checkInBetween_1.default,
+  getLineIntersectPoints: getLineIntersectPoints_1.default,
+  getLinePoints: getLinePoints_1.default,
+  getLineRelativePoints: getLineRelativePoints_1.default,
+  getLineTransitionPoints: getLineTransitionPoints_1.default,
+  getPointsForLines: getPointsForLines_1.default,
+  lineEndPoint: lineEndPoint_1.default,
+  pointsToStep: pointsToStep_1.default,
+  testPointsBetween: testPointsBetween_1.default
 }

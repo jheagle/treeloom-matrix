@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import cube from './cube.js'
+import cube from './cube'
 
 describe('cube', () => {
   test('grid is 1 deep, and 10 by 10', () => {

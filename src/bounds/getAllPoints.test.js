@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import buildMatrix from '../grid/buildMatrix.js'
-import getAllPoints from './getAllPoints.js'
+import buildMatrix from '../grid/buildMatrix'
+import getAllPoints from './getAllPoints'
 
 describe('getAllPoints', () => {
   test('retrieves all the points in the matrix', () => {

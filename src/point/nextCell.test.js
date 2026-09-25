@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import nextCell from './nextCell.js'
-import point from './point.js'
-import matrix from '../grid/matrix.js'
+import nextCell from './nextCell'
+import point from './point'
+import matrix from '../grid/matrix'
 
 describe('nextCell', () => {
     test('should return the next cell for a given point and offset', () => {

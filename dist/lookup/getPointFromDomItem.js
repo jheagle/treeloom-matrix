@@ -1,17 +1,21 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
-const _point = _interopRequireDefault(require('../point/point'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
+const point_1 = __importDefault(require('../point/point'))
 /**
  * Retrieve the point associated with the provided DomItem.
  * @function
- * @param {DomItem} domItem - Provide a DomItem associated with a point.
- * @param {boolean} useIfExists - Whether to use the existing point if it exists.
- * @returns {module:matrixObjects~Point}
+ * @param domItem - Provide a DomItem (a column) associated with a point.
+ * @param useIfExists - Whether to use the existing point if it exists.
  */
 const getPointFromDomItem = (domItem, useIfExists = true) => {
   if (typeof domItem?.parentItem?.parentItem?.parentItem?.children === 'undefined') {
@@ -20,6 +24,10 @@ const getPointFromDomItem = (domItem, useIfExists = true) => {
   if (useIfExists && domItem.point) {
     return domItem.point
   }
-  return (0, _point.default)(Array.from(domItem.parentItem.children).indexOf(domItem), Array.from(domItem.parentItem.parentItem.children).indexOf(domItem.parentItem), Array.from(domItem.parentItem.parentItem.parentItem.children).indexOf(domItem.parentItem.parentItem))
+  // The check above confirms each of these parents exists
+  const row = domItem.parentItem
+  const layer = row.parentItem
+  const matrix = layer.parentItem
+  return (0, point_1.default)(Array.from(row.children).indexOf(domItem), Array.from(layer.children).indexOf(row), Array.from(matrix.children).indexOf(layer))
 }
-const _default = exports.default = getPointFromDomItem
+exports.default = getPointFromDomItem

@@ -1,37 +1,32 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _point = _interopRequireDefault(require('./point.js'))
-const _nextCell = _interopRequireDefault(require('./nextCell.js'))
-const _prevCell = _interopRequireDefault(require('./prevCell.js'))
-const _siFunciona = _interopRequireDefault(require('si-funciona'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
-/**
- * Direction represents the delta from on point to another and indicactes the direction of travel.
- * @typedef {module:matrixObjects~Point} module:matrixObjects~Direction
- * @property {module:matrixObjects~coordinate} x - The X-coordinate is the x difference from starting to end point along a line.
- * @property {module:matrixObjects~coordinate} y - The Y-coordinate is the x difference from starting to end point along a line.
- * @property {module:matrixObjects~coordinate} z - The Z-coordinate is the x difference from starting to end point along a line.
- * @method next - Get the next point in the direction from a starting point
- * @method prev - Get the previous point in the direction from a starting point
- */
-
+const point_1 = __importDefault(require('./point'))
+const nextCell_1 = __importDefault(require('./nextCell'))
+const prevCell_1 = __importDefault(require('./prevCell'))
+const si_funciona_1 = __importDefault(require('si-funciona'))
 /**
  * Create a direction object having x, y, z properties and next/prev methods
- * @param {number} x
- * @param {number} y
- * @param {number} z
- * @returns {module:matrixObjects~Direction}
+ * @param x - The x difference along the line
+ * @param y - The y difference along the line
+ * @param z - The z difference along the line
  */
 const direction = (x, y, z = 0) => {
-  const simplifiedCoordinates = _siFunciona.default.simplestRatio(x, y, z)
-  const dir = (0, _point.default)(...simplifiedCoordinates)
-  dir.next = start => (0, _nextCell.default)(start, dir)
-  dir.prev = end => (0, _prevCell.default)(end, dir)
+  const simplifiedCoordinates = si_funciona_1.default.simplestRatio(x, y, z)
+  const [dx, dy, dz] = simplifiedCoordinates
+  const dir = (0, point_1.default)(dx, dy, dz)
+  dir.next = start => (0, nextCell_1.default)(start, dir)
+  dir.prev = end => (0, prevCell_1.default)(end, dir)
   return dir
 }
-const _default = exports.default = direction
+exports.default = direction

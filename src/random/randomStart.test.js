@@ -1,11 +1,11 @@
 /**
  * @jest-environment jsdom
  */
-import buildMatrix from '../grid/buildMatrix.js'
-import checkValidPoint from '../bounds/checkValidPoint.js'
-import direction from '../point/direction.js'
-import point from '../point/point.js'
-import randomStart from './randomStart.js'
+import buildMatrix from '../grid/buildMatrix'
+import checkValidPoint from '../bounds/checkValidPoint'
+import direction from '../point/direction'
+import point from '../point/point'
+import randomStart from './randomStart'
 
 describe('randomStart', () => {
   test('returns a point with coordinates within the specified limits', () => {

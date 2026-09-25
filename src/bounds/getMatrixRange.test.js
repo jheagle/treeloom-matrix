@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import buildMatrix from '../grid/buildMatrix.js'
-import getMatrixRange from './getMatrixRange.js'
+import buildMatrix from '../grid/buildMatrix'
+import getMatrixRange from './getMatrixRange'
 
 describe('getMatrixRange', () => {
     test('retrieves the lowest and highest points in the matrix', () => {

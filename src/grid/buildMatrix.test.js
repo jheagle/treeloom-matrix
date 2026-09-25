@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import buildMatrix from './buildMatrix.js'
+import buildMatrix from './buildMatrix'
 
 describe('buildMatrix', () => {
   test('default one layer with no dimensions', () => {

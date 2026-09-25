@@ -1,32 +1,37 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _alterCoordinates = _interopRequireDefault(require('./alterCoordinates.js'))
-const _areEqualPoints = _interopRequireDefault(require('./areEqualPoints.js'))
-const _direction = _interopRequireDefault(require('./direction.js'))
-const _getAbsolutePoint = _interopRequireDefault(require('./getAbsolutePoint.js'))
-const _getFirstAxisOfCoordinate = _interopRequireDefault(require('./getFirstAxisOfCoordinate.js'))
-const _getHighestAbsoluteCoordinate = _interopRequireDefault(require('./getHighestAbsoluteCoordinate.js'))
-const _nextCell = _interopRequireDefault(require('./nextCell.js'))
-const _point = _interopRequireDefault(require('./point.js'))
-const _pointDifference = _interopRequireDefault(require('./pointDifference.js'))
-const _prevCell = _interopRequireDefault(require('./prevCell.js'))
-const _sortAxisCoordinates = _interopRequireDefault(require('./sortAxisCoordinates.js'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
-const _default = exports.default = {
-  alterCoordinates: _alterCoordinates.default,
-  areEqualPoints: _areEqualPoints.default,
-  direction: _direction.default,
-  getAbsolutePoint: _getAbsolutePoint.default,
-  getFirstAxisOfCoordinate: _getFirstAxisOfCoordinate.default,
-  getHighestAbsoluteCoordinate: _getHighestAbsoluteCoordinate.default,
-  nextCell: _nextCell.default,
-  point: _point.default,
-  pointDifference: _pointDifference.default,
-  prevCell: _prevCell.default,
-  sortAxisCoordinates: _sortAxisCoordinates.default
+const alterCoordinates_1 = __importDefault(require('./alterCoordinates'))
+const areEqualPoints_1 = __importDefault(require('./areEqualPoints'))
+const direction_1 = __importDefault(require('./direction'))
+const getAbsolutePoint_1 = __importDefault(require('./getAbsolutePoint'))
+const getFirstAxisOfCoordinate_1 = __importDefault(require('./getFirstAxisOfCoordinate'))
+const getHighestAbsoluteCoordinate_1 = __importDefault(require('./getHighestAbsoluteCoordinate'))
+const nextCell_1 = __importDefault(require('./nextCell'))
+const point_1 = __importDefault(require('./point'))
+const pointDifference_1 = __importDefault(require('./pointDifference'))
+const prevCell_1 = __importDefault(require('./prevCell'))
+const sortAxisCoordinates_1 = __importDefault(require('./sortAxisCoordinates'))
+exports.default = {
+  alterCoordinates: alterCoordinates_1.default,
+  areEqualPoints: areEqualPoints_1.default,
+  direction: direction_1.default,
+  getAbsolutePoint: getAbsolutePoint_1.default,
+  getFirstAxisOfCoordinate: getFirstAxisOfCoordinate_1.default,
+  getHighestAbsoluteCoordinate: getHighestAbsoluteCoordinate_1.default,
+  nextCell: nextCell_1.default,
+  point: point_1.default,
+  pointDifference: pointDifference_1.default,
+  prevCell: prevCell_1.default,
+  sortAxisCoordinates: sortAxisCoordinates_1.default
 }

@@ -34,7 +34,6 @@ const publicApi = [
   'lineEndPoint',
   'matrix',
   'nextCell',
-  'noConflict',
   'point',
   'pointDifference',
   'pointsToStep',

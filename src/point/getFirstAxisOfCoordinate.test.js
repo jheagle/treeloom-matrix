@@ -1,5 +1,5 @@
-import getFirstAxisOfCoordinate from './getFirstAxisOfCoordinate.js'
-import point from './point.js'
+import getFirstAxisOfCoordinate from './getFirstAxisOfCoordinate'
+import point from './point'
 
 describe('getFirstAxisOfCoordinate', () => {
     test('should return the first axis of the coordinate', () => {

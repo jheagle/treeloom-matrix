@@ -1,5 +1,5 @@
-import prevCell from './prevCell.js'
-import point from './point.js'
+import prevCell from './prevCell'
+import point from './point'
 
 describe('prevCell', () => {
     test('should return the previous cell for a given point and offset', () => {

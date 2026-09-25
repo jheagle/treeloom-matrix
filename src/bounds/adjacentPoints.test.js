@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import adjacentPoints from './adjacentPoints.js'
-import point from '../point/point.js'
-import buildMatrix from '../grid/buildMatrix.js'
+import adjacentPoints from './adjacentPoints'
+import point from '../point/point'
+import buildMatrix from '../grid/buildMatrix'
 
 describe('adjacentPoints', () => {
     test('returns an array of points surrounding a point', () => {

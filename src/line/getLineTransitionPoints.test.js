@@ -1,5 +1,5 @@
-import point from '../point/point.js'
-import getLineTransitionPoints from './getLineTransitionPoints.js'
+import point from '../point/point'
+import getLineTransitionPoints from './getLineTransitionPoints'
 
 describe('getLineTransitionPoints', () => {
   test('returns an array of points from 0,0,0 to 0,0,3', () => {

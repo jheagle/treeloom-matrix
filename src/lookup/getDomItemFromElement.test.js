@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import buildMatrix from '../grid/buildMatrix.js'
-import getDomItemFromElement from './getDomItemFromElement.js'
-import point from '../point/point.js'
+import buildMatrix from '../grid/buildMatrix'
+import getDomItemFromElement from './getDomItemFromElement'
+import point from '../point/point'
 import jsonDom from 'json-dom'
 
 describe('getDomItemFromElement', () => {

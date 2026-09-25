@@ -1,4 +1,4 @@
-import direction from './direction.js'
+import direction from './direction'
 
 describe('direction', () => {
     test('should return a direction object with x, y, z properties and next/prev methods', () => {

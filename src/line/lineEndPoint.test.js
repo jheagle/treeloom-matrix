@@ -1,5 +1,5 @@
-import point from '../point/point.js'
-import lineEndPoint from './lineEndPoint.js'
+import point from '../point/point'
+import lineEndPoint from './lineEndPoint'
 
 describe('lineEndPoint', () => {
   test('get the correct end point along x-axis', () => {

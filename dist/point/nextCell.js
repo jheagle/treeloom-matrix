@@ -1,18 +1,22 @@
 'use strict'
 
+const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule
+    ? mod
+    : {
+        default: mod
+      }
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
-exports.default = void 0
 require('core-js/stable')
-const _point = _interopRequireDefault(require('./point'))
-function _interopRequireDefault (e) { return e && e.__esModule ? e : { default: e } }
+const point_1 = __importDefault(require('./point'))
 /**
  * Based on provided point and point direction generate next point.
  * @function
- * @param {module:matrixObjects~Point} pnt - Provide the current / initial point
- * @param {module:matrixObjects~Direction} dir - Provide the direction to be applied to find the next point
- * @returns {module:matrixObjects~Point}
+ * @param pnt - Provide the current / initial point
+ * @param dir - Provide the direction to be applied to find the next point
  */
-const nextCell = (pnt, dir) => (0, _point.default)(pnt.x + dir.x, pnt.y + dir.y, pnt.z + dir.z)
-const _default = exports.default = nextCell
+const nextCell = (pnt, dir) => (0, point_1.default)(pnt.x + dir.x, pnt.y + dir.y, pnt.z + dir.z)
+exports.default = nextCell

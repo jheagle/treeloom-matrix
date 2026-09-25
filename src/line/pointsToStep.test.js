@@ -1,5 +1,5 @@
-import pointsToStep from './pointsToStep.js'
-import point from '../point/point.js'
+import pointsToStep from './pointsToStep'
+import point from '../point/point'
 
 describe('pointsToStep', () => {
     test('returns simplified coordinates for 0,0,0 to 0,0,3', () => {
