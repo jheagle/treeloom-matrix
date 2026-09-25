@@ -27,15 +27,14 @@ const previousMatrixDom = root.matrixDom
 /**
  * All the functions of matrix-dom.
  */
-const matrixDom = Object.assign(
-  {},
-  point,
-  line,
-  grid,
-  bounds,
-  lookup,
-  random
-)
+const matrixDom = {
+  ...point,
+  ...line,
+  ...grid,
+  ...bounds,
+  ...lookup,
+  ...random
+}
 
 type MatrixDomFunctions = typeof matrixDom
 
