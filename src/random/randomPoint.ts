@@ -3,15 +3,16 @@ import siFunciona from 'si-funciona'
 import getCoordinateRanges from '../bounds/getCoordinateRanges'
 import getMatrixRange from '../bounds/getMatrixRange'
 import point from '../point/point'
+import { Point } from '../point/types'
+import { Matrix } from '../grid/types'
 
 /**
  * Get random point within a matrix
  * @function
- * @param {module:matrixObjects~Matrix} matrix - The matrix that the point will be contained within.
- * @param {module:matrixObjects~Point|null} maxRanges - The maximum ranges for the point. If null, the matrix will be used.
- * @returns {module:matrixObjects~Direction}
+ * @param matrix - The matrix that the point will be contained within.
+ * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.
  */
-const randPoint = (matrix, maxRanges = null) => {
+const randPoint = (matrix: Matrix, maxRanges: Point | null = null): Point => {
   const [minPoint, maxPoint] = getMatrixRange(matrix)
   const coordinateRanges = getCoordinateRanges(minPoint, maxPoint, maxRanges)
   return point(

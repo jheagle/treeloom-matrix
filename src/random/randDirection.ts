@@ -7,17 +7,18 @@ import getMatrixRange from '../bounds/getMatrixRange'
 import nextCell from '../point/nextCell'
 import pointDifference from '../point/pointDifference'
 import randomPoint from './randomPoint'
+import { Direction, Point } from '../point/types'
+import { Matrix } from '../grid/types'
 
 /**
  * Get random direction point.
  * NOTE: It is possible that the direction is 0,0,0 indicating no move.
  * @function
- * @param {module:matrixObjects~Matrix} matrix - The matrix that the point will be contained within.
- * @param {module:matrixObjects~Point|null} [start=null] - The point the direction will start from, null for random
- * @param {module:matrixObjects~Point|null} [maxRanges=null] - The maximum ranges for the point. If null, the matrix will be used.
- * @returns {module:matrixObjects~Direction}
+ * @param matrix - The matrix that the point will be contained within.
+ * @param start - The point the direction will start from, null for random
+ * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.
  */
-const randDirection = (matrix, start = null, maxRanges = null) => {
+const randDirection = (matrix: Matrix, start: Point | null = null, maxRanges: Point | null = null): Direction => {
   const [minPoint, maxPoint] = getMatrixRange(matrix)
   // Use the available ranges as the max ranges
   maxRanges = getCoordinateRanges(minPoint, maxPoint, maxRanges)

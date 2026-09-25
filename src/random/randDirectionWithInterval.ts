@@ -13,18 +13,19 @@ import randDirection from './randDirection'
 import randomPoint from './randomPoint'
 import siFunciona from 'si-funciona'
 import testIntervalFits from './testIntervalFits'
+import { Axis, Direction, Point } from '../point/types'
+import { Matrix } from '../grid/types'
 
 /**
  * Get random direction point.
  * NOTE: It is possible that the direction is 0,0,0 indicating no move.
  * @function
- * @param {module:matrixObjects~Matrix} matrix - The matrix that the point will be contained within.
- * @param {module:matrixObjects~Point|null} [start=null] - The point the direction will start from, null for random
- * @param {number|null} [interval=null] - An interval where a line would intersect in the direction, null for random
- * @param {module:matrixObjects~Point|null} [maxRanges=null] - The maximum ranges for the point. If null, the matrix will be used.
- * @returns {module:matrixObjects~Direction}
+ * @param matrix - The matrix that the point will be contained within.
+ * @param start - The point the direction will start from, null for random
+ * @param interval - An interval where a line would intersect in the direction, null for random
+ * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.
  */
-const randDirectionWithInterval = (matrix, start = null, interval = null, maxRanges = null) => {
+const randDirectionWithInterval = (matrix: Matrix, start: Point | null = null, interval: number | null = null, maxRanges: Point | null = null): Direction => {
   const [minPoint, maxPoint] = getMatrixRange(matrix)
   // Use the available ranges as the max ranges
   maxRanges = getCoordinateRanges(minPoint, maxPoint, maxRanges)
@@ -36,7 +37,7 @@ const randDirectionWithInterval = (matrix, start = null, interval = null, maxRan
     // The range is the the total numbers available, but the limit is the highest possible number
     let startLimits = pointDifference(point(1, 1, 1), maxRanges)
     if (interval !== null) {
-      startLimits = alterCoordinates(startLimits, (coordinate, axis) => intervalFits[axis] ? coordinate - Math.abs(interval) : coordinate)
+      startLimits = alterCoordinates(startLimits, (coordinate, axis) => intervalFits[axis] ? coordinate - Math.abs(interval as number) : coordinate)
     }
     // random point with offset of minimum of matrix
     start = nextCell(minPoint, randomPoint(matrix, startLimits))
@@ -55,7 +56,7 @@ const randDirectionWithInterval = (matrix, start = null, interval = null, maxRan
   // check if any coordinate already has the coorect interval
   if (interval !== null) {
     // none of the coordinates have the interval, so pick a valid one to update
-    const axisFit = siFunciona.reduceObject(intervalFits, (fitResults, fits, axis) => {
+    const axisFit: Axis[] = siFunciona.reduceObject(intervalFits, (fitResults: Axis[], fits: boolean, axis: Axis) => {
       if (fits) {
         fitResults.push(axis)
       }

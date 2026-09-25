@@ -11,13 +11,18 @@ export type Coordinate = number
 /**
  * Point stores a location in a Matrix defined by three key-value pairs (axis => coordinate)
  */
-export interface Point {
+export interface Point extends PointLike<Coordinate> {}
+
+/**
+ * The shape of a point with any kind of value for its coordinates (for example null when a coordinate is unknown).
+ */
+export interface PointLike<Value> {
   /** The X-coordinate of a Point */
-  x: Coordinate
+  x: Value
   /** The Y-coordinate of a Point */
-  y: Coordinate
+  y: Value
   /** The Z-coordinate of a Point */
-  z: Coordinate
+  z: Value
 }
 
 /**
@@ -31,12 +36,12 @@ export interface Direction extends Point {
 }
 
 /**
- * A function to alter one coordinate of a point
- * @param coordinate - The coordinate to alter (null when the point itself is missing)
+ * A function to alter one coordinate of a point, it returns the new value for the coordinate
+ * @param coordinate - The coordinate to alter
  * @param axis - The axis for the coordinate being altered
  * @param point - The point that the coordinate is part of
  */
-export type AlterCoordinate = (coordinate: Coordinate | null, axis: Axis, point: Point | null) => Coordinate
+export type AlterCoordinate<Value = Coordinate | null, Input = Coordinate, Source = Point> = (coordinate: Input, axis: Axis, point: Source) => Value
 
 /**
  * An object for an axis-coordinate pair
