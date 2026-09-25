@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import adjacentEdgePoints from './adjacentEdgePoints.js'
-import point from '../point/point.js'
-import buildMatrix from '../grid/buildMatrix.js'
+import adjacentEdgePoints from './adjacentEdgePoints'
+import point from '../point/point'
+import buildMatrix from '../grid/buildMatrix'
 
 describe('adjacentEdgePoints', () => {
     test('returns all points which touch on edges (not diagonal)', () => {

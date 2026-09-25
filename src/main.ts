@@ -7,12 +7,12 @@
  */
 
 import 'core-js/stable'
-import point from './point/index.js'
-import line from './line/index.js'
-import grid from './grid/index.js'
-import bounds from './bounds/index.js'
-import lookup from './lookup/index.js'
-import random from './random/index.js'
+import point from './point/index'
+import line from './line/index'
+import grid from './grid/index'
+import bounds from './bounds/index'
+import lookup from './lookup/index'
+import random from './random/index'
 
 /**
  * Store a reference to this scope which will be Window if rendered via browser

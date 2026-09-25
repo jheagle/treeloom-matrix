@@ -1,12 +1,12 @@
 import 'core-js/stable'
-import checkValidPoint from '../bounds/checkValidPoint.js'
-import direction from '../point/direction.js'
-import getAxisLengths from '../bounds/getAxisLengths.js'
-import getCoordinateRanges from '../bounds/getCoordinateRanges.js'
-import getMatrixRange from '../bounds/getMatrixRange.js'
-import nextCell from '../point/nextCell.js'
-import pointDifference from '../point/pointDifference.js'
-import randomPoint from './randomPoint.js'
+import checkValidPoint from '../bounds/checkValidPoint'
+import direction from '../point/direction'
+import getAxisLengths from '../bounds/getAxisLengths'
+import getCoordinateRanges from '../bounds/getCoordinateRanges'
+import getMatrixRange from '../bounds/getMatrixRange'
+import nextCell from '../point/nextCell'
+import pointDifference from '../point/pointDifference'
+import randomPoint from './randomPoint'
 
 /**
  * Get random direction point.

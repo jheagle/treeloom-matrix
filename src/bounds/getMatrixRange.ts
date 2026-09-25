@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import getAllPoints from './getAllPoints.js'
+import getAllPoints from './getAllPoints'
 import siFunciona from 'si-funciona'
 
 /**

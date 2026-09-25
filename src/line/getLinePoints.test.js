@@ -1,8 +1,8 @@
-import getLinePoints from './getLinePoints.js'
-import getLineIntersectPoints from './getLineIntersectPoints.js'
-import getLineRelativePoints from './getLineRelativePoints.js'
-import getLineTransitionPoints from './getLineTransitionPoints.js'
-import point from '../point/point.js'
+import getLinePoints from './getLinePoints'
+import getLineIntersectPoints from './getLineIntersectPoints'
+import getLineRelativePoints from './getLineRelativePoints'
+import getLineTransitionPoints from './getLineTransitionPoints'
+import point from '../point/point'
 
 describe('getLinePoints', () => {
   test('test defaults to relative', () => {

@@ -1,6 +1,6 @@
 import 'core-js/stable'
-import areEqualPoints from '../point/areEqualPoints.js'
-import pointsToStep from './pointsToStep.js'
+import areEqualPoints from '../point/areEqualPoints'
+import pointsToStep from './pointsToStep'
 
 /**
  * Recursively find the next point in a line from 'start' to 'end' using the provided direction. Return an array of points connecting 'start' and 'end'.

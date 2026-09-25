@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import checkValidPoint from './checkValidPoint.js'
-import point from '../point/point.js'
-import buildMatrix from '../grid/buildMatrix.js'
+import checkValidPoint from './checkValidPoint'
+import point from '../point/point'
+import buildMatrix from '../grid/buildMatrix'
 
 describe('checkValidPoint', () => {
     test('should return true for a valid point in a matrix', () => {

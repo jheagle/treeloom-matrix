@@ -1,5 +1,12 @@
 {
   "browser": {
     "name": "matrix-dom"
+  },
+  "readme": {
+    "from": "dist/**/!(*.min).js"
+  },
+  "typescript": {
+    "config": "tsconfig.json",
+    "enabled": true
   }
 }

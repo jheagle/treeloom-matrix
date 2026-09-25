@@ -1,5 +1,5 @@
 import 'core-js/stable'
-import getLinePoints from './getLinePoints.js'
+import getLinePoints from './getLinePoints'
 
 /**
  * Takes an array of arrays containing two points each. Calls getPointsLine for each array of points. Returns an

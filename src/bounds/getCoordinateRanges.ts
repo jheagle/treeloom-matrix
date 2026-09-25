@@ -1,7 +1,7 @@
 import 'core-js/stable'
-import nextCell from '../point/nextCell.js'
-import point from '../point/point.js'
-import pointDifference from '../point/pointDifference.js'
+import nextCell from '../point/nextCell'
+import point from '../point/point'
+import pointDifference from '../point/pointDifference'
 
 /**
  * Using a max an min point, find the ranges for each coordinate.

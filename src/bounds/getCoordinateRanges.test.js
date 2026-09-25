@@ -1,5 +1,5 @@
-import getCoordinateRanges from './getCoordinateRanges.js'
-import point from '../point/point.js'
+import getCoordinateRanges from './getCoordinateRanges'
+import point from '../point/point'
 
 describe('getCoordinateRanges', () => {
   test('returns the correct ranges for a matrix', () => {

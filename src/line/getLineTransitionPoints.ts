@@ -1,8 +1,8 @@
 import 'core-js/stable'
-import areEqualPoints from '../point/areEqualPoints.js'
-import point from '../point/point.js'
-import pointDifference from '../point/pointDifference.js'
-import getHighestAbsoluteCoordinate from '../point/getHighestAbsoluteCoordinate.js'
+import areEqualPoints from '../point/areEqualPoints'
+import point from '../point/point'
+import pointDifference from '../point/pointDifference'
+import getHighestAbsoluteCoordinate from '../point/getHighestAbsoluteCoordinate'
 
 /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array

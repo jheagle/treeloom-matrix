@@ -1,6 +1,6 @@
 import 'core-js/stable'
-import getCoordinateRanges from '../bounds/getCoordinateRanges.js'
-import getMatrixRange from '../bounds/getMatrixRange.js'
+import getCoordinateRanges from '../bounds/getCoordinateRanges'
+import getMatrixRange from '../bounds/getMatrixRange'
 
 /**
  * An object that has boolean values for each axis indicating whether the interval fits within the matrix.

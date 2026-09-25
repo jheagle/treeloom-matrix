@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import updateMatrixPoints from './updateMatrixPoints.js'
-import matrix from './matrix.js'
+import updateMatrixPoints from './updateMatrixPoints'
+import matrix from './matrix'
 
 describe('updateMatrixPoints', () => {
     test('should update the points for each DomItem in a matrix', () => {

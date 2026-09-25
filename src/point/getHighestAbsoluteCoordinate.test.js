@@ -1,5 +1,5 @@
-import getHighestAbsoluteCoordinate from './getHighestAbsoluteCoordinate.js'
-import point from './point.js'
+import getHighestAbsoluteCoordinate from './getHighestAbsoluteCoordinate'
+import point from './point'
 
 describe('getHighestAbsoluteCoordinate', () => {
     test('should return the highest absolute coordinate value', () => {

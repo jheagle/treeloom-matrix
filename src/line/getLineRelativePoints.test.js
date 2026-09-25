@@ -1,5 +1,5 @@
-import point from '../point/point.js'
-import getLineRelativePoints from './getLineRelativePoints.js'
+import point from '../point/point'
+import getLineRelativePoints from './getLineRelativePoints'
 
 describe('getLineRelativePoints', () => {
   test('returns an array of points from 0,0,0 to 0,0,3', () => {

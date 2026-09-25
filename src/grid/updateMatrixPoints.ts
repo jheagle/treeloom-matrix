@@ -1,4 +1,4 @@
-import point from '../point/point.js'
+import point from '../point/point'
 
 /**
  * Update the points for each DomItem in a matrix.

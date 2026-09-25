@@ -1,5 +1,5 @@
-import sortAxisCoordinates from './sortAxisCoordinates.js'
-import point from './point.js'
+import sortAxisCoordinates from './sortAxisCoordinates'
+import point from './point'
 
 describe('sortAxisCoordinates', () => {
     test('sorts with high-low x,y,z', () => {

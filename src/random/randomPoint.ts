@@ -1,8 +1,8 @@
 import 'core-js/stable'
 import siFunciona from 'si-funciona'
-import getCoordinateRanges from '../bounds/getCoordinateRanges.js'
-import getMatrixRange from '../bounds/getMatrixRange.js'
-import point from '../point/point.js'
+import getCoordinateRanges from '../bounds/getCoordinateRanges'
+import getMatrixRange from '../bounds/getMatrixRange'
+import point from '../point/point'
 
 /**
  * Get random point within a matrix

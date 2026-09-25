@@ -1,5 +1,5 @@
-import getAbsolutePoint from './getAbsolutePoint.js'
-import point from './point.js'
+import getAbsolutePoint from './getAbsolutePoint'
+import point from './point'
 
 describe('getAbsolutePoint', () => {
     test('should return the point with absolute coordinates', () => {

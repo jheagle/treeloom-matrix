@@ -1,7 +1,7 @@
 import 'core-js/stable'
-import getLineIntersectPoints from './getLineIntersectPoints.js'
-import getLineRelativePoints from './getLineRelativePoints.js'
-import getLineTransitionPoints from './getLineTransitionPoints.js'
+import getLineIntersectPoints from './getLineIntersectPoints'
+import getLineRelativePoints from './getLineRelativePoints'
+import getLineTransitionPoints from './getLineTransitionPoints'
 
 /**
  * Find the points that a line would cross from 'start' to 'end' and return the array of points

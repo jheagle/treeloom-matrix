@@ -1,4 +1,4 @@
-import alterCoordinates from './alterCoordinates.js'
+import alterCoordinates from './alterCoordinates'
 
 describe('alterCoordinates', () => {
     test('should alter the coordinates of a point using a function', () => {

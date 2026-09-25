@@ -4,6 +4,7 @@
   "description": "Create element matrix using json-dom.",
   "version": "0.0.0",
   "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "author": "Joshua Heagle",
   "license": "GNU",
   "scripts": {
@@ -12,6 +13,7 @@
     "htmldocs": "jsdoc -R MAIN.md -c ./.jsdoc.conf.js -d docs",
     "readme": "gulp readme",
     "test": "gulp testFull",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.type-tests.json",
     "test:quick": "gulp testQuick",
     "watch": "gulp watchFull",
     "watch:test": "gulp watchTest"
@@ -19,11 +21,12 @@
   "devDependencies": {
     "js-build-tools": "^5.2.0",
     "standard": "^17.1.2",
-    "test-filesystem": "^1.5.1"
+    "test-filesystem": "^1.5.1",
+    "typescript": "^6.0.3"
   },
   "dependencies": {
-    "json-dom": "github:jheagle/json-dom",
-    "si-funciona": "^2.6.1"
+    "json-dom": "github:jheagle/JSON-DOM",
+    "si-funciona": "^2.7.1"
   },
   "directories": {
     "test": "tests"

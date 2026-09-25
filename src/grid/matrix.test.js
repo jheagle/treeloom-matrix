@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import matrix from './matrix.js'
+import matrix from './matrix'
 
 describe('matrix', () => {
   test('default one layer with no dimensions', () => {

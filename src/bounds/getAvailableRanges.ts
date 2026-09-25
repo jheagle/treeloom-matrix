@@ -1,6 +1,6 @@
 import 'core-js/stable'
-import getCoordinateRanges from './getCoordinateRanges.js'
-import getMatrixRange from './getMatrixRange.js'
+import getCoordinateRanges from './getCoordinateRanges'
+import getMatrixRange from './getMatrixRange'
 
 /**
  * Find the range of the matrix from smallest to largest point.

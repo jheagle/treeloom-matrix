@@ -1,8 +1,8 @@
 import 'core-js/stable'
-import areEqualPoints from '../point/areEqualPoints.js'
-import direction from '../point/direction.js'
-import point from '../point/point.js'
-import pointDifference from '../point/pointDifference.js'
+import areEqualPoints from '../point/areEqualPoints'
+import direction from '../point/direction'
+import point from '../point/point'
+import pointDifference from '../point/pointDifference'
 import siFunciona from 'si-funciona'
 
 /**

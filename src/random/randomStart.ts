@@ -1,12 +1,12 @@
 import 'core-js/stable'
 import siFunciona from 'si-funciona'
-import alterCoordinates from '../point/alterCoordinates.js'
-import getCoordinateRanges from '../bounds/getCoordinateRanges.js'
-import getHighestAbsoluteCoordinate from '../point/getHighestAbsoluteCoordinate.js'
-import getMatrixRange from '../bounds/getMatrixRange.js'
-import nextCell from '../point/nextCell.js'
-import randomPoint from './randomPoint.js'
-import randDirectionWithInterval from './randDirectionWithInterval.js'
+import alterCoordinates from '../point/alterCoordinates'
+import getCoordinateRanges from '../bounds/getCoordinateRanges'
+import getHighestAbsoluteCoordinate from '../point/getHighestAbsoluteCoordinate'
+import getMatrixRange from '../bounds/getMatrixRange'
+import nextCell from '../point/nextCell'
+import randomPoint from './randomPoint'
+import randDirectionWithInterval from './randDirectionWithInterval'
 
 /**
  * Generate a random starting point for a line with the provided length and direction.

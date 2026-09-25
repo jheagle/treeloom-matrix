@@ -1,5 +1,5 @@
-import areEqualPoints from './areEqualPoints.js'
-import point from './point.js'
+import areEqualPoints from './areEqualPoints'
+import point from './point'
 
 describe('areEqualPoints', () => {
     test('returns true for points with identical coordinates', () => {

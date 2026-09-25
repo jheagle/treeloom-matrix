@@ -1,5 +1,5 @@
-import point from '../point/point.js'
-import getLineIntersectPoints from './getLineIntersectPoints.js'
+import point from '../point/point'
+import getLineIntersectPoints from './getLineIntersectPoints'
 
 describe('getLineIntersectPoints', () => {
   test('returns an array of points from 0,0,0 to 0,0,3', () => {

@@ -1,8 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import point from '../point/point.js'
-import getPointsForLines from './getPointsForLines.js'
+import point from '../point/point'
+import getPointsForLines from './getPointsForLines'
 
 describe('getPointsLines', () => {
   test('takes several point arrays and returns points for all lines', () => {

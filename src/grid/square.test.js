@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import square from './square.js'
+import square from './square'
 
 describe('square', () => {
   test('grid is 1 deep, and 10 by 10', () => {

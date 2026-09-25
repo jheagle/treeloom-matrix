@@ -1,10 +1,10 @@
 /**
  * @jest-environment jsdom
  */
-import testPointsBetween from './testPointsBetween.js'
-import getDomItemFromPoint from '../lookup/getDomItemFromPoint.js'
-import point from '../point/point.js'
-import buildMatrix from '../grid/buildMatrix.js'
+import testPointsBetween from './testPointsBetween'
+import getDomItemFromPoint from '../lookup/getDomItemFromPoint'
+import point from '../point/point'
+import buildMatrix from '../grid/buildMatrix'
 
 const validClass = 'valid-item'
 const testFn = (pn, m) => getDomItemFromPoint(pn, m).attributes.className.includes(validClass)

@@ -1,7 +1,7 @@
 import 'core-js/stable'
-import point from './point.js'
-import nextCell from './nextCell.js'
-import prevCell from './prevCell.js'
+import point from './point'
+import nextCell from './nextCell'
+import prevCell from './prevCell'
 import siFunciona from 'si-funciona'
 
 /**

@@ -1,5 +1,5 @@
-import matrix from './matrix.js'
-import updateMatrixPoints from './updateMatrixPoints.js'
+import matrix from './matrix'
+import updateMatrixPoints from './updateMatrixPoints'
 import jsonDom from 'json-dom'
 import siFunciona from 'si-funciona'
 

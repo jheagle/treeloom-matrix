@@ -1,9 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-import buildMatrix from '../grid/buildMatrix.js'
-import getAvailableRanges from './getAvailableRanges.js'
-import point from '../point/point.js'
+import buildMatrix from '../grid/buildMatrix'
+import getAvailableRanges from './getAvailableRanges'
+import point from '../point/point'
 
 describe('getAvailableRanges', () => {
   test('returns the correct ranges for a matrix', () => {

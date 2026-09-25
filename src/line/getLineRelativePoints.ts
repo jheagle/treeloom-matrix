@@ -1,9 +1,9 @@
 import 'core-js/stable'
-import areEqualPoints from '../point/areEqualPoints.js'
-import getAbsolutePoint from '../point/getAbsolutePoint.js'
-import point from '../point/point.js'
-import pointsToStep from './pointsToStep.js'
-import sortAxisCoordinate from '../point/sortAxisCoordinates.js'
+import areEqualPoints from '../point/areEqualPoints'
+import getAbsolutePoint from '../point/getAbsolutePoint'
+import point from '../point/point'
+import pointsToStep from './pointsToStep'
+import sortAxisCoordinate from '../point/sortAxisCoordinates'
 
 /**
  * Having provided two points, return an array of integer transition points connecting 'start' and 'end'.
