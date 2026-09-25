@@ -15,36 +15,20 @@ import lookup from './lookup/index'
 import random from './random/index'
 
 /**
- * Store a reference to this scope which will be Window if rendered via browser
+ * Store a reference to the global scope which will be Window if rendered via browser
  */
-const root = this || window || global || {}
+const root = (typeof window !== 'undefined' ? window : {}) as unknown as Record<string, unknown>
 
 /**
  * Store reference to any pre-existing module of the same name
- * @type {module|*}
  */
-const previousMatrixDom = root.jsonDom || {}
+const previousMatrixDom = root.matrixDom
 
 /**
- * All methods exported from this module are encapsulated within jsonDom.
- * @typedef {module:matrixDom} matrixDom
+ * All the functions of matrix-dom.
  */
-const matrixDom = {}
-root.matrixDom = matrixDom
-
-/**
- * Return a reference to this library while preserving the original same-named library
- * @function
- * @returns {module:matrixDom~matrixDom|module:matrixFunctions|module:matrixObjects}
- */
-const noConflict = () => {
-  root.jsonDom = previousMatrixDom
-  return matrixDom
-}
-matrixDom.noConflict = noConflict
-
-export default root.matrixDom = Object.assign(
-  matrixDom,
+const matrixDom = Object.assign(
+  {},
   point,
   line,
   grid,
@@ -52,3 +36,23 @@ export default root.matrixDom = Object.assign(
   lookup,
   random
 )
+
+type MatrixDomFunctions = typeof matrixDom
+
+/**
+ * The matrix-dom library: all of its functions and noConflict.
+ */
+export interface MatrixDom extends MatrixDomFunctions {
+  /** Return a reference to this library while preserving the original same-named library */
+  noConflict: () => MatrixDom
+}
+
+const noConflict = (): MatrixDom => {
+  root.matrixDom = previousMatrixDom
+  return library
+}
+
+const library: MatrixDom = Object.assign(matrixDom, { noConflict })
+root.matrixDom = library
+
+export default library
