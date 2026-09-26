@@ -1,3 +1,6 @@
+/**
+ * Random points and directions within a matrix, for example to place a line of a given length.
+ */
 import 'core-js/stable'
 import randDirection from './randDirection'
 import randDirectionWithInterval from './randDirectionWithInterval'

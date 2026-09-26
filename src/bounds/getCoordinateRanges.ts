@@ -6,7 +6,6 @@ import { Point } from '../point/types'
 
 /**
  * Using a max an min point, find the ranges for each coordinate.
- * @function
  * @param minPoint - The smallest point in the matrix
  * @param maxPoint - The largest point in the matrix
  * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.

@@ -4,7 +4,6 @@ import { Point } from './types'
 
 /**
  * Return the point with absolute coordinates.
- * @function
  * @param pnt - A Point to have coordinates switched to absolute units.
  */
 const getAbsolutePoint = (pnt: Point): Point => siFunciona.mapObject(pnt, Math.abs, 0)

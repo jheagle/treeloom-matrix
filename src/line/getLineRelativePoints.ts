@@ -9,7 +9,6 @@ import { Line } from './types'
 
 /**
  * Having provided two points, return an array of integer transition points connecting 'start' and 'end'.
- * @function
  * @param start - The starting location of the line.
  * @param end - The final line destination.
  * @param line - The resulting line to connect start and end.
