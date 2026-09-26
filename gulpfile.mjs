@@ -1,3 +1,3 @@
 export {
-  build, defaultCmd as default, readme, testFull, testQuick, typescript, watchFull, watchTest
+  build, defaultCmd as default, docs, testFull, testQuick, typescript, watchFull, watchTest
 } from 'js-build-tools/gulpfile.base.mjs'
