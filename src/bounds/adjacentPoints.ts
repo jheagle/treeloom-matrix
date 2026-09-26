@@ -8,7 +8,6 @@ import { Matrix } from '../grid/types'
 
 /**
  * Return all valid points surrounding a provided point
- * @function
  * @param pnt - The point we want to find adjacent points for.
  * @param matrix - The matrix having the point.
  */

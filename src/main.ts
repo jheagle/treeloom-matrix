@@ -1,9 +1,5 @@
 /**
  * All of the Matrix DOM functions and objects necessary to create DOM Matrices
- * @file
- * @author Joshua Heagle <joshuaheagle@gmail.com>
- * @version 1.0.0
- * @module matrixDom
  */
 
 import 'core-js/stable'

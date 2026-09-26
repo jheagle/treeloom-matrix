@@ -7,7 +7,6 @@ import { Matrix } from '../grid/types'
 
 /**
  * Return all points which touch on edges (not diagonal)
- * @function
  * @param pnt - The point we want to find adjacent points for.
  * @param matrix - The matrix having the point.
  */

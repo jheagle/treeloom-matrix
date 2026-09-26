@@ -14,7 +14,6 @@ require('core-js/stable')
 const getAxisLengths_1 = __importDefault(require('./getAxisLengths'))
 /**
  * Test if the provided point exists in the matrix.
- * @function
  * @param pnt - Provide a point to validate.
  * @param matrix - The matrix that contains valid points.
  */

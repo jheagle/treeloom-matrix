@@ -10,6 +10,9 @@ const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
+/**
+ * Points and directions in a matrix: create them, compare them and step from one to the next.
+ */
 require('core-js/stable')
 const alterCoordinates_1 = __importDefault(require('./alterCoordinates'))
 const areEqualPoints_1 = __importDefault(require('./areEqualPoints'))

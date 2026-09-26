@@ -16,7 +16,6 @@ const getLineRelativePoints_1 = __importDefault(require('./getLineRelativePoints
 const getLineTransitionPoints_1 = __importDefault(require('./getLineTransitionPoints'))
 /**
  * Find the points that a line would cross from 'start' to 'end' and return the array of points
- * @function
  * @param start - The starting location of the line.
  * @param end - The final line destination.
  * @param type - select the method used for finding the points: 'relative'|'intersect'|'transition'

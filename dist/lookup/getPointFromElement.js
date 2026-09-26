@@ -14,7 +14,6 @@ require('core-js/stable')
 const point_1 = __importDefault(require('../point/point'))
 /**
  * Retrieve the point associated with the provided element.
- * @function
  * @param elem - Provide an element associated with a point.
  */
 const getPointFromElement = elem => {

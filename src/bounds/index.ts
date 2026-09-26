@@ -1,3 +1,6 @@
+/**
+ * Measure a matrix and check points against it: axis lengths, ranges, valid points and the points around a point.
+ */
 import 'core-js/stable'
 import adjacentEdgePoints from './adjacentEdgePoints'
 import adjacentPoints from './adjacentPoints'

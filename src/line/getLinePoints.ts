@@ -7,7 +7,6 @@ import { Line, LineType } from './types'
 
 /**
  * Find the points that a line would cross from 'start' to 'end' and return the array of points
- * @function
  * @param start - The starting location of the line.
  * @param end - The final line destination.
  * @param type - select the method used for finding the points: 'relative'|'intersect'|'transition'

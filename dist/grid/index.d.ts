@@ -1,3 +1,7 @@
+/**
+ * The grid itself: a matrix of layers, rows and columns (json-dom items with the matrix.* traits), where each
+ * column holds a tile with its point.
+ */
 import 'core-js/stable';
 declare const _default: {
     buildMatrix: (dimensions?: import("../point/types").Point, props?: import("./types").MatrixProps) => import("./types").Matrix;

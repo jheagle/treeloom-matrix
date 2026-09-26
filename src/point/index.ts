@@ -1,3 +1,6 @@
+/**
+ * Points and directions in a matrix: create them, compare them and step from one to the next.
+ */
 import 'core-js/stable'
 import alterCoordinates from './alterCoordinates'
 import areEqualPoints from './areEqualPoints'

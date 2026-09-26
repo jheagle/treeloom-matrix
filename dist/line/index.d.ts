@@ -1,3 +1,6 @@
+/**
+ * Lines between points: find the points a line passes through, and test the points along it.
+ */
 import 'core-js/stable';
 declare const _default: {
     checkInBetween: (start: import("../point/types").Point, end: import("../point/types").Point, matrix: import("../grid/types").Matrix, func: import("./types").TestPointStatus, inclusive?: boolean) => boolean;

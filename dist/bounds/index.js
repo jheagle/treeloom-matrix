@@ -10,6 +10,9 @@ const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
+/**
+ * Measure a matrix and check points against it: axis lengths, ranges, valid points and the points around a point.
+ */
 require('core-js/stable')
 const adjacentEdgePoints_1 = __importDefault(require('./adjacentEdgePoints'))
 const adjacentPoints_1 = __importDefault(require('./adjacentPoints'))

@@ -14,7 +14,6 @@ require('core-js/stable')
 const checkValidPoint_1 = __importDefault(require('../bounds/checkValidPoint'))
 /**
  * Retrieve the DomItem associated with the provided point
- * @function
  * @param pnt - A point corresponding to a DomItem.
  * @param matrix - The matrix containing the point.
  * @returns The DomItem (a column), or false when the point is not in the matrix

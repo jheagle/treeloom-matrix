@@ -18,7 +18,6 @@ const pointDifference_1 = __importDefault(require('../point/pointDifference'))
 const si_funciona_1 = __importDefault(require('si-funciona'))
 /**
  * Find the lowest common ratio of the difference between the coordinates of two points.
- * @function
  * @param start - The first point to assess.
  * @param end - The other point to assess.
  * @returns A Direction, or just the point 0, 0, 0 when both points are the same

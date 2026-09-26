@@ -1,3 +1,6 @@
+/**
+ * Measure a matrix and check points against it: axis lengths, ranges, valid points and the points around a point.
+ */
 import 'core-js/stable';
 declare const _default: {
     adjacentEdgePoints: (pnt: import("../point/types").Point, matrix: import("../grid/types").Matrix) => import("../point/types").Point[];

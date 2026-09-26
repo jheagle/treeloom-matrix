@@ -20,7 +20,6 @@
     const checkValidPoint_1 = __importDefault(require('./checkValidPoint'))
     /**
  * Return all points which touch on edges (not diagonal)
- * @function
  * @param pnt - The point we want to find adjacent points for.
  * @param matrix - The matrix having the point.
  */
@@ -50,7 +49,6 @@
     const checkValidPoint_1 = __importDefault(require('./checkValidPoint'))
     /**
  * Return all valid points surrounding a provided point
- * @function
  * @param pnt - The point we want to find adjacent points for.
  * @param matrix - The matrix having the point.
  */
@@ -74,7 +72,6 @@
     const getAxisLengths_1 = __importDefault(require('./getAxisLengths'))
     /**
  * Test if the provided point exists in the matrix.
- * @function
  * @param pnt - Provide a point to validate.
  * @param matrix - The matrix that contains valid points.
  */
@@ -98,7 +95,6 @@
     require('core-js/stable')
     /**
  * Return an array of all the points in the matrix
- * @function
  * @param matrix - The matrix (or any level of it) to retrieve points from.
  * @param allPoints - The array of points to add the found points to.
  */
@@ -123,7 +119,6 @@
     const getMatrixRange_1 = __importDefault(require('./getMatrixRange'))
     /**
  * Find the range of the matrix from smallest to largest point.
- * @function
  * @param matrix - The matrix that the point will be contained within.
  * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.
  * @returns The number of available coordinates on each axis
@@ -151,7 +146,6 @@
     const point_1 = __importDefault(require('../point/point'))
     /**
  * Return point-like object with all of the axis lengths.
- * @function
  * @param matrix - The matrix to get the dimensions of.
  */
     const getAxisLengths = matrix => (0, point_1.default)(matrix.children[0].children[0].children.length, matrix.children[0].children.length, matrix.children.length)
@@ -176,7 +170,6 @@
     const pointDifference_1 = __importDefault(require('../point/pointDifference'))
     /**
  * Using a max an min point, find the ranges for each coordinate.
- * @function
  * @param minPoint - The smallest point in the matrix
  * @param maxPoint - The largest point in the matrix
  * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.
@@ -214,7 +207,6 @@
     const si_funciona_1 = __importDefault(require('si-funciona'))
     /**
  * Get the lowest and highest points in the matrix as the range.
- * @function
  * @param matrix - The matrix to find the range of.
  * @returns The lowest point followed by the highest point (empty when the matrix has no points)
  */
@@ -257,6 +249,9 @@
     Object.defineProperty(exports, '__esModule', {
       value: true
     })
+    /**
+ * Measure a matrix and check points against it: axis lengths, ranges, valid points and the points around a point.
+ */
     require('core-js/stable')
     const adjacentEdgePoints_1 = __importDefault(require('./adjacentEdgePoints'))
     const adjacentPoints_1 = __importDefault(require('./adjacentPoints'))
@@ -296,7 +291,6 @@
     const si_funciona_1 = __importDefault(require('si-funciona'))
     /**
  * Create the matrix and assign the correct points to each tile.
- * @function
  * @param dimensions - The dimensions of the matrix to be created (x is the width, y the height, z the depth)
  * @param props - Additional properties to be added to each level of the matrix
  */
@@ -329,7 +323,6 @@
     const buildMatrix_1 = __importDefault(require('./buildMatrix'))
     /**
  * Return a matrix where x, y, and z are equal
- * @function
  * @param props - Additional data to append to each level: x for each column (the tile data), y for each row, z for
  * each layer and matrix for the matrix itself. Each is a single configuration object, not an array.
  * @param size - Used to define the width, height and depth as equal values
@@ -364,6 +357,10 @@
     Object.defineProperty(exports, '__esModule', {
       value: true
     })
+    /**
+ * The grid itself: a matrix of layers, rows and columns (json-dom items with the matrix.* traits), where each
+ * column holds a tile with its point.
+ */
     require('core-js/stable')
     const buildMatrix_1 = __importDefault(require('./buildMatrix'))
     const cube_1 = __importDefault(require('./cube'))
@@ -400,7 +397,6 @@
     require('./traits')
     /**
  * Create a 3d matrix of i with x by y by z size, add additional objects for each layer as well
- * @function
  * @param dimensions - The dimensions of the matrix to be created (x is the width, y the height, z the depth)
  * @param props - Additional properties to be added to each level of the matrix
  */
@@ -472,7 +468,6 @@
     const buildMatrix_1 = __importDefault(require('./buildMatrix'))
     /**
  * Return a single layer matrix where x and y are equal
- * @function
  * @param props - Additional data to append to each level: x for each column (the tile data), y for each row, z for
  * each layer and matrix for the matrix itself. Each is a single configuration object, not an array.
  * @param size - Used to define the width and height as equal values (depth is set to 1)
@@ -503,7 +498,6 @@
     require('core-js/stable')
     /**
  * A default tile in the Matrix, the point is filled in once the matrix is built (see updateMatrixPoints).
- * @function
  */
     const tile = () => ({
       point: {}
@@ -562,7 +556,6 @@
     const traits_1 = require('./traits')
     /**
  * Update the points for each DomItem in a matrix.
- * @function
  * @param matrix - Provide a matrix to update the points for.
  * @returns The same matrix, with the point of each column updated
  */
@@ -618,7 +611,6 @@
     /**
  * Given two points, check the cells between using specified function.
  * When inclusive is set to true the provided start and end points will also be tested
- * @function
  * @param start - The beginning point to check.
  * @param end - The terminating point to check between.
  * @param matrix - The grid of points all the points can exist on.
@@ -647,7 +639,6 @@
     const pointsToStep_1 = __importDefault(require('./pointsToStep'))
     /**
  * Recursively find the next point in a line from 'start' to 'end' using the provided direction. Return an array of points connecting 'start' and 'end'.
- * @function
  * @param direction - The step from each point to the next
  * @param start - The point to add to the line, then continue from
  * @param end - The final line destination
@@ -660,7 +651,6 @@
     /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
  * includes 'start' (line[0]) and 'end' (line[line.length-1]). Line contains only exactly matched points
- * @function
  * @param start - The starting location of the line.
  * @param end - The final line destination.
  * @param line - The resulting line to connect start and end.
@@ -694,7 +684,6 @@
     const getLineTransitionPoints_1 = __importDefault(require('./getLineTransitionPoints'))
     /**
  * Find the points that a line would cross from 'start' to 'end' and return the array of points
- * @function
  * @param start - The starting location of the line.
  * @param end - The final line destination.
  * @param type - select the method used for finding the points: 'relative'|'intersect'|'transition'
@@ -736,7 +725,6 @@
     const sortAxisCoordinates_1 = __importDefault(require('../point/sortAxisCoordinates'))
     /**
  * Having provided two points, return an array of integer transition points connecting 'start' and 'end'.
- * @function
  * @param start - The starting location of the line.
  * @param end - The final line destination.
  * @param line - The resulting line to connect start and end.
@@ -805,7 +793,6 @@
     /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
  * includes 'start' (line[0]) and 'end' (line[line.length-1])
- * @function
  * @param start - The starting location of the line.
  * @param end - The final line destination.
  * @param line - The resulting line to connect start and end.
@@ -853,7 +840,6 @@
     /**
  * Takes an array of arrays containing two points each. Calls getPointsLine for each array of points. Returns an
  * array of all points captured for each line segment
- * @function
  * @param lines - An array of line segments, each is the arguments for getLinePoints (start, end, and optionally the type).
  * @returns All the points of all the lines in one array
  */
@@ -873,6 +859,9 @@
     Object.defineProperty(exports, '__esModule', {
       value: true
     })
+    /**
+ * Lines between points: find the points a line passes through, and test the points along it.
+ */
     require('core-js/stable')
     const checkInBetween_1 = __importDefault(require('./checkInBetween'))
     const getLineIntersectPoints_1 = __importDefault(require('./getLineIntersectPoints'))
@@ -912,7 +901,6 @@
     const point_1 = __importDefault(require('../point/point'))
     /**
  * Given a start point, line length, and a direction, generate the end point of the line.
- * @function
  * @param start - The selected starting point.
  * @param length - The total length of the line.
  * @param dir - The direction of the line.
@@ -941,7 +929,6 @@
     const si_funciona_1 = __importDefault(require('si-funciona'))
     /**
  * Find the lowest common ratio of the difference between the coordinates of two points.
- * @function
  * @param start - The first point to assess.
  * @param end - The other point to assess.
  * @returns A Direction, or just the point 0, 0, 0 when both points are the same
@@ -978,7 +965,6 @@
     /**
  * Given a start and end point, test the points between with the provided function. Return the points as part of true
  * and / or false properties based on the test.
- * @function
  * @param start - The beginning point to check.
  * @param end - The terminating point to check between.
  * @param matrix - The grid of points all the points can exist on.
@@ -1012,7 +998,6 @@
     const getPointFromElement_1 = __importDefault(require('./getPointFromElement'))
     /**
  * Retrieve the DomItem associated with the provided element in the matrix
- * @function
  * @param elem - Provide an element having an associated DomItem.
  * @param matrix - The matrix potentially containing the DomItem with Point.
  * @returns The DomItem (a column), or false when the element is not in the matrix
@@ -1037,7 +1022,6 @@
     const checkValidPoint_1 = __importDefault(require('../bounds/checkValidPoint'))
     /**
  * Retrieve the DomItem associated with the provided point
- * @function
  * @param pnt - A point corresponding to a DomItem.
  * @param matrix - The matrix containing the point.
  * @returns The DomItem (a column), or false when the point is not in the matrix
@@ -1061,7 +1045,6 @@
     const point_1 = __importDefault(require('../point/point'))
     /**
  * Retrieve the point associated with the provided DomItem.
- * @function
  * @param domItem - Provide a DomItem (a column) associated with a point.
  * @param useIfExists - Whether to use the existing point if it exists.
  */
@@ -1097,7 +1080,6 @@
     const point_1 = __importDefault(require('../point/point'))
     /**
  * Retrieve the point associated with the provided element.
- * @function
  * @param elem - Provide an element associated with a point.
  */
     const getPointFromElement = elem => {
@@ -1126,6 +1108,9 @@
     Object.defineProperty(exports, '__esModule', {
       value: true
     })
+    /**
+ * Move between the points, the items and the elements of a matrix.
+ */
     require('core-js/stable')
     const getDomItemFromElement_1 = __importDefault(require('./getDomItemFromElement'))
     const getDomItemFromPoint_1 = __importDefault(require('./getDomItemFromPoint'))
@@ -1143,10 +1128,6 @@
 
     /**
  * All of the Matrix DOM functions and objects necessary to create DOM Matrices
- * @file
- * @author Joshua Heagle <joshuaheagle@gmail.com>
- * @version 1.0.0
- * @module matrixDom
  */
     const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
       return mod && mod.__esModule
@@ -1212,7 +1193,6 @@
     require('core-js/stable')
     /**
  * Given two points, compare the x, y, and z of each to see if they are the same
- * @function
  * @param p1 - The first point to compare
  * @param p2 - The other point to be compared
  */
@@ -1270,7 +1250,6 @@
     const si_funciona_1 = __importDefault(require('si-funciona'))
     /**
  * Return the point with absolute coordinates.
- * @function
  * @param pnt - A Point to have coordinates switched to absolute units.
  */
     const getAbsolutePoint = pnt => si_funciona_1.default.mapObject(pnt, Math.abs, 0)
@@ -1287,7 +1266,6 @@
     require('core-js/stable')
     /**
  * Having provided a coordinate number, find all corresponding axis, return the first match.
- * @function
  * @param pnt - The Point containing a matching coordinate.
  * @param coordinate - The coordinate to search for.
  * @returns The first matching axis, or false when no axis matches
@@ -1312,7 +1290,6 @@
     const si_funciona_1 = __importDefault(require('si-funciona'))
     /**
  * Return the first coordinate number with the highest absolute value.
- * @function
  * @param pnt - A Point to be assessed.
  */
     const getHighestAbsoluteCoordinate = pnt => si_funciona_1.default.reduceObject(pnt, si_funciona_1.default.absoluteMax, 0)
@@ -1331,6 +1308,9 @@
     Object.defineProperty(exports, '__esModule', {
       value: true
     })
+    /**
+ * Points and directions in a matrix: create them, compare them and step from one to the next.
+ */
     require('core-js/stable')
     const alterCoordinates_1 = __importDefault(require('./alterCoordinates'))
     const areEqualPoints_1 = __importDefault(require('./areEqualPoints'))
@@ -1374,7 +1354,6 @@
     const point_1 = __importDefault(require('./point'))
     /**
  * Based on provided point and point direction generate next point.
- * @function
  * @param pnt - Provide the current / initial point
  * @param dir - Provide the direction to be applied to find the next point
  */
@@ -1390,7 +1369,6 @@
     require('core-js/stable')
     /**
  * Store the point data for an x, y, z Matrix.
- * @function
  * @param x - The numeric value for X-coordinate
  * @param y - The numeric value for Y-coordinate
  * @param z - The numeric value for Z-coordinate (default to 0 for 2D Matrix)
@@ -1419,7 +1397,6 @@
     const point_1 = __importDefault(require('./point'))
     /**
  * Based on provided point and another point, get a point with the difference between each axis
- * @function
  * @param start - The first point to compare
  * @param end - The other point to be compared
  */
@@ -1443,7 +1420,6 @@
     const point_1 = __importDefault(require('./point'))
     /**
  * Based on provided point and point direction generate previous point.
- * @function
  * @param pnt - Provide the current / initial point
  * @param dir - Provide the direction to be applied to find the previous point
  */
@@ -1459,7 +1435,6 @@
     require('core-js/stable')
     /**
  * Take a point and sort the coordinates, return an array of them sorted.
- * @function
  * @param pnt - the Point to be sorted
  * @param direction - 'asc'|'desc'
  */
@@ -1492,6 +1467,9 @@
     Object.defineProperty(exports, '__esModule', {
       value: true
     })
+    /**
+ * Random points and directions within a matrix, for example to place a line of a given length.
+ */
     require('core-js/stable')
     const randDirection_1 = __importDefault(require('./randDirection'))
     const randDirectionWithInterval_1 = __importDefault(require('./randDirectionWithInterval'))
@@ -1531,7 +1509,6 @@
     /**
  * Get random direction point.
  * NOTE: It is possible that the direction is 0,0,0 indicating no move.
- * @function
  * @param matrix - The matrix that the point will be contained within.
  * @param start - The point the direction will start from, null for random
  * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.
@@ -1587,7 +1564,6 @@
     /**
  * Get random direction point.
  * NOTE: It is possible that the direction is 0,0,0 indicating no move.
- * @function
  * @param matrix - The matrix that the point will be contained within.
  * @param start - The point the direction will start from, null for random
  * @param interval - An interval where a line would intersect in the direction, null for random
@@ -1658,7 +1634,6 @@
     const point_1 = __importDefault(require('../point/point'))
     /**
  * Get random point within a matrix
- * @function
  * @param matrix - The matrix that the point will be contained within.
  * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.
  */
@@ -1693,7 +1668,6 @@
     const randDirectionWithInterval_1 = __importDefault(require('./randDirectionWithInterval'))
     /**
  * Generate a random starting point for a line with the provided length and direction.
- * @function
  * @param matrix - The matrix in which the line will be drawn.
  * @param length - The intended length (intersected tiles) of the resulting line, null will use a random length within the matrix
  * @param dir - The direction the line will extend towards, null will use a random direction within the matrix
@@ -1751,7 +1725,6 @@
     const getMatrixRange_1 = __importDefault(require('../bounds/getMatrixRange'))
     /**
  * Check each axis of the matrix to see if a length interval would fit within.
- * @function
  * @param matrix - The matrix that the point will be contained within.
  * @param interval - An interval where a line would intersect in the direction, null for unspecified
  * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.

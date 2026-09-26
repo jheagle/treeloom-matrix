@@ -2,7 +2,6 @@ import 'core-js/stable';
 import { Point } from './types';
 /**
  * Given two points, compare the x, y, and z of each to see if they are the same
- * @function
  * @param p1 - The first point to compare
  * @param p2 - The other point to be compared
  */

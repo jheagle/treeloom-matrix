@@ -14,7 +14,6 @@ require('core-js/stable')
 const buildMatrix_1 = __importDefault(require('./buildMatrix'))
 /**
  * Return a single layer matrix where x and y are equal
- * @function
  * @param props - Additional data to append to each level: x for each column (the tile data), y for each row, z for
  * each layer and matrix for the matrix itself. Each is a single configuration object, not an array.
  * @param size - Used to define the width and height as equal values (depth is set to 1)

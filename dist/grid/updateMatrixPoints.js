@@ -16,7 +16,6 @@ const point_1 = __importDefault(require('../point/point'))
 const traits_1 = require('./traits')
 /**
  * Update the points for each DomItem in a matrix.
- * @function
  * @param matrix - Provide a matrix to update the points for.
  * @returns The same matrix, with the point of each column updated
  */

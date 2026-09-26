@@ -10,19 +10,19 @@
   "scripts": {
     "build": "gulp build",
     "dev": "gulp",
-    "htmldocs": "jsdoc -R MAIN.md -c ./.jsdoc.conf.js -d docs",
-    "readme": "gulp readme",
+    "docs": "gulp docs",
     "test": "gulp testFull",
-    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.type-tests.json",
     "test:quick": "gulp testQuick",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.type-tests.json",
     "watch": "gulp watchFull",
     "watch:test": "gulp watchTest"
   },
   "devDependencies": {
+    "js-build-tools": "^5.3.1",
     "json-dom": "github:jheagle/JSON-DOM",
-    "js-build-tools": "^5.2.0",
     "standard": "^17.1.2",
     "test-filesystem": "^1.5.1",
+    "typedoc": "^0.28.20",
     "typescript": "^6.0.3"
   },
   "dependencies": {

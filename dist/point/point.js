@@ -6,7 +6,6 @@ Object.defineProperty(exports, '__esModule', {
 require('core-js/stable')
 /**
  * Store the point data for an x, y, z Matrix.
- * @function
  * @param x - The numeric value for X-coordinate
  * @param y - The numeric value for Y-coordinate
  * @param z - The numeric value for Z-coordinate (default to 0 for 2D Matrix)

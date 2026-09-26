@@ -16,7 +16,6 @@ const json_dom_1 = __importDefault(require('json-dom'))
 const si_funciona_1 = __importDefault(require('si-funciona'))
 /**
  * Create the matrix and assign the correct points to each tile.
- * @function
  * @param dimensions - The dimensions of the matrix to be created (x is the width, y the height, z the depth)
  * @param props - Additional properties to be added to each level of the matrix
  */

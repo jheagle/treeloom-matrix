@@ -3,7 +3,6 @@ import { Point } from '../point/types';
 import { Matrix } from '../grid/types';
 /**
  * Test if the provided point exists in the matrix.
- * @function
  * @param pnt - Provide a point to validate.
  * @param matrix - The matrix that contains valid points.
  */
