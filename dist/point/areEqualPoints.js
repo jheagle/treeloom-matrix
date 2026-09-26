@@ -6,7 +6,6 @@ Object.defineProperty(exports, '__esModule', {
 require('core-js/stable')
 /**
  * Given two points, compare the x, y, and z of each to see if they are the same
- * @function
  * @param p1 - The first point to compare
  * @param p2 - The other point to be compared
  */

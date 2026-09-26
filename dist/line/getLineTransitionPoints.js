@@ -18,7 +18,6 @@ const getHighestAbsoluteCoordinate_1 = __importDefault(require('../point/getHigh
 /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
  * includes 'start' (line[0]) and 'end' (line[line.length-1])
- * @function
  * @param start - The starting location of the line.
  * @param end - The final line destination.
  * @param line - The resulting line to connect start and end.

@@ -10,6 +10,9 @@ const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
+/**
+ * Random points and directions within a matrix, for example to place a line of a given length.
+ */
 require('core-js/stable')
 const randDirection_1 = __importDefault(require('./randDirection'))
 const randDirectionWithInterval_1 = __importDefault(require('./randDirectionWithInterval'))

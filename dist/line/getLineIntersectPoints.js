@@ -15,7 +15,6 @@ const areEqualPoints_1 = __importDefault(require('../point/areEqualPoints'))
 const pointsToStep_1 = __importDefault(require('./pointsToStep'))
 /**
  * Recursively find the next point in a line from 'start' to 'end' using the provided direction. Return an array of points connecting 'start' and 'end'.
- * @function
  * @param direction - The step from each point to the next
  * @param start - The point to add to the line, then continue from
  * @param end - The final line destination
@@ -28,7 +27,6 @@ const nextIntersect = (direction, start, end, line = []) => {
 /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
  * includes 'start' (line[0]) and 'end' (line[line.length-1]). Line contains only exactly matched points
- * @function
  * @param start - The starting location of the line.
  * @param end - The final line destination.
  * @param line - The resulting line to connect start and end.

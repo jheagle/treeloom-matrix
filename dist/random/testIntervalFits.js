@@ -15,7 +15,6 @@ const getCoordinateRanges_1 = __importDefault(require('../bounds/getCoordinateRa
 const getMatrixRange_1 = __importDefault(require('../bounds/getMatrixRange'))
 /**
  * Check each axis of the matrix to see if a length interval would fit within.
- * @function
  * @param matrix - The matrix that the point will be contained within.
  * @param interval - An interval where a line would intersect in the direction, null for unspecified
  * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.

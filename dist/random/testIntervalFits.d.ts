@@ -4,7 +4,6 @@ import { Matrix } from '../grid/types';
 import { IntervalFits } from './types';
 /**
  * Check each axis of the matrix to see if a length interval would fit within.
- * @function
  * @param matrix - The matrix that the point will be contained within.
  * @param interval - An interval where a line would intersect in the direction, null for unspecified
  * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.

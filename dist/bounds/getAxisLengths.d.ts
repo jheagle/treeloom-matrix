@@ -3,7 +3,6 @@ import { Point } from '../point/types';
 import { Matrix } from '../grid/types';
 /**
  * Return point-like object with all of the axis lengths.
- * @function
  * @param matrix - The matrix to get the dimensions of.
  */
 declare const getAxisLengths: (matrix: Matrix) => Point;

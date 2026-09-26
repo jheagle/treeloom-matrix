@@ -2,10 +2,6 @@
 
 /**
  * All of the Matrix DOM functions and objects necessary to create DOM Matrices
- * @file
- * @author Joshua Heagle <joshuaheagle@gmail.com>
- * @version 1.0.0
- * @module matrixDom
  */
 const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
   return mod && mod.__esModule

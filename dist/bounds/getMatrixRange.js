@@ -17,7 +17,6 @@ const getAllPoints_1 = __importDefault(require('./getAllPoints'))
 const si_funciona_1 = __importDefault(require('si-funciona'))
 /**
  * Get the lowest and highest points in the matrix as the range.
- * @function
  * @param matrix - The matrix to find the range of.
  * @returns The lowest point followed by the highest point (empty when the matrix has no points)
  */

@@ -10,6 +10,9 @@ const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
+/**
+ * Lines between points: find the points a line passes through, and test the points along it.
+ */
 require('core-js/stable')
 const checkInBetween_1 = __importDefault(require('./checkInBetween'))
 const getLineIntersectPoints_1 = __importDefault(require('./getLineIntersectPoints'))

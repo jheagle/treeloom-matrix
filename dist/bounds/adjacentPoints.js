@@ -20,7 +20,6 @@ const nextCell_1 = __importDefault(require('../point/nextCell'))
 const checkValidPoint_1 = __importDefault(require('./checkValidPoint'))
 /**
  * Return all valid points surrounding a provided point
- * @function
  * @param pnt - The point we want to find adjacent points for.
  * @param matrix - The matrix having the point.
  */

@@ -15,7 +15,6 @@ const testPointsBetween_1 = __importDefault(require('./testPointsBetween'))
 /**
  * Given two points, check the cells between using specified function.
  * When inclusive is set to true the provided start and end points will also be tested
- * @function
  * @param start - The beginning point to check.
  * @param end - The terminating point to check between.
  * @param matrix - The grid of points all the points can exist on.

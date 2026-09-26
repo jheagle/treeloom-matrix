@@ -14,7 +14,6 @@ require('core-js/stable')
 const point_1 = __importDefault(require('../point/point'))
 /**
  * Return point-like object with all of the axis lengths.
- * @function
  * @param matrix - The matrix to get the dimensions of.
  */
 const getAxisLengths = matrix => (0, point_1.default)(matrix.children[0].children[0].children.length, matrix.children[0].children.length, matrix.children.length)

@@ -10,6 +10,9 @@ const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, '__esModule', {
   value: true
 })
+/**
+ * Move between the points, the items and the elements of a matrix.
+ */
 require('core-js/stable')
 const getDomItemFromElement_1 = __importDefault(require('./getDomItemFromElement'))
 const getDomItemFromPoint_1 = __importDefault(require('./getDomItemFromPoint'))

@@ -6,7 +6,6 @@ Object.defineProperty(exports, '__esModule', {
 require('core-js/stable')
 /**
  * Take a point and sort the coordinates, return an array of them sorted.
- * @function
  * @param pnt - the Point to be sorted
  * @param direction - 'asc'|'desc'
  */
