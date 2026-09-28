@@ -6,7 +6,7 @@
     "enabled": true,
     "from": "src",
     "index": "MAIN.md",
-    "to": "docs"
+    "to": "../joshuaheagle.local/projects/matrix-dom/docs"
   },
   "typescript": {
     "config": "tsconfig.json",
