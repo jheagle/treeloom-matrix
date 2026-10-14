@@ -19,6 +19,7 @@ const getAllPoints_1 = __importDefault(require("./getAllPoints"));
 const getAvailableRanges_1 = __importDefault(require("./getAvailableRanges"));
 const getAxisLengths_1 = __importDefault(require("./getAxisLengths"));
 const getCoordinateRanges_1 = __importDefault(require("./getCoordinateRanges"));
+const getLayerPoints_1 = __importDefault(require("./getLayerPoints"));
 const getMatrixRange_1 = __importDefault(require("./getMatrixRange"));
 exports.default = {
   adjacentEdgePoints: adjacentEdgePoints_1.default,
@@ -28,5 +29,6 @@ exports.default = {
   getAvailableRanges: getAvailableRanges_1.default,
   getAxisLengths: getAxisLengths_1.default,
   getCoordinateRanges: getCoordinateRanges_1.default,
+  getLayerPoints: getLayerPoints_1.default,
   getMatrixRange: getMatrixRange_1.default
 };
