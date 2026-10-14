@@ -34,6 +34,7 @@ declare const matrixDom: {
     getLinePoints: (start: import("./point/types").Point, end: import("./point/types").Point, type?: import("./line/types").LineType, line?: import("./line/types").Line) => import("./line/types").Line;
     getLineRelativePoints: (start: import("./point/types").Point, end: import("./point/types").Point, line?: import("./line/types").Line) => import("./line/types").Line;
     getLineTransitionPoints: (start: import("./point/types").Point, end: import("./point/types").Point, line?: import("./line/types").Line, transitions?: number | null) => import("./line/types").Line;
+    getLinesOfLength: (dimensions: import("./point/types").Point, length: number) => import("./line/types").Line[];
     getPointsForLines: (lines: import("./line/types").LineSegment[]) => import("./line/types").Line;
     lineEndPoint: (start: import("./point/types").Point, length: number, dir: import("./point/types").Point | import("./point/types").Direction) => import("./point/types").Point;
     pointsToStep: (start: import("./point/types").Point, end: import("./point/types").Point) => import("./point/types").Point | import("./point/types").Direction;

@@ -7,6 +7,7 @@ import getLineIntersectPoints from './getLineIntersectPoints'
 import getLinePoints from './getLinePoints'
 import getLineRelativePoints from './getLineRelativePoints'
 import getLineTransitionPoints from './getLineTransitionPoints'
+import getLinesOfLength from './getLinesOfLength'
 import getPointsForLines from './getPointsForLines'
 import lineEndPoint from './lineEndPoint'
 import pointsToStep from './pointsToStep'
@@ -18,6 +19,7 @@ export default {
   getLinePoints,
   getLineRelativePoints,
   getLineTransitionPoints,
+  getLinesOfLength,
   getPointsForLines,
   lineEndPoint,
   pointsToStep,
