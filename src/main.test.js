@@ -27,6 +27,7 @@ const publicApi = [
   'getLinePoints',
   'getLineRelativePoints',
   'getLineTransitionPoints',
+  'getLinesOfLength',
   'getMatrixRange',
   'getPointFromDomItem',
   'getPointFromElement',
