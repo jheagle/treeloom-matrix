@@ -23,6 +23,7 @@ const publicApi = [
   'getDomItemFromPoint',
   'getFirstAxisOfCoordinate',
   'getHighestAbsoluteCoordinate',
+  'getLayerPoints',
   'getLineIntersectPoints',
   'getLinePoints',
   'getLineRelativePoints',

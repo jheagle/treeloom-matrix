@@ -9,6 +9,7 @@ import getAllPoints from './getAllPoints'
 import getAvailableRanges from './getAvailableRanges'
 import getAxisLengths from './getAxisLengths'
 import getCoordinateRanges from './getCoordinateRanges'
+import getLayerPoints from './getLayerPoints'
 import getMatrixRange from './getMatrixRange'
 
 export default {
@@ -19,5 +20,6 @@ export default {
   getAvailableRanges,
   getAxisLengths,
   getCoordinateRanges,
+  getLayerPoints,
   getMatrixRange
 }
