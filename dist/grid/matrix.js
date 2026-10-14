@@ -35,7 +35,12 @@ const matrix = (dimensions = {
   attributes: {
     className: 'matrix'
   },
-  children: si_funciona_1.default.buildArray(si_funciona_1.default.mergeObjectsMutable(json_dom_1.default.createDomItem({
+  // Each level is built fresh per array element (not built once then cloned via buildArray) so every
+  // createDomItem call actually runs and stamps its own real id - cloning a single built item would copy
+  // that one id onto every layer/row/tile instead (the id-collision bug behind JSON-DOM#100).
+  children: Array.from({
+    length: dimensions.z
+  }, () => si_funciona_1.default.mergeObjectsMutable(json_dom_1.default.createDomItem({
     axis: 'z',
     has: {
       'matrix.layer': true
@@ -44,7 +49,9 @@ const matrix = (dimensions = {
     attributes: {
       className: 'layer'
     },
-    children: si_funciona_1.default.buildArray(si_funciona_1.default.mergeObjectsMutable(json_dom_1.default.createDomItem({
+    children: Array.from({
+      length: dimensions.y
+    }, () => si_funciona_1.default.mergeObjectsMutable(json_dom_1.default.createDomItem({
       axis: 'y',
       has: {
         'matrix.row': true
@@ -53,7 +60,9 @@ const matrix = (dimensions = {
       attributes: {
         className: 'row'
       },
-      children: si_funciona_1.default.buildArray(si_funciona_1.default.mergeObjectsMutable(json_dom_1.default.createDomItem({
+      children: Array.from({
+        length: dimensions.x
+      }, () => si_funciona_1.default.mergeObjectsMutable(json_dom_1.default.createDomItem({
         axis: 'x',
         has: {
           'matrix.column': true
@@ -63,8 +72,8 @@ const matrix = (dimensions = {
           className: 'column'
         },
         children: []
-      }), (0, tile_1.default)(), props.x), dimensions.x)
-    }), props.y), dimensions.y)
-  }), props.z), dimensions.z)
+      }), (0, tile_1.default)(), props.x))
+    }), props.y))
+  }), props.z))
 }), props.matrix);
 exports.default = matrix;
