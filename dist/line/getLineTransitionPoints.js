@@ -1,20 +1,18 @@
-'use strict'
+"use strict";
 
-const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
-  return mod && mod.__esModule
-    ? mod
-    : {
-        default: mod
-      }
-}
-Object.defineProperty(exports, '__esModule', {
+var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+Object.defineProperty(exports, "__esModule", {
   value: true
-})
-require('core-js/stable')
-const areEqualPoints_1 = __importDefault(require('../point/areEqualPoints'))
-const point_1 = __importDefault(require('../point/point'))
-const pointDifference_1 = __importDefault(require('../point/pointDifference'))
-const getHighestAbsoluteCoordinate_1 = __importDefault(require('../point/getHighestAbsoluteCoordinate'))
+});
+require("core-js/stable");
+const areEqualPoints_1 = __importDefault(require("../point/areEqualPoints"));
+const point_1 = __importDefault(require("../point/point"));
+const pointDifference_1 = __importDefault(require("../point/pointDifference"));
+const getHighestAbsoluteCoordinate_1 = __importDefault(require("../point/getHighestAbsoluteCoordinate"));
 /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
  * includes 'start' (line[0]) and 'end' (line[line.length-1])
@@ -26,21 +24,21 @@ const getHighestAbsoluteCoordinate_1 = __importDefault(require('../point/getHigh
  */
 const getLineTransitionPoints = (start, end, line = [], transitions = null) => {
   if ((0, areEqualPoints_1.default)(start, end)) {
-    return [start]
+    return [start];
   }
-  const difference = (0, pointDifference_1.default)(start, end)
+  const difference = (0, pointDifference_1.default)(start, end);
   if (transitions === null) {
-    transitions = Math.abs((0, getHighestAbsoluteCoordinate_1.default)(difference))
+    transitions = Math.abs((0, getHighestAbsoluteCoordinate_1.default)(difference));
   }
   for (let i = 0; i <= transitions; ++i) {
     // Calculate the fractional distance (t) from 0 to 1
-    const t = i / transitions
+    const t = i / transitions;
     // Linear interpolation formula
-    const x = start.x + (end.x - start.x) * t
-    const y = start.y + (end.y - start.y) * t
-    const z = start.z + (end.z - start.z) * t
-    line.push((0, point_1.default)(x, y, z))
+    const x = start.x + (end.x - start.x) * t;
+    const y = start.y + (end.y - start.y) * t;
+    const z = start.z + (end.z - start.z) * t;
+    line.push((0, point_1.default)(x, y, z));
   }
-  return line
-}
-exports.default = getLineTransitionPoints
+  return line;
+};
+exports.default = getLineTransitionPoints;

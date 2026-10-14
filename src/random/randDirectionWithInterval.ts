@@ -28,7 +28,7 @@ const randDirectionWithInterval = (matrix: Matrix, start: Point | null = null, i
   const [minPoint, maxPoint] = getMatrixRange(matrix)
   // Use the available ranges as the max ranges
   maxRanges = getCoordinateRanges(minPoint, maxPoint, maxRanges)
-  let intervalFits = testIntervalFits(matrix, interval, start === null ? maxRanges : pointDifference(start, maxRanges))
+  const intervalFits = testIntervalFits(matrix, interval, start === null ? maxRanges : pointDifference(start, maxRanges))
   if (!intervalFits.x && !intervalFits.y && !intervalFits.z) {
     throw new Error(`The given interval (${interval}) will not fit in this matrix`)
   }

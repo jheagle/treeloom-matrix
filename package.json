@@ -18,7 +18,7 @@
     "watch:test": "gulp watchTest"
   },
   "devDependencies": {
-    "js-build-tools": "^5.3.1",
+    "js-build-tools": "^6.1.0",
     "json-dom": "github:jheagle/JSON-DOM",
     "standard": "^17.1.2",
     "test-filesystem": "^1.5.1",
