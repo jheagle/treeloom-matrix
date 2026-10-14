@@ -22,56 +22,50 @@ const matrix = (
       attributes: {
         className: 'matrix'
       },
-      children: siFunciona.buildArray(
-        siFunciona.mergeObjectsMutable(
-          jsonDom.createDomItem(
-            {
-              axis: 'z',
-              has: { 'matrix.layer': true },
-              tagName: 'div',
-              attributes: {
-                className: 'layer'
-              },
-              children: siFunciona.buildArray(
-                siFunciona.mergeObjectsMutable(
-                  jsonDom.createDomItem(
-                    {
-                      axis: 'y',
-                      has: { 'matrix.row': true },
-                      tagName: 'div',
-                      attributes: {
-                        className: 'row'
-                      },
-                      children: siFunciona.buildArray(
-                        siFunciona.mergeObjectsMutable(
-                          jsonDom.createDomItem(
-                            {
-                              axis: 'x',
-                              has: { 'matrix.column': true },
-                              tagName: 'div',
-                              attributes: {
-                                className: 'column'
-                              },
-                              children: []
-                            }
-                          ),
-                          tile(),
-                          props.x
-                        ),
-                        dimensions.x
-                      )
-                    }
-                  ),
-                  props.y
-                ),
-                dimensions.y
-              )
-            }
-          ),
-          props.z
+      // Each level is built fresh per array element (not built once then cloned via buildArray) so every
+      // createDomItem call actually runs and stamps its own real id - cloning a single built item would copy
+      // that one id onto every layer/row/tile instead (the id-collision bug behind JSON-DOM#100).
+      children: Array.from({ length: dimensions.z }, () => siFunciona.mergeObjectsMutable(
+        jsonDom.createDomItem(
+          {
+            axis: 'z',
+            has: { 'matrix.layer': true },
+            tagName: 'div',
+            attributes: {
+              className: 'layer'
+            },
+            children: Array.from({ length: dimensions.y }, () => siFunciona.mergeObjectsMutable(
+              jsonDom.createDomItem(
+                {
+                  axis: 'y',
+                  has: { 'matrix.row': true },
+                  tagName: 'div',
+                  attributes: {
+                    className: 'row'
+                  },
+                  children: Array.from({ length: dimensions.x }, () => siFunciona.mergeObjectsMutable(
+                    jsonDom.createDomItem(
+                      {
+                        axis: 'x',
+                        has: { 'matrix.column': true },
+                        tagName: 'div',
+                        attributes: {
+                          className: 'column'
+                        },
+                        children: []
+                      }
+                    ),
+                    tile(),
+                    props.x
+                  ))
+                }
+              ),
+              props.y
+            ))
+          }
         ),
-        dimensions.z
-      )
+        props.z
+      ))
     }
   ),
   props.matrix

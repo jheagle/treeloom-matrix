@@ -18,6 +18,19 @@ describe('matrix', () => {
     expect(grid.children[0].children[0].children.length).toBe(10)
   })
 
+  test('every layer, row and tile gets its own unique id, not a copy of the first one built', () => {
+    const grid = matrix({ x: 3, y: 3, z: 3 })
+    const ids = []
+    grid.children.forEach(layer => {
+      ids.push(layer.id)
+      layer.children.forEach(row => {
+        ids.push(row.id)
+        row.children.forEach(tile => ids.push(tile.id))
+      })
+    })
+    expect(new Set(ids).size).toBe(ids.length)
+  })
+
   // test add custom classname properties to each layer, row, and column, matrix
   test('add custom classname properties to each layer, row, and column, matrix', () => {
     const grid = matrix(
