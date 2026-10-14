@@ -13,13 +13,13 @@ import { Direction, Point } from '../point/types'
  * @returns A Direction, or just the point 0, 0, 0 when both points are the same
  */
 const pointsToStep = (start: Point, end: Point): Point | Direction => {
-    if (areEqualPoints(start, end)) {
-        return point(0, 0, 0)
-    }
-    const difference = pointDifference(start, end)
-    const simplifiedCoordinates = siFunciona.simplestRatio(difference.x, difference.y, difference.z)
-    const [dx, dy, dz] = simplifiedCoordinates as number[]
-    return direction(dx, dy, dz)
+  if (areEqualPoints(start, end)) {
+    return point(0, 0, 0)
+  }
+  const difference = pointDifference(start, end)
+  const simplifiedCoordinates = siFunciona.simplestRatio(difference.x, difference.y, difference.z)
+  const [dx, dy, dz] = simplifiedCoordinates as number[]
+  return direction(dx, dy, dz)
 }
 
 export default pointsToStep

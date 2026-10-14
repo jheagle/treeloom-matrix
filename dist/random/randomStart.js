@@ -1,24 +1,22 @@
-'use strict'
+"use strict";
 
-const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
-  return mod && mod.__esModule
-    ? mod
-    : {
-        default: mod
-      }
-}
-Object.defineProperty(exports, '__esModule', {
+var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+Object.defineProperty(exports, "__esModule", {
   value: true
-})
-require('core-js/stable')
-const si_funciona_1 = __importDefault(require('si-funciona'))
-const alterCoordinates_1 = __importDefault(require('../point/alterCoordinates'))
-const getCoordinateRanges_1 = __importDefault(require('../bounds/getCoordinateRanges'))
-const getHighestAbsoluteCoordinate_1 = __importDefault(require('../point/getHighestAbsoluteCoordinate'))
-const getMatrixRange_1 = __importDefault(require('../bounds/getMatrixRange'))
-const nextCell_1 = __importDefault(require('../point/nextCell'))
-const randomPoint_1 = __importDefault(require('./randomPoint'))
-const randDirectionWithInterval_1 = __importDefault(require('./randDirectionWithInterval'))
+});
+require("core-js/stable");
+const si_funciona_1 = __importDefault(require("si-funciona"));
+const alterCoordinates_1 = __importDefault(require("../point/alterCoordinates"));
+const getCoordinateRanges_1 = __importDefault(require("../bounds/getCoordinateRanges"));
+const getHighestAbsoluteCoordinate_1 = __importDefault(require("../point/getHighestAbsoluteCoordinate"));
+const getMatrixRange_1 = __importDefault(require("../bounds/getMatrixRange"));
+const nextCell_1 = __importDefault(require("../point/nextCell"));
+const randomPoint_1 = __importDefault(require("./randomPoint"));
+const randDirectionWithInterval_1 = __importDefault(require("./randDirectionWithInterval"));
 /**
  * Generate a random starting point for a line with the provided length and direction.
  * @param matrix - The matrix in which the line will be drawn.
@@ -27,35 +25,35 @@ const randDirectionWithInterval_1 = __importDefault(require('./randDirectionWith
  * @param maxRanges - The maximum ranges for the point. If null, the matrix will be used.
  */
 const randomStart = (matrix, length = null, dir = null, maxRanges = null) => {
-  const [minPoint, maxPoint] = (0, getMatrixRange_1.default)(matrix)
-  maxRanges = (0, getCoordinateRanges_1.default)(minPoint, maxPoint, maxRanges)
+  const [minPoint, maxPoint] = (0, getMatrixRange_1.default)(matrix);
+  maxRanges = (0, getCoordinateRanges_1.default)(minPoint, maxPoint, maxRanges);
   // length must be at least 1, and less than the highest coordinate in the matrix
-  const lineLength = length ?? si_funciona_1.default.randomInteger((0, getHighestAbsoluteCoordinate_1.default)(maxRanges) - 2, 1)
+  const lineLength = length ?? si_funciona_1.default.randomInteger((0, getHighestAbsoluteCoordinate_1.default)(maxRanges) - 2, 1);
   if (dir === null) {
-    dir = (0, randDirectionWithInterval_1.default)(matrix, null, lineLength, maxRanges)
+    dir = (0, randDirectionWithInterval_1.default)(matrix, null, lineLength, maxRanges);
   }
   // check direction has at least one non-zero component
   if (dir.x === 0 && dir.y === 0 && dir.z === 0) {
-    throw new Error('Direction must have at least one non-zero coordinate')
+    throw new Error('Direction must have at least one non-zero coordinate');
   }
   const multipleToLength = (0, alterCoordinates_1.default)(dir, coordinate => {
     if (lineLength % coordinate !== 0) {
-      return null
+      return null;
     }
-    return lineLength / coordinate
-  })
+    return lineLength / coordinate;
+  });
   const timesToLength = si_funciona_1.default.reduceObject(multipleToLength, (times, coordinate) => {
     if (coordinate === null) {
-      return times
+      return times;
     }
     if (coordinate < times) {
-      return coordinate
+      return coordinate;
     }
-    return times
-  }, lineLength)
+    return times;
+  }, lineLength);
   for (let i = 0; i < timesToLength; ++i) {
-    maxRanges = dir.prev(maxRanges)
+    maxRanges = dir.prev(maxRanges);
   }
-  return (0, nextCell_1.default)(minPoint, (0, randomPoint_1.default)(matrix, maxRanges))
-}
-exports.default = randomStart
+  return (0, nextCell_1.default)(minPoint, (0, randomPoint_1.default)(matrix, maxRanges));
+};
+exports.default = randomStart;

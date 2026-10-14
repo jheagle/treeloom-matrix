@@ -1,9 +1,9 @@
-'use strict'
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
-})
-require('core-js/stable')
+});
+require("core-js/stable");
 /**
  * Store the point data for an x, y, z Matrix.
  * @param x - The numeric value for X-coordinate
@@ -14,5 +14,5 @@ const point = (x, y, z = 0) => ({
   x,
   y,
   z
-})
-exports.default = point
+});
+exports.default = point;

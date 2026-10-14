@@ -7,6 +7,6 @@ import { Coordinate, Point } from './types'
  * @param y - The numeric value for Y-coordinate
  * @param z - The numeric value for Z-coordinate (default to 0 for 2D Matrix)
  */
-const point = (x: Coordinate, y: Coordinate, z: Coordinate = 0): Point => ({ x: x, y: y, z: z })
+const point = (x: Coordinate, y: Coordinate, z: Coordinate = 0): Point => ({ x, y, z })
 
 export default point

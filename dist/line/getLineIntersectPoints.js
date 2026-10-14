@@ -1,18 +1,16 @@
-'use strict'
+"use strict";
 
-const __importDefault = void 0 && (void 0).__importDefault || function (mod) {
-  return mod && mod.__esModule
-    ? mod
-    : {
-        default: mod
-      }
-}
-Object.defineProperty(exports, '__esModule', {
+var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+Object.defineProperty(exports, "__esModule", {
   value: true
-})
-require('core-js/stable')
-const areEqualPoints_1 = __importDefault(require('../point/areEqualPoints'))
-const pointsToStep_1 = __importDefault(require('./pointsToStep'))
+});
+require("core-js/stable");
+const areEqualPoints_1 = __importDefault(require("../point/areEqualPoints"));
+const pointsToStep_1 = __importDefault(require("./pointsToStep"));
 /**
  * Recursively find the next point in a line from 'start' to 'end' using the provided direction. Return an array of points connecting 'start' and 'end'.
  * @param direction - The step from each point to the next
@@ -21,9 +19,9 @@ const pointsToStep_1 = __importDefault(require('./pointsToStep'))
  * @param line - The points found so far
  */
 const nextIntersect = (direction, start, end, line = []) => {
-  line.push(start)
-  return (0, areEqualPoints_1.default)(start, end) ? line : nextIntersect(direction, direction.next(start), end, line)
-}
+  line.push(start);
+  return (0, areEqualPoints_1.default)(start, end) ? line : nextIntersect(direction, direction.next(start), end, line);
+};
 /**
  * Having provided two points, return an array of transition points connecting 'start' and 'end'. Return array
  * includes 'start' (line[0]) and 'end' (line[line.length-1]). Line contains only exactly matched points
@@ -33,10 +31,10 @@ const nextIntersect = (direction, start, end, line = []) => {
  */
 const getLineIntersectPoints = (start, end, line = []) => {
   if ((0, areEqualPoints_1.default)(start, end)) {
-    return line.concat([start])
+    return line.concat([start]);
   }
   // start and end differ here, so the step is a Direction
-  const simplifiedDirection = (0, pointsToStep_1.default)(start, end)
-  return nextIntersect(simplifiedDirection, start, end, line)
-}
-exports.default = getLineIntersectPoints
+  const simplifiedDirection = (0, pointsToStep_1.default)(start, end);
+  return nextIntersect(simplifiedDirection, start, end, line);
+};
+exports.default = getLineIntersectPoints;

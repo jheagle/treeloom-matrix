@@ -10,7 +10,7 @@ import { Matrix, MatrixProps } from './types'
  */
 const square = ({ x = {}, y = {}, z = {}, matrix = {} }: MatrixProps = {}, size: number): Matrix => buildMatrix(
   { x: size, y: size, z: 1 },
-  { x: x, y: y, z: z, matrix: matrix }
+  { x, y, z, matrix }
 )
 
 export default square
