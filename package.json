@@ -2,7 +2,7 @@
   "name": "matrix-dom",
   "private": true,
   "description": "Create element matrix using json-dom.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "author": "Joshua Heagle",
@@ -21,12 +21,12 @@
     "js-build-tools": "^6.1.0",
     "json-dom": "github:jheagle/JSON-DOM",
     "standard": "^17.1.2",
-    "test-filesystem": "^1.5.1",
+    "test-filesystem": "^2.0.0",
     "typedoc": "^0.28.20",
     "typescript": "^6.0.3"
   },
   "dependencies": {
-    "si-funciona": "^2.7.1"
+    "si-funciona": "^2.7.3"
   },
   "peerDependencies": {
     "json-dom": ">=1.4.0"
