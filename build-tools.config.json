@@ -2,6 +2,12 @@
   "browser": {
     "name": "matrix-dom"
   },
+  "copyFiles": [
+    {
+      "from": "browser/*.js",
+      "to": "../joshuaheagle.local/projects/matrix-dom/browser"
+    }
+  ],
   "docs": {
     "enabled": true,
     "from": "src",
