@@ -29,4 +29,8 @@ const matrixDom = {
 
 root.matrixDom = matrixDom
 
-export default matrixDom
+// `export =` (not `export default`) so the compiled module.exports IS matrixDom directly, not
+// { default: matrixDom } - browserify's standalone UMD wrapper exposes a bundle's module.exports
+// as the global/CommonJS/AMD value verbatim, so a default export would otherwise surface as
+// window.matrixDom.default instead of window.matrixDom itself.
+export = matrixDom

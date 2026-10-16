@@ -52,4 +52,4 @@ declare const matrixDom: {
     prevCell: (pnt: import("./point/types").Point, dir: import("./point/types").Point | import("./point/types").Direction) => import("./point/types").Point;
     sortAxisCoordinates: (pnt: import("./point/types").Point, direction?: "asc" | "desc") => import("./point/types").AxisCoordinatePairs;
 };
-export default matrixDom;
+export = matrixDom;
