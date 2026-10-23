@@ -12,7 +12,9 @@
     "enabled": true,
     "from": "src",
     "index": "MAIN.md",
-    "to": "../joshuaheagle.local/projects/matrix-dom/docs"
+    "to": "../joshuaheagle.local/projects/matrix-dom/docs",
+    "inBuild": false,
+    "gitRevision": "main"
   },
   "typescript": {
     "config": "tsconfig.json",
