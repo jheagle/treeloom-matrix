@@ -8,7 +8,6 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 const point_1 = __importDefault(require("./point"));
 /**
  * Based on provided point and another point, get a point with the difference between each axis

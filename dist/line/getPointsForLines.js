@@ -10,7 +10,6 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 const getLinePoints_1 = __importDefault(require("./getLinePoints"));
 /**
  * Takes an array of arrays containing two points each. Calls getPointsLine for each array of points. Returns an

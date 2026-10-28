@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Point } from './types';
 /**
  * Return the point with absolute coordinates.

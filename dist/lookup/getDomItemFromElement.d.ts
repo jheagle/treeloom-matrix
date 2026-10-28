@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Matrix, MatrixColumn } from '../grid/types';
 /**
  * Retrieve the DomItem associated with the provided element in the matrix

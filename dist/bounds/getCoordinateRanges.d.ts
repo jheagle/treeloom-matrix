@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Point } from '../point/types';
 /**
  * Using a max an min point, find the ranges for each coordinate.

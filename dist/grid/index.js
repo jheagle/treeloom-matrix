@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", {
  * The grid itself: a matrix of layers, rows and columns (json-dom items with the matrix.* traits), where each
  * column holds a tile with its point.
  */
-require("core-js/stable");
 const buildMatrix_1 = __importDefault(require("./buildMatrix"));
 const cube_1 = __importDefault(require("./cube"));
 const matrix_1 = __importDefault(require("./matrix"));

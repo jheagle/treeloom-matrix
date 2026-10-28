@@ -1,7 +1,3 @@
-/**
- * Random points and directions within a matrix, for example to place a line of a given length.
- */
-import 'core-js/stable';
 declare const _default: {
     randDirection: (matrix: import("../grid/types").Matrix, start?: import("../point/types").Point | null, maxRanges?: import("../point/types").Point | null) => import("../point/types").Direction;
     randDirectionWithInterval: (matrix: import("../grid/types").Matrix, start?: import("../point/types").Point | null, interval?: number | null, maxRanges?: import("../point/types").Point | null) => import("../point/types").Direction;

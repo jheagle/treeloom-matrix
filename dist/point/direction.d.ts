@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Coordinate, Direction } from './types';
 /**
  * Create a direction object having x, y, z properties and next/prev methods

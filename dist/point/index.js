@@ -11,7 +11,6 @@ Object.defineProperty(exports, "__esModule", {
 /**
  * Points and directions in a matrix: create them, compare them and step from one to the next.
  */
-require("core-js/stable");
 const alterCoordinates_1 = __importDefault(require("./alterCoordinates"));
 const areEqualPoints_1 = __importDefault(require("./areEqualPoints"));
 const direction_1 = __importDefault(require("./direction"));

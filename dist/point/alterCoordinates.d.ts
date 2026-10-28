@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Axis, Coordinate, Point, PointLike } from './types';
 /**
  * Alter the coordinates of a point using a function. The point (or its coordinates) may be null, then the function

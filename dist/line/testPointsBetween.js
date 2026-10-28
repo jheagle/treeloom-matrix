@@ -11,7 +11,6 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 const getLinePoints_1 = __importDefault(require("./getLinePoints"));
 /**
  * Given a start and end point, test the points between with the provided function. Return the points as part of true

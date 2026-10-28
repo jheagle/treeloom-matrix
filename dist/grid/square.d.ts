@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Matrix, MatrixProps } from './types';
 /**
  * Return a single layer matrix where x and y are equal

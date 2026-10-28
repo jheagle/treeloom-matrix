@@ -9,7 +9,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.hasTrait = void 0;
-require("core-js/stable");
 const json_dom_1 = __importDefault(require("json-dom"));
 /**
  * The typed version of json-dom's hasTrait, it narrows an item to the trait it was checked for.

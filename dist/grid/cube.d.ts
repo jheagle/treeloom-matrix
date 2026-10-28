@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Matrix, MatrixProps } from './types';
 /**
  * Return a matrix where x, y, and z are equal

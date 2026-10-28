@@ -8,7 +8,6 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 const buildMatrix_1 = __importDefault(require("./buildMatrix"));
 /**
  * Return a matrix where x, y, and z are equal

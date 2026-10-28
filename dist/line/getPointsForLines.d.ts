@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Line, LineSegment } from './types';
 /**
  * Takes an array of arrays containing two points each. Calls getPointsLine for each array of points. Returns an

@@ -8,7 +8,6 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 const checkValidPoint_1 = __importDefault(require("../bounds/checkValidPoint"));
 const direction_1 = __importDefault(require("../point/direction"));
 const getAxisLengths_1 = __importDefault(require("../bounds/getAxisLengths"));

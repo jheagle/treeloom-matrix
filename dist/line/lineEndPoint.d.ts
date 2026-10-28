@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Direction, Point } from '../point/types';
 /**
  * Given a start point, line length, and a direction, generate the end point of the line.

@@ -8,7 +8,6 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 const getAxisLengths_1 = __importDefault(require("./getAxisLengths"));
 /**
  * Test if the provided point exists in the matrix.

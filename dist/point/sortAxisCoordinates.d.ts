@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { AxisCoordinatePairs, Point } from './types';
 /**
  * Take a point and sort the coordinates, return an array of them sorted.

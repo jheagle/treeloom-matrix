@@ -8,7 +8,6 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 const getLineIntersectPoints_1 = __importDefault(require("./getLineIntersectPoints"));
 const getLineRelativePoints_1 = __importDefault(require("./getLineRelativePoints"));
 const getLineTransitionPoints_1 = __importDefault(require("./getLineTransitionPoints"));
