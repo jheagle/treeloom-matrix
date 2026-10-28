@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import testPointsBetween from './testPointsBetween'
 import { Point } from '../point/types'
 import { Matrix } from '../grid/types'

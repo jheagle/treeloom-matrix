@@ -1,7 +1,6 @@
 /**
  * Lines between points: find the points a line passes through, and test the points along it.
  */
-import 'core-js/stable'
 import checkInBetween from './checkInBetween'
 import getLineIntersectPoints from './getLineIntersectPoints'
 import getLinePoints from './getLinePoints'

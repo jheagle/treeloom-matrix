@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import point from '../point/point'
 import nextCell from '../point/nextCell'
 import checkValidPoint from './checkValidPoint'

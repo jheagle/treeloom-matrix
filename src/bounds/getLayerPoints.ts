@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import getAllPoints from './getAllPoints'
 import { Point } from '../point/types'
 import { MatrixLevel } from '../grid/types'

@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import buildMatrix from './buildMatrix'
 import { Matrix, MatrixProps } from './types'
 

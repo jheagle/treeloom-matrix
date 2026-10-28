@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import { Point } from '../point/types'
 import { MatrixColumn, MatrixLevel } from '../grid/types'
 

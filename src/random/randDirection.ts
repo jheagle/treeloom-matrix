@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import checkValidPoint from '../bounds/checkValidPoint'
 import direction from '../point/direction'
 import getAxisLengths from '../bounds/getAxisLengths'

@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import getLineIntersectPoints from './getLineIntersectPoints'
 import getLineRelativePoints from './getLineRelativePoints'
 import getLineTransitionPoints from './getLineTransitionPoints'

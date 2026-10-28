@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import point from './point'
 import { Axis, Coordinate, Point, PointLike } from './types'
 

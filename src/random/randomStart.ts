@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import siFunciona from 'si-funciona'
 import alterCoordinates from '../point/alterCoordinates'
 import getCoordinateRanges from '../bounds/getCoordinateRanges'

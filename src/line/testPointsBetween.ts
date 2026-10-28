@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import getLinePoints from './getLinePoints'
 import { Point } from '../point/types'
 import { Matrix } from '../grid/types'

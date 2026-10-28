@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import getCoordinateRanges from './getCoordinateRanges'
 import getMatrixRange from './getMatrixRange'
 import { Point } from '../point/types'

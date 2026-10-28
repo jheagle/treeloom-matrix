@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import getPointsForLines from '../line/getPointsForLines'
 import point from '../point/point'
 import nextCell from '../point/nextCell'

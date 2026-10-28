@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import point from '../point/point'
 import { Point } from '../point/types'
 import { Matrix } from '../grid/types'

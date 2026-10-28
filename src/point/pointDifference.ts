@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import point from './point'
 import { Point } from './types'
 
