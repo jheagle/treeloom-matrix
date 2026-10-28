@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import './traits';
 import { Matrix, MatrixProps } from './types';
 import { Point } from '../point/types';

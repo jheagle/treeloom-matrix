@@ -5,7 +5,6 @@ require("core-js/modules/esnext.iterator.filter.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 /**
  * Having provided a coordinate number, find all corresponding axis, return the first match.
  * @param pnt - The Point containing a matching coordinate.

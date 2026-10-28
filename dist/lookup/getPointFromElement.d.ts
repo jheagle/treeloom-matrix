@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Point } from '../point/types';
 /**
  * Retrieve the point associated with the provided element.

@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Direction, Point } from '../point/types';
 /**
  * Find the lowest common ratio of the difference between the coordinates of two points.

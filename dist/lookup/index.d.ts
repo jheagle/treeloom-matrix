@@ -1,7 +1,3 @@
-/**
- * Move between the points, the items and the elements of a matrix.
- */
-import 'core-js/stable';
 declare const _default: {
     getDomItemFromElement: (elem: Node, matrix: import("../grid/types").Matrix) => import("../grid/types").MatrixColumn | false;
     getDomItemFromPoint: (pnt: import("../point/types").Point, matrix: import("../grid/types").Matrix) => import("../grid/types").MatrixColumn | false;

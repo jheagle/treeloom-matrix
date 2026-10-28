@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Coordinate, Point } from './types';
 /**
  * Store the point data for an x, y, z Matrix.

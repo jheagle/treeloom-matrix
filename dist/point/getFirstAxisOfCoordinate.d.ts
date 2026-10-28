@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Axis, Coordinate, Point } from './types';
 /**
  * Having provided a coordinate number, find all corresponding axis, return the first match.

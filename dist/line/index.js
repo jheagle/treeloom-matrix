@@ -11,7 +11,6 @@ Object.defineProperty(exports, "__esModule", {
 /**
  * Lines between points: find the points a line passes through, and test the points along it.
  */
-require("core-js/stable");
 const checkInBetween_1 = __importDefault(require("./checkInBetween"));
 const getLineIntersectPoints_1 = __importDefault(require("./getLineIntersectPoints"));
 const getLinePoints_1 = __importDefault(require("./getLinePoints"));

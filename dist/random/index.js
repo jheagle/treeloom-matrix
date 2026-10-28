@@ -11,7 +11,6 @@ Object.defineProperty(exports, "__esModule", {
 /**
  * Random points and directions within a matrix, for example to place a line of a given length.
  */
-require("core-js/stable");
 const randDirection_1 = __importDefault(require("./randDirection"));
 const randDirectionWithInterval_1 = __importDefault(require("./randDirectionWithInterval"));
 const randomPoint_1 = __importDefault(require("./randomPoint"));

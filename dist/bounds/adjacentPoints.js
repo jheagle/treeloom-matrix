@@ -11,7 +11,6 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 const getPointsForLines_1 = __importDefault(require("../line/getPointsForLines"));
 const point_1 = __importDefault(require("../point/point"));
 const nextCell_1 = __importDefault(require("../point/nextCell"));

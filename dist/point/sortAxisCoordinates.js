@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 /**
  * Take a point and sort the coordinates, return an array of them sorted.
  * @param pnt - the Point to be sorted

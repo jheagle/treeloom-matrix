@@ -8,7 +8,6 @@ var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 const nextCell_1 = __importDefault(require("../point/nextCell"));
 const point_1 = __importDefault(require("../point/point"));
 const pointDifference_1 = __importDefault(require("../point/pointDifference"));

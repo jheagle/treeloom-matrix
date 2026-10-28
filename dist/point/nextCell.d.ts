@@ -1,4 +1,3 @@
-import 'core-js/stable';
 import { Direction, Point } from './types';
 /**
  * Based on provided point and point direction generate next point.

@@ -11,7 +11,6 @@ Object.defineProperty(exports, "__esModule", {
 /**
  * Move between the points, the items and the elements of a matrix.
  */
-require("core-js/stable");
 const getDomItemFromElement_1 = __importDefault(require("./getDomItemFromElement"));
 const getDomItemFromPoint_1 = __importDefault(require("./getDomItemFromPoint"));
 const getPointFromDomItem_1 = __importDefault(require("./getPointFromDomItem"));

@@ -5,7 +5,6 @@ require("core-js/modules/esnext.iterator.reduce.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-require("core-js/stable");
 /**
  * Return an array of all the points in the matrix
  * @param matrix - The matrix (or any level of it) to retrieve points from.

@@ -1,7 +1,6 @@
 /**
  * All of the Matrix DOM functions and objects necessary to create DOM Matrices
  */
-import 'core-js/stable';
 /**
  * All the functions of matrix-dom.
  */
