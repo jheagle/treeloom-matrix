@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import point from './point'
 import { Direction, Point } from './types'
 

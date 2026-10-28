@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import getDomItemFromPoint from './getDomItemFromPoint'
 import getPointFromElement from './getPointFromElement'
 import { Matrix, MatrixColumn } from '../grid/types'

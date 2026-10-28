@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import getAllPoints from './getAllPoints'
 import siFunciona from 'si-funciona'
 import { Point } from '../point/types'

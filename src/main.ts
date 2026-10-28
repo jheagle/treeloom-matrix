@@ -2,7 +2,6 @@
  * All of the Matrix DOM functions and objects necessary to create DOM Matrices
  */
 
-import 'core-js/stable'
 import point from './point/index'
 import line from './line/index'
 import grid from './grid/index'

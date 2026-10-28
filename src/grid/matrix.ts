@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import siFunciona from 'si-funciona'
 import jsonDom from 'json-dom'
 import tile from './tile'

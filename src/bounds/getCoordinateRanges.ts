@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import nextCell from '../point/nextCell'
 import point from '../point/point'
 import pointDifference from '../point/pointDifference'

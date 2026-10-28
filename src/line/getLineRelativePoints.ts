@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import areEqualPoints from '../point/areEqualPoints'
 import getAbsolutePoint from '../point/getAbsolutePoint'
 import point from '../point/point'

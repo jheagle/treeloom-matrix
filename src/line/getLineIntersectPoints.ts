@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import areEqualPoints from '../point/areEqualPoints'
 import pointsToStep from './pointsToStep'
 import { Direction, Point } from '../point/types'

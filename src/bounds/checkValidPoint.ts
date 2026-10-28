@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import getAxisLengths from './getAxisLengths'
 import { Point } from '../point/types'
 import { Matrix } from '../grid/types'

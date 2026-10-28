@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import getLinePoints from './getLinePoints'
 import { Line, LineSegment } from './types'
 

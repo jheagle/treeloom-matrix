@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import point from './point'
 import nextCell from './nextCell'
 import prevCell from './prevCell'

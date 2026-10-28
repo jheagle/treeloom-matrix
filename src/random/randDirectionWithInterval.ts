@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import alterCoordinates from '../point/alterCoordinates'
 import checkValidPoint from '../bounds/checkValidPoint'
 import direction from '../point/direction'

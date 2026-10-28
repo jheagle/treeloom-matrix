@@ -1,4 +1,3 @@
-import 'core-js/stable'
 import siFunciona from 'si-funciona'
 import getCoordinateRanges from '../bounds/getCoordinateRanges'
 import getMatrixRange from '../bounds/getMatrixRange'
