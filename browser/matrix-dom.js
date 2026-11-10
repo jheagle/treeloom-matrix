@@ -12208,6 +12208,9 @@ var matrixDom = (() => {
       };
       var keyTarget = (event, from, size) => {
         const ctrl = event.ctrlKey || event.metaKey;
+        if (event.altKey || event.shiftKey || ctrl && event.key !== "Home" && event.key !== "End") {
+          return null;
+        }
         switch (event.key) {
           case "ArrowRight":
             return (0, point_1.default)(Math.min(from.x + 1, size.x - 1), from.y, from.z);
@@ -12222,9 +12225,9 @@ var matrixDom = (() => {
           case "End":
             return ctrl ? (0, point_1.default)(size.x - 1, size.y - 1, from.z) : (0, point_1.default)(size.x - 1, from.y, from.z);
           case "PageUp":
-            return (0, point_1.default)(from.x, from.y, Math.max(from.z - 1, 0));
+            return size.z > 1 ? (0, point_1.default)(from.x, from.y, Math.max(from.z - 1, 0)) : null;
           case "PageDown":
-            return (0, point_1.default)(from.x, from.y, Math.min(from.z + 1, size.z - 1));
+            return size.z > 1 ? (0, point_1.default)(from.x, from.y, Math.min(from.z + 1, size.z - 1)) : null;
           default:
             return null;
         }
@@ -12236,7 +12239,7 @@ var matrixDom = (() => {
         }
         const matrix = target;
         const keyEvent = event;
-        if (keyEvent.key === "Enter" || keyEvent.key === " ") {
+        if ((keyEvent.key === "Enter" || keyEvent.key === " ") && !keyEvent.altKey && !keyEvent.ctrlKey && !keyEvent.metaKey) {
           keyEvent.preventDefault();
           column.element?.click();
           return;
@@ -12264,8 +12267,11 @@ var matrixDom = (() => {
       };
       exports.gridFocusin = gridFocusin;
       var navigableGrid = (matrix, start = (0, point_1.default)(0, 0, 0)) => {
-        setGridRoles(matrix);
         const columns = allColumns(matrix);
+        if (!columns.length) {
+          return matrix;
+        }
+        setGridRoles(matrix);
         const first = (0, getDomItemFromPoint_1.default)(start, matrix) || columns[0];
         columns.forEach((column) => setTabIndex(column, column === first ? 0 : -1));
         const listeners = {

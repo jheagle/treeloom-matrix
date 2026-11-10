@@ -101,7 +101,8 @@ const setTabStop = (matrix, column) => {
 /**
  * Where a key moves to from a point, following the ARIA grid pattern: the arrows move one cell, Home and End go to
  * the start and end of the row, Ctrl+Home and Ctrl+End to the first and last cell, and Page Up / Page Down to the
- * previous / next layer. Movement stops at the edges (no wrapping).
+ * previous / next layer (only when there are several). Movement stops at the edges (no wrapping). Keys held with
+ * Alt or Shift, and arrows held with Ctrl / Meta, are left to the browser (Alt+Left is Back).
  * @param event - The keyboard event
  * @param from - The point of the focused cell
  * @param size - The axis lengths of the matrix
@@ -109,6 +110,9 @@ const setTabStop = (matrix, column) => {
  */
 const keyTarget = (event, from, size) => {
   const ctrl = event.ctrlKey || event.metaKey;
+  if (event.altKey || event.shiftKey || ctrl && event.key !== 'Home' && event.key !== 'End') {
+    return null;
+  }
   switch (event.key) {
     case 'ArrowRight':
       return (0, point_1.default)(Math.min(from.x + 1, size.x - 1), from.y, from.z);
@@ -123,9 +127,9 @@ const keyTarget = (event, from, size) => {
     case 'End':
       return ctrl ? (0, point_1.default)(size.x - 1, size.y - 1, from.z) : (0, point_1.default)(size.x - 1, from.y, from.z);
     case 'PageUp':
-      return (0, point_1.default)(from.x, from.y, Math.max(from.z - 1, 0));
+      return size.z > 1 ? (0, point_1.default)(from.x, from.y, Math.max(from.z - 1, 0)) : null;
     case 'PageDown':
-      return (0, point_1.default)(from.x, from.y, Math.min(from.z + 1, size.z - 1));
+      return size.z > 1 ? (0, point_1.default)(from.x, from.y, Math.min(from.z + 1, size.z - 1)) : null;
     default:
       return null;
   }
@@ -143,7 +147,7 @@ const gridKeydown = (event, target) => {
   }
   const matrix = target;
   const keyEvent = event;
-  if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
+  if ((keyEvent.key === 'Enter' || keyEvent.key === ' ') && !keyEvent.altKey && !keyEvent.ctrlKey && !keyEvent.metaKey) {
     keyEvent.preventDefault();
     column.element?.click();
     return;
@@ -194,12 +198,16 @@ exports.gridFocusin = gridFocusin;
  * (or the cells) rather than on buttons inside the cells.
  * @param matrix - A matrix (from buildMatrix, square, cube or matrix)
  * @param start - The cell which is the Tab stop at first (default the first cell)
- * @returns The same matrix, with the grid roles, tabIndex on each cell and the keydown and focusin listeners on the
+ * @returns The same matrix (unchanged when it has no cells), with the grid roles, tabIndex on each cell and the keydown and focusin listeners on the
  * matrix
  */
 const navigableGrid = (matrix, start = (0, point_1.default)(0, 0, 0)) => {
-  setGridRoles(matrix);
   const columns = allColumns(matrix);
+  if (!columns.length) {
+    // Nothing to navigate (e.g. a size of 0 from dynamic data)
+    return matrix;
+  }
+  setGridRoles(matrix);
   const first = (0, getDomItemFromPoint_1.default)(start, matrix) || columns[0];
   columns.forEach(column => setTabIndex(column, column === first ? 0 : -1));
   // The functions themselves, not names registered with json-dom's registerListener: a name lives on one json-dom

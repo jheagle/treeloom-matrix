@@ -34,7 +34,7 @@ export declare const gridFocusin: (event: EventProxy | Event, target: DomItem) =
  * (or the cells) rather than on buttons inside the cells.
  * @param matrix - A matrix (from buildMatrix, square, cube or matrix)
  * @param start - The cell which is the Tab stop at first (default the first cell)
- * @returns The same matrix, with the grid roles, tabIndex on each cell and the keydown and focusin listeners on the
+ * @returns The same matrix (unchanged when it has no cells), with the grid roles, tabIndex on each cell and the keydown and focusin listeners on the
  * matrix
  */
 declare const navigableGrid: (matrix: Matrix, start?: Point) => Matrix;

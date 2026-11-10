@@ -94,6 +94,33 @@ describe('navigableGrid', () => {
     expect(document.activeElement).toBe(cell(grid, 0, 0).element)
   })
 
+  test('Page Up / Page Down are left to the page in a single layer grid (it can still scroll)', () => {
+    const grid = live(square({}, 3))
+    cell(grid, 1, 1).element.focus()
+    expect(press(document.activeElement, 'PageDown').defaultPrevented).toBe(false)
+    expect(press(document.activeElement, 'PageUp').defaultPrevented).toBe(false)
+    expect(document.activeElement).toBe(cell(grid, 1, 1).element)
+  })
+
+  test('keys with Alt or Shift, and arrows with Ctrl / Meta, are left to the browser', () => {
+    const grid = live(square({}, 3))
+    cell(grid, 1, 1).element.focus()
+    expect(press(document.activeElement, 'ArrowLeft', { altKey: true }).defaultPrevented).toBe(false)
+    expect(press(document.activeElement, 'ArrowRight', { shiftKey: true }).defaultPrevented).toBe(false)
+    expect(press(document.activeElement, 'ArrowDown', { ctrlKey: true }).defaultPrevented).toBe(false)
+    expect(press(document.activeElement, 'ArrowUp', { metaKey: true }).defaultPrevented).toBe(false)
+    expect(press(document.activeElement, 'Home', { altKey: true }).defaultPrevented).toBe(false)
+    expect(press(document.activeElement, 'Enter', { ctrlKey: true }).defaultPrevented).toBe(false)
+    expect(document.activeElement).toBe(cell(grid, 1, 1).element)
+  })
+
+  test('a matrix with no cells is returned unchanged', () => {
+    const empty = buildMatrix({ x: 0, y: 0, z: 0 })
+    expect(navigableGrid(empty)).toBe(empty)
+    expect(empty.attributes.role).toBeUndefined()
+    expect(navigableGrid(buildMatrix({ x: 0, y: 2, z: 1 })).attributes.role).toBeUndefined()
+  })
+
   test('focusing a cell another way (a click) makes it the Tab stop', () => {
     const grid = live(square({}, 3))
     cell(grid, 2, 2).element.focus()
