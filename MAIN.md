@@ -41,3 +41,25 @@ matrixDom.randomStart(grid, 3)                         // a random start for a l
 
 jsonDom.renderHtml(grid)                               // <div class="matrix"><div class="layer">...
 ```
+
+## Accessibility
+
+A matrix is an ARIA grid, so screen readers announce its rows and cells: a single layer matrix renders with
+`role="grid"` (and `aria-rowcount` / `aria-colcount`), its layer a `rowgroup`, each row a `row` and each column a
+`gridcell`. A matrix of several layers is a `group` of grids, one per layer, labelled "Layer 1", "Layer 2", ... Give
+the grid a name, and replace any default, with attributes in the props:
+
+```js
+const board = matrixDom.square({ matrix: { attributes: { 'aria-label': 'Your board' } } }, 10)
+```
+
+`navigableGrid` makes it keyboard navigable, following the ARIA grid pattern: the grid is one Tab stop (the first cell,
+then whichever cell was used last), the arrow keys move between cells, Home / End go to the start / end of the row,
+Ctrl+Home / Ctrl+End to the first / last cell, Page Up / Page Down change layer, and Enter or Space clicks the focused
+cell, so a click listener on the matrix handles the keyboard too. Call it before rendering:
+
+```js
+jsonDom.renderHtml(matrixDom.navigableGrid(board))
+```
+
+The cells take the focus themselves, so put the click listener on the matrix (or the cells), not on buttons inside them.

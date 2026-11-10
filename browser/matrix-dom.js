@@ -12070,6 +12070,230 @@ var matrixDom = (() => {
     }
   });
 
+  // dist/bounds/getAxisLengths.js
+  var require_getAxisLengths = __commonJS({
+    "dist/bounds/getAxisLengths.js"(exports) {
+      "use strict";
+      init_process();
+      var __importDefault = function(mod) {
+        return mod && mod.__esModule ? mod : {
+          "default": mod
+        };
+      };
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      var point_1 = __importDefault(require_point());
+      var getAxisLengths = (matrix) => (0, point_1.default)(matrix.children[0].children[0].children.length, matrix.children[0].children.length, matrix.children.length);
+      exports.default = getAxisLengths;
+    }
+  });
+
+  // dist/bounds/checkValidPoint.js
+  var require_checkValidPoint = __commonJS({
+    "dist/bounds/checkValidPoint.js"(exports) {
+      "use strict";
+      init_process();
+      var __importDefault = function(mod) {
+        return mod && mod.__esModule ? mod : {
+          "default": mod
+        };
+      };
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      var getAxisLengths_1 = __importDefault(require_getAxisLengths());
+      var checkValidPoint = (pnt, matrix) => {
+        const matrixDimensions = (0, getAxisLengths_1.default)(matrix);
+        if (pnt.x >= matrixDimensions.x || pnt.y >= matrixDimensions.y || pnt.z >= matrixDimensions.z) {
+          return false;
+        }
+        return !!matrix.children[pnt.z] && !!matrix.children[pnt.z].children[pnt.y] && !!matrix.children[pnt.z].children[pnt.y].children[pnt.x] && !!matrix.children[pnt.z].children[pnt.y].children[pnt.x].point;
+      };
+      exports.default = checkValidPoint;
+    }
+  });
+
+  // dist/lookup/getDomItemFromPoint.js
+  var require_getDomItemFromPoint = __commonJS({
+    "dist/lookup/getDomItemFromPoint.js"(exports) {
+      "use strict";
+      init_process();
+      var __importDefault = function(mod) {
+        return mod && mod.__esModule ? mod : {
+          "default": mod
+        };
+      };
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      var checkValidPoint_1 = __importDefault(require_checkValidPoint());
+      var getDomItemFromPoint = (pnt, matrix) => (0, checkValidPoint_1.default)(pnt, matrix) ? matrix.children[pnt.z].children[pnt.y].children[pnt.x] : false;
+      exports.default = getDomItemFromPoint;
+    }
+  });
+
+  // dist/grid/navigableGrid.js
+  var require_navigableGrid = __commonJS({
+    "dist/grid/navigableGrid.js"(exports) {
+      "use strict";
+      init_process();
+      var __importDefault = function(mod) {
+        return mod && mod.__esModule ? mod : {
+          "default": mod
+        };
+      };
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.gridFocusin = exports.gridKeydown = void 0;
+      var getDomItemFromPoint_1 = __importDefault(require_getDomItemFromPoint());
+      var point_1 = __importDefault(require_point());
+      var traits_1 = require_traits();
+      var eventColumn = (event, matrix) => {
+        let item = event.domItemTarget ?? null;
+        while (item && item !== matrix && !(0, traits_1.hasTrait)(item, "matrix.column")) {
+          item = item.parentItem;
+        }
+        return item && item !== matrix ? item : null;
+      };
+      var setTabIndex = (item, tabIndex) => {
+        item.attributes.tabIndex = tabIndex;
+        if (item.element) {
+          item.element.tabIndex = tabIndex;
+        }
+      };
+      var setDefaultAttributes = (item, attributes) => {
+        for (const [name, value] of Object.entries(attributes)) {
+          if (item.attributes[name] === void 0) {
+            item.attributes[name] = value;
+          }
+        }
+      };
+      var setGridRoles = (matrix) => {
+        const layered = matrix.children.length > 1;
+        const gridAttributes = (layer) => ({
+          role: "grid",
+          "aria-rowcount": layer.children.length,
+          "aria-colcount": layer.children[0]?.children.length ?? 0
+        });
+        setDefaultAttributes(matrix, layered ? {
+          role: "group"
+        } : gridAttributes(matrix.children[0]));
+        matrix.children.forEach((layer, z) => {
+          setDefaultAttributes(layer, layered ? {
+            ...gridAttributes(layer),
+            "aria-label": `Layer ${z + 1}`
+          } : {
+            role: "rowgroup"
+          });
+          layer.children.forEach((row) => {
+            setDefaultAttributes(row, {
+              role: "row"
+            });
+            row.children.forEach((column) => setDefaultAttributes(column, {
+              role: "gridcell"
+            }));
+          });
+        });
+      };
+      var allColumns = (matrix) => matrix.children.flatMap((layer) => layer.children.flatMap((row) => row.children));
+      var setTabStop = (matrix, column) => {
+        allColumns(matrix).forEach((item) => {
+          if (item !== column && item.attributes.tabIndex !== -1) {
+            setTabIndex(item, -1);
+          }
+        });
+        setTabIndex(column, 0);
+      };
+      var keyTarget = (event, from, size) => {
+        const ctrl = event.ctrlKey || event.metaKey;
+        if (event.altKey || event.shiftKey || ctrl && event.key !== "Home" && event.key !== "End") {
+          return null;
+        }
+        switch (event.key) {
+          case "ArrowRight":
+            return (0, point_1.default)(Math.min(from.x + 1, size.x - 1), from.y, from.z);
+          case "ArrowLeft":
+            return (0, point_1.default)(Math.max(from.x - 1, 0), from.y, from.z);
+          case "ArrowDown":
+            return (0, point_1.default)(from.x, Math.min(from.y + 1, size.y - 1), from.z);
+          case "ArrowUp":
+            return (0, point_1.default)(from.x, Math.max(from.y - 1, 0), from.z);
+          case "Home":
+            return ctrl ? (0, point_1.default)(0, 0, from.z) : (0, point_1.default)(0, from.y, from.z);
+          case "End":
+            return ctrl ? (0, point_1.default)(size.x - 1, size.y - 1, from.z) : (0, point_1.default)(size.x - 1, from.y, from.z);
+          case "PageUp":
+            return size.z > 1 ? (0, point_1.default)(from.x, from.y, Math.max(from.z - 1, 0)) : null;
+          case "PageDown":
+            return size.z > 1 ? (0, point_1.default)(from.x, from.y, Math.min(from.z + 1, size.z - 1)) : null;
+          default:
+            return null;
+        }
+      };
+      var gridKeydown = (event, target) => {
+        const column = eventColumn(event, target);
+        if (!column || !(0, traits_1.hasTrait)(target, "matrix.matrix")) {
+          return;
+        }
+        const matrix = target;
+        const keyEvent = event;
+        if ((keyEvent.key === "Enter" || keyEvent.key === " ") && !keyEvent.altKey && !keyEvent.ctrlKey && !keyEvent.metaKey) {
+          keyEvent.preventDefault();
+          column.element?.click();
+          return;
+        }
+        const layer = matrix.children[column.point.z];
+        const size = (0, point_1.default)(layer.children[0].children.length, layer.children.length, matrix.children.length);
+        const to = keyTarget(keyEvent, column.point, size);
+        if (!to) {
+          return;
+        }
+        keyEvent.preventDefault();
+        const next = (0, getDomItemFromPoint_1.default)(to, matrix);
+        if (!next) {
+          return;
+        }
+        setTabStop(matrix, next);
+        next.element?.focus();
+      };
+      exports.gridKeydown = gridKeydown;
+      var gridFocusin = (event, target) => {
+        const column = eventColumn(event, target);
+        if (column && (0, traits_1.hasTrait)(target, "matrix.matrix")) {
+          setTabStop(target, column);
+        }
+      };
+      exports.gridFocusin = gridFocusin;
+      var navigableGrid = (matrix, start = (0, point_1.default)(0, 0, 0)) => {
+        const columns = allColumns(matrix);
+        if (!columns.length) {
+          return matrix;
+        }
+        setGridRoles(matrix);
+        const first = (0, getDomItemFromPoint_1.default)(start, matrix) || columns[0];
+        columns.forEach((column) => setTabIndex(column, column === first ? 0 : -1));
+        const listeners = {
+          keydown: exports.gridKeydown,
+          focusin: exports.gridFocusin
+        };
+        for (const [eventName, listenerFunc] of Object.entries(listeners)) {
+          const listeners2 = matrix.eventListeners[eventName] ?? [];
+          if (!listeners2.some((listener) => listener.listenerFunc === listenerFunc)) {
+            matrix.eventListeners[eventName] = [...listeners2, {
+              listenerFunc,
+              listenerArgs: {},
+              listenerOptions: false
+            }];
+          }
+        }
+        return matrix;
+      };
+      exports.default = navigableGrid;
+    }
+  });
+
   // dist/grid/square.js
   var require_square = __commonJS({
     "dist/grid/square.js"(exports) {
@@ -12119,6 +12343,7 @@ var matrixDom = (() => {
       var buildMatrix_1 = __importDefault(require_buildMatrix());
       var cube_1 = __importDefault(require_cube());
       var matrix_1 = __importDefault(require_matrix());
+      var navigableGrid_1 = __importDefault(require_navigableGrid());
       var square_1 = __importDefault(require_square());
       var tile_1 = __importDefault(require_tile());
       var updateMatrixPoints_1 = __importDefault(require_updateMatrixPoints());
@@ -12126,54 +12351,11 @@ var matrixDom = (() => {
         buildMatrix: buildMatrix_1.default,
         cube: cube_1.default,
         matrix: matrix_1.default,
+        navigableGrid: navigableGrid_1.default,
         square: square_1.default,
         tile: tile_1.default,
         updateMatrixPoints: updateMatrixPoints_1.default
       };
-    }
-  });
-
-  // dist/bounds/getAxisLengths.js
-  var require_getAxisLengths = __commonJS({
-    "dist/bounds/getAxisLengths.js"(exports) {
-      "use strict";
-      init_process();
-      var __importDefault = function(mod) {
-        return mod && mod.__esModule ? mod : {
-          "default": mod
-        };
-      };
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      var point_1 = __importDefault(require_point());
-      var getAxisLengths = (matrix) => (0, point_1.default)(matrix.children[0].children[0].children.length, matrix.children[0].children.length, matrix.children.length);
-      exports.default = getAxisLengths;
-    }
-  });
-
-  // dist/bounds/checkValidPoint.js
-  var require_checkValidPoint = __commonJS({
-    "dist/bounds/checkValidPoint.js"(exports) {
-      "use strict";
-      init_process();
-      var __importDefault = function(mod) {
-        return mod && mod.__esModule ? mod : {
-          "default": mod
-        };
-      };
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      var getAxisLengths_1 = __importDefault(require_getAxisLengths());
-      var checkValidPoint = (pnt, matrix) => {
-        const matrixDimensions = (0, getAxisLengths_1.default)(matrix);
-        if (pnt.x >= matrixDimensions.x || pnt.y >= matrixDimensions.y || pnt.z >= matrixDimensions.z) {
-          return false;
-        }
-        return !!matrix.children[pnt.z] && !!matrix.children[pnt.z].children[pnt.y] && !!matrix.children[pnt.z].children[pnt.y].children[pnt.x] && !!matrix.children[pnt.z].children[pnt.y].children[pnt.x].point;
-      };
-      exports.default = checkValidPoint;
     }
   });
 
@@ -12380,25 +12562,6 @@ var matrixDom = (() => {
         getLayerPoints: getLayerPoints_1.default,
         getMatrixRange: getMatrixRange_1.default
       };
-    }
-  });
-
-  // dist/lookup/getDomItemFromPoint.js
-  var require_getDomItemFromPoint = __commonJS({
-    "dist/lookup/getDomItemFromPoint.js"(exports) {
-      "use strict";
-      init_process();
-      var __importDefault = function(mod) {
-        return mod && mod.__esModule ? mod : {
-          "default": mod
-        };
-      };
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      var checkValidPoint_1 = __importDefault(require_checkValidPoint());
-      var getDomItemFromPoint = (pnt, matrix) => (0, checkValidPoint_1.default)(pnt, matrix) ? matrix.children[pnt.z].children[pnt.y].children[pnt.x] : false;
-      exports.default = getDomItemFromPoint;
     }
   });
 
