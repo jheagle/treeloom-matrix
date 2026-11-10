@@ -35,6 +35,7 @@ const publicApi = [
   'getPointsForLines',
   'lineEndPoint',
   'matrix',
+  'navigableGrid',
   'nextCell',
   'point',
   'pointDifference',

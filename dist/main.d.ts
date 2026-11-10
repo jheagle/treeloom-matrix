@@ -26,6 +26,7 @@ declare const matrixDom: {
     buildMatrix: (dimensions?: import("./point/types").Point, props?: import("./grid/types").MatrixProps) => import("./grid/types").Matrix;
     cube: ({ x, y, z, matrix }: import("./grid/types").MatrixProps | undefined, size: number) => import("./grid/types").Matrix;
     matrix: (dimensions?: import("./point/types").Point, props?: import("./grid/types").MatrixProps) => import("./grid/types").Matrix;
+    navigableGrid: (matrix: import("./grid/types").Matrix, start?: import("./point/types").Point) => import("./grid/types").Matrix;
     square: ({ x, y, z, matrix }: import("./grid/types").MatrixProps | undefined, size: number) => import("./grid/types").Matrix;
     tile: () => import("./grid/types").MatrixTile;
     updateMatrixPoints: (matrix: import("./grid/types").Matrix) => import("./grid/types").Matrix;
