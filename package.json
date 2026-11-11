@@ -6,7 +6,7 @@
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "author": "Joshua Heagle",
-  "license": "GNU",
+  "license": "MIT",
   "scripts": {
     "build": "gulp build",
     "dev": "gulp",
