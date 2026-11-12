@@ -3,7 +3,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 import siFunciona from 'si-funciona'
-import jsonDom from 'json-dom'
+import treeloom from 'treeloom'
 import tile from './tile'
 import './traits'
 import { Matrix, MatrixProps } from './types'
@@ -18,7 +18,7 @@ const matrix = (
   dimensions: Point = { x: 0, y: 0, z: 1 },
   props: MatrixProps = { x: {}, y: {}, z: {}, matrix: {} }
 ): Matrix => siFunciona.mergeObjects(
-  jsonDom.createDomItem(
+  treeloom.createDomItem(
     {
       has: { 'matrix.matrix': true },
       tagName: 'div',
@@ -27,9 +27,9 @@ const matrix = (
       },
       // Each level is built fresh per array element (not built once then cloned via buildArray) so every
       // createDomItem call actually runs and stamps its own real id - cloning a single built item would copy
-      // that one id onto every layer/row/tile instead (the id-collision bug behind JSON-DOM#100).
+      // that one id onto every layer/row/tile instead (the id-collision bug behind treeloom#100).
       children: Array.from({ length: dimensions.z }, () => siFunciona.mergeObjectsMutable(
-        jsonDom.createDomItem(
+        treeloom.createDomItem(
           {
             axis: 'z',
             has: { 'matrix.layer': true },
@@ -38,7 +38,7 @@ const matrix = (
               className: 'layer'
             },
             children: Array.from({ length: dimensions.y }, () => siFunciona.mergeObjectsMutable(
-              jsonDom.createDomItem(
+              treeloom.createDomItem(
                 {
                   axis: 'y',
                   has: { 'matrix.row': true },
@@ -47,7 +47,7 @@ const matrix = (
                     className: 'row'
                   },
                   children: Array.from({ length: dimensions.x }, () => siFunciona.mergeObjectsMutable(
-                    jsonDom.createDomItem(
+                    treeloom.createDomItem(
                       {
                         axis: 'x',
                         has: { 'matrix.column': true },

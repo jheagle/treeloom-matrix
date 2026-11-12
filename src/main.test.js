@@ -5,7 +5,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-import matrixDom from './main'
+import treeloomMatrix from './main'
 
 // The names other projects (battleship, ...) call. Moving a function between folders must never change these.
 const publicApi = [
@@ -57,22 +57,22 @@ const publicApi = [
   'updateMatrixPoints'
 ]
 
-describe('matrixDom public API', () => {
+describe('treeloomMatrix public API', () => {
   test('has exactly the functions and objects it had before the folders were regrouped', () => {
-    expect(Object.keys(matrixDom).sort()).toEqual(publicApi)
+    expect(Object.keys(treeloomMatrix).sort()).toEqual(publicApi)
   })
 
-  test('the package exports the flat matrixDom object directly, not wrapped under a default key', () => {
+  test('the package exports the flat treeloomMatrix object directly, not wrapped under a default key', () => {
     // A regression test for a real bug: `export default` here compiled to `exports.default = ...`, which
     // browserify's standalone option (used for the plain <script> tag / global consumption case) then exposed
-    // as `window.matrixDom = { default: {...} }` instead of the real object - every destructured function
-    // (square, matrix, point, ...) silently became undefined. `export =` avoids this, matching json-dom's own
+    // as `window.treeloomMatrix = { default: {...} }` instead of the real object - every destructured function
+    // (square, matrix, point, ...) silently became undefined. `export =` avoids this, matching treeloom's own
     // main.ts. Uses require() directly (not the top-level `import` above) so TypeScript/babel's esModuleInterop
     // doesn't smooth over the exact shape a plain CommonJS consumer actually gets.
-    const requiredMatrixDom = require('./main')
-    expect(requiredMatrixDom.default).toBeUndefined()
-    expect(typeof requiredMatrixDom.square).toBe('function')
-    expect(typeof requiredMatrixDom.matrix).toBe('function')
-    expect(typeof requiredMatrixDom.point).toBe('function')
+    const requiredTreeloomMatrix = require('./main')
+    expect(requiredTreeloomMatrix.default).toBeUndefined()
+    expect(typeof requiredTreeloomMatrix.square).toBe('function')
+    expect(typeof requiredTreeloomMatrix.matrix).toBe('function')
+    expect(typeof requiredTreeloomMatrix.point).toBe('function')
   })
 })

@@ -3,7 +3,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 /**
- * All of the Matrix DOM functions and objects necessary to create DOM Matrices
+ * All of the treeloom-matrix functions and objects necessary to create DOM Matrices
  */
 
 import point from './point/index'
@@ -19,9 +19,9 @@ import random from './random/index'
 const root = (typeof window !== 'undefined' ? window : {}) as unknown as Record<string, unknown>
 
 /**
- * All the functions of matrix-dom.
+ * All the functions of treeloom-matrix.
  */
-const matrixDom = {
+const treeloomMatrix = {
   ...point,
   ...line,
   ...grid,
@@ -30,10 +30,10 @@ const matrixDom = {
   ...random
 }
 
-root.matrixDom = matrixDom
+root.treeloomMatrix = treeloomMatrix
 
-// `export =` (not `export default`) so the compiled module.exports IS matrixDom directly, not
-// { default: matrixDom } - browserify's standalone UMD wrapper exposes a bundle's module.exports
+// `export =` (not `export default`) so the compiled module.exports IS treeloomMatrix directly, not
+// { default: treeloomMatrix } - browserify's standalone UMD wrapper exposes a bundle's module.exports
 // as the global/CommonJS/AMD value verbatim, so a default export would otherwise surface as
-// window.matrixDom.default instead of window.matrixDom itself.
-export = matrixDom
+// window.treeloomMatrix.default instead of window.treeloomMatrix itself.
+export = treeloomMatrix

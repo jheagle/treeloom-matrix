@@ -3,7 +3,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 /**
- * The grid itself: a matrix of layers, rows and columns (json-dom items with the matrix.* traits), where each
+ * The grid itself: a matrix of layers, rows and columns (treeloom items with the matrix.* traits), where each
  * column holds a tile with its point.
  */
 import buildMatrix from './buildMatrix'

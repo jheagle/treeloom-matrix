@@ -2,14 +2,14 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-import type { DomItem, DomItemConfig, WithTraits } from 'json-dom/dist/domItem/types'
+import type { DomItem, DomItemConfig, WithTraits } from 'treeloom/dist/domItem/types'
 import type { Point } from '../point/types'
 
 /**
- * The traits of a matrix: which level of the grid an item is. They are added to json-dom's TraitRegistry, so
+ * The traits of a matrix: which level of the grid an item is. They are added to treeloom's TraitRegistry, so
  * `hasTrait(item, 'matrix.row')` narrows an item to a MatrixRow.
  */
-declare module 'json-dom/dist/domItem/types' {
+declare module 'treeloom/dist/domItem/types' {
   interface TraitRegistry {
     /** The item is the top level of a grid, it contains the layers. */
     'matrix.matrix': {}
