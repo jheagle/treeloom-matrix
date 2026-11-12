@@ -1,5 +1,8 @@
 "use strict";
 
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -14,7 +17,7 @@ const point_1 = __importDefault(require("../point/point"));
 const traits_1 = require("./traits");
 /**
  * The column (gridcell) an event happened in: the event's target item, or the column it is inside.
- * @param event - The event, as json-dom gives it to a listener
+ * @param event - The event, as treeloom gives it to a listener
  * @param matrix - The matrix the listener is attached to (the search stops there)
  */
 const eventColumn = (event, matrix) => {
@@ -210,9 +213,9 @@ const navigableGrid = (matrix, start = (0, point_1.default)(0, 0, 0)) => {
   setGridRoles(matrix);
   const first = (0, getDomItemFromPoint_1.default)(start, matrix) || columns[0];
   columns.forEach(column => setTabIndex(column, column === first ? 0 : -1));
-  // The functions themselves, not names registered with json-dom's registerListener: a name lives on one json-dom
-  // root, and matrix-dom's browser bundle carries its own copy of json-dom, so a page rendering with its own
-  // json-dom would not find it ("Undefined listener function").
+  // The functions themselves, not names registered with treeloom's registerListener: a name lives on one treeloom
+  // root, and treeloom-matrix's browser bundle carries its own copy of treeloom, so a page rendering with its own
+  // treeloom would not find it ("Undefined listener function").
   const listeners = {
     keydown: exports.gridKeydown,
     focusin: exports.gridFocusin

@@ -1,5 +1,8 @@
 "use strict";
 
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -9,7 +12,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 /**
- * The grid itself: a matrix of layers, rows and columns (json-dom items with the matrix.* traits), where each
+ * The grid itself: a matrix of layers, rows and columns (treeloom items with the matrix.* traits), where each
  * column holds a tile with its point.
  */
 const buildMatrix_1 = __importDefault(require("./buildMatrix"));

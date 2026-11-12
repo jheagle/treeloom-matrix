@@ -5,7 +5,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
-import jsonDom from 'json-dom'
+import treeloom from 'treeloom'
 import navigableGrid, { gridFocusin, gridKeydown } from './navigableGrid'
 import buildMatrix from './buildMatrix'
 import square from './square'
@@ -19,7 +19,7 @@ const press = (element, key, options = {}) => {
   element.dispatchEvent(event)
   return event
 }
-const live = (grid, start) => jsonDom.renderHtml(navigableGrid(grid, start))
+const live = (grid, start) => treeloom.renderHtml(navigableGrid(grid, start))
 
 afterEach(() => { document.body.innerHTML = '' })
 

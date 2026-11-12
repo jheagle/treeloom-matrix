@@ -1,11 +1,11 @@
 {
   "browser": {
-    "name": "matrix-dom"
+    "name": "treeloom-matrix"
   },
   "copyFiles": [
     {
       "from": "browser/*.js",
-      "to": "../joshuaheagle.local/projects/matrix-dom/browser"
+      "to": "../joshuaheagle.local/projects/treeloom-matrix/browser"
     }
   ],
   "docs": {
@@ -13,7 +13,7 @@
     "enabled": true,
     "from": "src",
     "index": "MAIN.md",
-    "to": "../joshuaheagle.local/projects/matrix-dom/docs",
+    "to": "../joshuaheagle.local/projects/treeloom-matrix/docs",
     "inBuild": false,
     "gitRevision": "main"
   },

@@ -1,10 +1,7 @@
 /**
- * All of the Matrix DOM functions and objects necessary to create DOM Matrices
+ * All the functions of treeloom-matrix.
  */
-/**
- * All the functions of matrix-dom.
- */
-declare const matrixDom: {
+declare const treeloomMatrix: {
     randDirection: (matrix: import("./grid/types").Matrix, start?: import("./point/types").Point | null, maxRanges?: import("./point/types").Point | null) => import("./point/types").Direction;
     randDirectionWithInterval: (matrix: import("./grid/types").Matrix, start?: import("./point/types").Point | null, interval?: number | null, maxRanges?: import("./point/types").Point | null) => import("./point/types").Direction;
     randomPoint: (matrix: import("./grid/types").Matrix, maxRanges?: import("./point/types").Point | null) => import("./point/types").Point;
@@ -52,4 +49,4 @@ declare const matrixDom: {
     prevCell: (pnt: import("./point/types").Point, dir: import("./point/types").Point | import("./point/types").Direction) => import("./point/types").Point;
     sortAxisCoordinates: (pnt: import("./point/types").Point, direction?: "asc" | "desc") => import("./point/types").AxisCoordinatePairs;
 };
-export = matrixDom;
+export = treeloomMatrix;

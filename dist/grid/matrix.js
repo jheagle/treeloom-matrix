@@ -1,5 +1,8 @@
 "use strict";
 
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -9,7 +12,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 const si_funciona_1 = __importDefault(require("si-funciona"));
-const json_dom_1 = __importDefault(require("json-dom"));
+const treeloom_1 = __importDefault(require("treeloom"));
 const tile_1 = __importDefault(require("./tile"));
 require("./traits");
 /**
@@ -26,7 +29,7 @@ const matrix = (dimensions = {
   y: {},
   z: {},
   matrix: {}
-}) => si_funciona_1.default.mergeObjects(json_dom_1.default.createDomItem({
+}) => si_funciona_1.default.mergeObjects(treeloom_1.default.createDomItem({
   has: {
     'matrix.matrix': true
   },
@@ -36,10 +39,10 @@ const matrix = (dimensions = {
   },
   // Each level is built fresh per array element (not built once then cloned via buildArray) so every
   // createDomItem call actually runs and stamps its own real id - cloning a single built item would copy
-  // that one id onto every layer/row/tile instead (the id-collision bug behind JSON-DOM#100).
+  // that one id onto every layer/row/tile instead (the id-collision bug behind treeloom#100).
   children: Array.from({
     length: dimensions.z
-  }, () => si_funciona_1.default.mergeObjectsMutable(json_dom_1.default.createDomItem({
+  }, () => si_funciona_1.default.mergeObjectsMutable(treeloom_1.default.createDomItem({
     axis: 'z',
     has: {
       'matrix.layer': true
@@ -50,7 +53,7 @@ const matrix = (dimensions = {
     },
     children: Array.from({
       length: dimensions.y
-    }, () => si_funciona_1.default.mergeObjectsMutable(json_dom_1.default.createDomItem({
+    }, () => si_funciona_1.default.mergeObjectsMutable(treeloom_1.default.createDomItem({
       axis: 'y',
       has: {
         'matrix.row': true
@@ -61,7 +64,7 @@ const matrix = (dimensions = {
       },
       children: Array.from({
         length: dimensions.x
-      }, () => si_funciona_1.default.mergeObjectsMutable(json_dom_1.default.createDomItem({
+      }, () => si_funciona_1.default.mergeObjectsMutable(treeloom_1.default.createDomItem({
         axis: 'x',
         has: {
           'matrix.column': true

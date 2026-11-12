@@ -1,5 +1,5 @@
-import type { DomItem } from 'json-dom/dist/domItem/types';
-import type { EventProxy } from 'json-dom/dist/events/types';
+import type { DomItem } from 'treeloom/dist/domItem/types';
+import type { EventProxy } from 'treeloom/dist/events/types';
 import { Point } from '../point/types';
 import { Matrix } from './types';
 /**

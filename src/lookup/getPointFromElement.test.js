@@ -8,11 +8,11 @@
 import buildMatrix from '../grid/buildMatrix'
 import getPointFromElement from './getPointFromElement'
 import point from '../point/point'
-import jsonDom from 'json-dom'
+import treeloom from 'treeloom'
 
 describe('getPointFromElement', () => {
   test('Retrieve the associated point from an element within a matrix', () => {
-    const liveMatrix = jsonDom.renderHtml(buildMatrix(point(2, 4, 6)))
+    const liveMatrix = treeloom.renderHtml(buildMatrix(point(2, 4, 6)))
     const element = liveMatrix.children[3].children[2].children[1].element
     expect(getPointFromElement(element, liveMatrix)).toEqual(point(1, 2, 3))
   })
