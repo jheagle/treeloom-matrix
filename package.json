@@ -1,16 +1,26 @@
 {
   "name": "treeloom-matrix",
-  "private": true,
   "description": "Grids of layers, rows and columns built as treeloom trees: points, lines and random placement.",
   "version": "1.1.0",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "author": "Joshua Heagle",
   "license": "MPL-2.0",
+  "keywords": [
+    "grid",
+    "matrix",
+    "tree",
+    "treeloom",
+    "points",
+    "lines",
+    "aria grid",
+    "typescript"
+  ],
   "scripts": {
     "build": "gulp build",
     "dev": "gulp",
     "docs": "gulp docs",
+    "prepublishOnly": "npm run build",
     "publish:bundle": "gulp copyFiles",
     "release": "release-it",
     "release:dry-run": "release-it --dry-run",
