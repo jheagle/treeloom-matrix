@@ -8,11 +8,11 @@ random placements on it.
 
 ## Install
 
-treeloom-matrix is not on npm yet, install it from GitHub. treeloom is a **peer dependency** (the matrix is a treeloom
-tree and its traits are registered with treeloom, so there must be exactly one copy of treeloom), so install that too:
+treeloom is a **peer dependency** (the matrix is a treeloom tree and its traits are registered with treeloom, so there
+must be exactly one copy of treeloom), so install it too:
 
 ```shell
-npm install treeloom github:jheagle/treeloom-matrix
+npm install treeloom treeloom-matrix
 ```
 
 It is written in TypeScript and ships its types.
