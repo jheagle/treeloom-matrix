@@ -7,7 +7,7 @@
 
 import treeloomMatrix from './main'
 
-// The names other projects (battleship, ...) call. Moving a function between folders must never change these.
+// The names other projects (cloakfall, ...) call. Moving a function between folders must never change these.
 const publicApi = [
   'adjacentEdgePoints',
   'adjacentPoints',
