@@ -15,7 +15,9 @@ must be exactly one copy of treeloom), so install it too:
 npm install treeloom treeloom-matrix
 ```
 
-It is written in TypeScript and ships its types.
+It is written in TypeScript and ships its types. In a browser, use `browser/treeloom-matrix.min.js` (it defines
+`treeloomMatrix` and includes the parts of treeloom it uses). The bundles are in the npm package (not in git), so a
+CDN serves them too, e.g. `https://cdn.jsdelivr.net/npm/treeloom-matrix@2/browser/treeloom-matrix.min.js`.
 
 ## Example
 
