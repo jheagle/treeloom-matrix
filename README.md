@@ -1,5 +1,7 @@
 # treeloom-matrix
 
+[![tests](https://github.com/jheagle/treeloom-matrix/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/jheagle/treeloom-matrix/actions/workflows/tests.yml)
+
 Use treeloom to generate grids that can be rendered in the DOM.
 
 A **matrix** is a [treeloom](https://github.com/jheagle/treeloom) tree of layers, rows and columns. Every column holds a
